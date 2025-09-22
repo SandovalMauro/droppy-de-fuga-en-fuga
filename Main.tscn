@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmyxmqdjcmwb3"]
+
+[ext_resource type="Script" uid="uid://84k6sawf73vg" path="res://Main.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://cj7f4do8q77kv" path="res://src/player/Droppy.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://3y6jxu3clq88" path="res://src/world/Nivel.tscn" id="2_cm0pq"]
+[ext_resource type="PackedScene" uid="uid://b56dqpcl8gajh" path="res://src/world/Plataforma.tscn" id="3_h2yge"]
+
+[node name="main" type="Node"]
+script = ExtResource("1_ig7tw")
+
+[node name="Nivel" parent="." instance=ExtResource("2_cm0pq")]
+
+[node name="Droppy" parent="Nivel" instance=ExtResource("2_0xm2m")]
+position = Vector2(248, 100)
+
+[node name="StaticBody2D" parent="Nivel" instance=ExtResource("3_h2yge")]
+position = Vector2(28, 525)

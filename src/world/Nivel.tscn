@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://3y6jxu3clq88"]
+
+[ext_resource type="Script" uid="uid://dqprhwxp64hbw" path="res://src/world/Nivel.gd" id="1_xigpd"]
+
+[node name="Nivel" type="Node"]
+script = ExtResource("1_xigpd")

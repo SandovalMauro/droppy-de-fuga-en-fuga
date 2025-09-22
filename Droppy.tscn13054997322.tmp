@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cj7f4do8q77kv"]
+
+[ext_resource type="Script" uid="uid://do5tvuy0jp6uk" path="res://Droppy.gd" id="1_ktedv"]
+[ext_resource type="Texture2D" uid="uid://c1cdxtxmo71by" path="res://gota.png" id="2_2aj7x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_15a3c"]
+
+[node name="Droppy" type="RigidBody2D"]
+mass = 2.0
+script = ExtResource("1_ktedv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(1.1600003, 1.12)
+texture = ExtResource("2_2aj7x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_15a3c")
