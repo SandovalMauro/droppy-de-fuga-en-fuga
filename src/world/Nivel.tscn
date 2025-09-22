@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://3y6jxu3clq88"]
+[gd_scene load_steps=3 format=3 uid="uid://3y6jxu3clq88"]
 
 [ext_resource type="Script" uid="uid://dqprhwxp64hbw" path="res://src/world/Nivel.gd" id="1_xigpd"]
+[ext_resource type="Texture2D" uid="uid://b8gehsdhym0am" path="res://assets/world/backgroud/DesertSunset.png" id="2_koqm3"]
 
 [node name="Nivel" type="Node"]
 script = ExtResource("1_xigpd")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_right = 2312.6208
+offset_bottom = 3053.6858
+scale = Vector2(0.49770376, 0.21220258)
+texture = ExtResource("2_koqm3")

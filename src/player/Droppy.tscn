@@ -16,3 +16,9 @@ texture = ExtResource("2_2aj7x")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.9865714, -0.9096027)
 shape = SubResource("CircleShape2D_15a3c")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = 0
+limit_bottom = 650
+editor_draw_limits = true

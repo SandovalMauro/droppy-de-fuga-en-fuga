@@ -13,5 +13,23 @@ script = ExtResource("1_ig7tw")
 [node name="Droppy" parent="Nivel" instance=ExtResource("2_0xm2m")]
 position = Vector2(248, 100)
 
-[node name="StaticBody2D" parent="Nivel" instance=ExtResource("3_h2yge")]
+[node name="Platafaorma" parent="Nivel" instance=ExtResource("3_h2yge")]
 position = Vector2(28, 525)
+
+[node name="Plataforma2" parent="Nivel" instance=ExtResource("3_h2yge")]
+position = Vector2(418, 296)
+
+[node name="Plataforma3" parent="Nivel" instance=ExtResource("3_h2yge")]
+position = Vector2(888, 465)
+
+[node name="Plataforma4" parent="Nivel" instance=ExtResource("3_h2yge")]
+position = Vector2(1433, 544)
+
+[node name="Plataforma5" parent="Nivel" instance=ExtResource("3_h2yge")]
+position = Vector2(1810, 309)
+
+[node name="Plataforma6" parent="Nivel" instance=ExtResource("3_h2yge")]
+position = Vector2(2320, 203)
+
+[node name="Plataforma7" parent="Nivel" instance=ExtResource("3_h2yge")]
+position = Vector2(2646, 488)
