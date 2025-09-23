@@ -8,17 +8,19 @@ extends Node
 @export var humidity: float #= 0
 @export var pressure_atm: float #= 0
 
-const K := 0.0005  # coeficiente general para ajustar el juego
+const K := 0.05  # coeficiente general para ajustar el juego
 
 @onready var droppy: Droppy = $Droppy
 
 func _ready() -> void:
 	temperature_air = 22#30
-	humidity = 0.5#0.5
+	humidity = 0.9#0.5
 	pressure_atm = 0.5 #1
 
 func _physics_process(delta: float) -> void:
-	droppy.update_mass(calcular_estado(droppy.temperature, temperature_air, humidity, pressure_atm, droppy.mass))
+	var dm = calcular_estado(droppy.temperature, temperature_air, humidity, pressure_atm, droppy.mass)
+	droppy.update_mass(dm * delta)
+	print({"dm * delta":dm * delta})
 
 
 func calcular_estado(t_drop: float, t_air: float, hum: float, p_atm: float, m: float) -> float:

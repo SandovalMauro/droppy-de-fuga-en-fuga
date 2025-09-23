@@ -4,7 +4,7 @@ class_name Droppy
 @onready var sprite = $Sprite2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
-var speed: float = 400 
+var speed: float = 250 
 var jump_impulse: float = 700 
 var mass_scale_min: float = 1
 var mass_scale_max: float = 3.5
