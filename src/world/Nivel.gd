@@ -28,10 +28,10 @@ func calcular_estado(t_drop: float, t_air: float, hum: float, p_atm: float, m: f
 	var P_ref = 1.0    # atm
 
 	# Ajustar para calibrar el peso de cada variable
-	var k_presion = 0.005
-	var k_humedad = 0.003
-	var k_Taire = 0.00005
-	var k_Tdrop = 0.00005
+	var k_presion = 0.5
+	var k_humedad = 0.3
+	var k_Taire = 0.005
+	var k_Tdrop = 0.008
 
 	# Calculo, resto el valor de equilibrio a los pasados por parametro y multiplico por el peso
 	var w_presion = k_presion * (p_atm - P_ref)

@@ -33,10 +33,16 @@ func _physics_process(delta: float) -> void:
 	#escala el sprite y el collisionShape dependiendo la cantidad de masa
 	#el remap esta para que se exagere un poco mas el tamaño de la imagen en realacion con los valores de la masa
 	var scale_factor = remap(mass, mass_min, mass_max, mass_scale_min, mass_scale_max)
-	print(scale_factor)
+	#print(scale_factor)
 	sprite.scale = Vector2.ONE * scale_factor
 	collision_shape_2d.scale = sprite.scale
 
 # actualiza masa con la variacion calculada por el nivel
 func update_mass(variacion: float) -> void:
 	mass = clamp(mass + variacion, mass_min, mass_max)
+	print(mass)
+	print({"temperaturaGota": temperature})
+	
+func update_temperature(temp: float) -> void:
+	temperature += temp
+	
