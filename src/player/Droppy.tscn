@@ -22,3 +22,7 @@ limit_left = 0
 limit_top = 0
 limit_bottom = 650
 editor_draw_limits = true
+
+[node name="RayCastFloot" type="RayCast2D" parent="."]
+show_behind_parent = true
+target_position = Vector2(0, 13)
