@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var temp: float = 1.5;
+@export var temp: float;
 @onready var timer: Timer = $Timer
 
 var body_entered: Node2D = null

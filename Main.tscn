@@ -1,35 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://cmyxmqdjcmwb3"]
+[gd_scene load_steps=4 format=3 uid="uid://cmyxmqdjcmwb3"]
 
 [ext_resource type="Script" uid="uid://84k6sawf73vg" path="res://Main.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://cj7f4do8q77kv" path="res://src/player/Droppy.tscn" id="2_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://3y6jxu3clq88" path="res://src/world/Nivel.tscn" id="2_cm0pq"]
-[ext_resource type="PackedScene" uid="uid://b56dqpcl8gajh" path="res://src/world/Plataforma.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://codfo418w6ulc" path="res://src/world/Nivel1.tscn" id="2_r0du0"]
 
 [node name="main" type="Node"]
 script = ExtResource("1_ig7tw")
 
-[node name="Nivel" parent="." instance=ExtResource("2_cm0pq")]
+[node name="Nivel1" parent="." node_paths=PackedStringArray("droppy") instance=ExtResource("2_r0du0")]
+droppy = NodePath("Droppy")
 
-[node name="Droppy" parent="Nivel" instance=ExtResource("2_0xm2m")]
-position = Vector2(248, 100)
-
-[node name="Platafaorma" parent="Nivel" instance=ExtResource("3_h2yge")]
-position = Vector2(28, 525)
-
-[node name="Plataforma2" parent="Nivel" instance=ExtResource("3_h2yge")]
-position = Vector2(418, 296)
-
-[node name="Plataforma3" parent="Nivel" instance=ExtResource("3_h2yge")]
-position = Vector2(888, 465)
-
-[node name="Plataforma4" parent="Nivel" instance=ExtResource("3_h2yge")]
-position = Vector2(1433, 544)
-
-[node name="Plataforma5" parent="Nivel" instance=ExtResource("3_h2yge")]
-position = Vector2(1810, 309)
-
-[node name="Plataforma6" parent="Nivel" instance=ExtResource("3_h2yge")]
-position = Vector2(2320, 203)
-
-[node name="Plataforma7" parent="Nivel" instance=ExtResource("3_h2yge")]
-position = Vector2(2646, 488)
+[node name="Droppy" parent="Nivel1" instance=ExtResource("2_0xm2m")]
+position = Vector2(118, 156)

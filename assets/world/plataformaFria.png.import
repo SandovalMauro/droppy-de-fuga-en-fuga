@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bajc8isuydleu"
-path="res://.godot/imported/plataforma.png-d22bc7e979b114eb3398f5c1151b0f79.ctex"
+uid="uid://f2xlvhbos53w"
+path="res://.godot/imported/plataformaFria.png-712444875f97145e1595d3f33f5eef35.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/world/plataforma.png"
-dest_files=["res://.godot/imported/plataforma.png-d22bc7e979b114eb3398f5c1151b0f79.ctex"]
+source_file="res://assets/world/plataformaFria.png"
+dest_files=["res://.godot/imported/plataformaFria.png-712444875f97145e1595d3f33f5eef35.ctex"]
 
 [params]
 

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://beld6jgwmtm5l"]
+
+[ext_resource type="PackedScene" uid="uid://b56dqpcl8gajh" path="res://src/world/Plataforma.tscn" id="1_lbnn7"]
+[ext_resource type="Texture2D" uid="uid://cs2lre07kaowu" path="res://assets/world/plataformaCaliente.png" id="2_forda"]
+
+[node name="PlataformaCaliente" instance=ExtResource("1_lbnn7")]
+temp = 1.5
+
+[node name="Sprite2D" parent="StaticBody2D" index="0"]
+texture = ExtResource("2_forda")

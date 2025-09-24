@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://b56dqpcl8gajh"]
+[gd_scene load_steps=4 format=3 uid="uid://b56dqpcl8gajh"]
 
 [ext_resource type="Script" uid="uid://cw1voa1lap85d" path="res://src/world/plataforma.gd" id="1_odf2y"]
-[ext_resource type="Texture2D" uid="uid://bajc8isuydleu" path="res://assets/world/plataforma.png" id="1_xnlno"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yc5i5"]
 size = Vector2(261.5, 21.5)
@@ -17,7 +16,6 @@ script = ExtResource("1_odf2y")
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(120.0401, 2.003148)
 scale = Vector2(4.092497, -0.34365162)
-texture = ExtResource("1_xnlno")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(120.25, 1.25)
@@ -25,6 +23,7 @@ shape = SubResource("RectangleShape2D_yc5i5")
 debug_color = Color(0.9122268, 0.18778217, 0.57010293, 0.41960785)
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -19)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(120, -9)

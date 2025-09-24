@@ -8,14 +8,20 @@ extends Node
 @export var humidity: float #= 0
 @export var pressure_atm: float #= 0
 
+	# Ajustar para calibrar el peso de cada variable
+@export var k_presion = 0.5
+@export var k_humedad = 0.3
+@export var k_Taire = 0.005
+@export var k_Tdrop = 0.008
+
 const K := 0.05  # coeficiente general para ajustar el juego
 
-@onready var droppy: Droppy = $Droppy
+@export var droppy: Droppy
 
-func _ready() -> void:
-	temperature_air = 22#30
-	humidity = 0.9#0.5
-	pressure_atm = 0.5 #1
+#func _ready() -> void:
+	#temperature_air = 22#30
+	#humidity = 0.9#0.5
+	#pressure_atm = 0.5 #1
 
 func _physics_process(delta: float) -> void:
 	var dm = calcular_estado(droppy.temperature, temperature_air, humidity, pressure_atm, droppy.mass)
@@ -28,12 +34,6 @@ func calcular_estado(t_drop: float, t_air: float, hum: float, p_atm: float, m: f
 	var T_ref = 20.0   # °C
 	var RH_ref = 0.5   # 50%
 	var P_ref = 1.0    # atm
-
-	# Ajustar para calibrar el peso de cada variable
-	var k_presion = 0.5
-	var k_humedad = 0.3
-	var k_Taire = 0.005
-	var k_Tdrop = 0.008
 
 	# Calculo, resto el valor de equilibrio a los pasados por parametro y multiplico por el peso
 	var w_presion = k_presion * (p_atm - P_ref)

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://5r0b7fkjl4oa"]
+
+[ext_resource type="PackedScene" uid="uid://b56dqpcl8gajh" path="res://src/world/Plataforma.tscn" id="1_hig8e"]
+[ext_resource type="Texture2D" uid="uid://b62dlyvbjg74i" path="res://assets/world/plataformaNormal.png" id="2_q4dc3"]
+
+[node name="PlataformaNormal" instance=ExtResource("1_hig8e")]
+
+[node name="Sprite2D" parent="StaticBody2D" index="0"]
+texture = ExtResource("2_q4dc3")

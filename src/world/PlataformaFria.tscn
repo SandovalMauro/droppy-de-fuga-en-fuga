@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://f3ffea40tvt2"]
+
+[ext_resource type="PackedScene" uid="uid://b56dqpcl8gajh" path="res://src/world/Plataforma.tscn" id="1_opck6"]
+[ext_resource type="Texture2D" uid="uid://f2xlvhbos53w" path="res://assets/world/plataformaFria.png" id="2_rcobt"]
+
+[node name="PlataformaFria" instance=ExtResource("1_opck6")]
+temp = -1.5
+
+[node name="Sprite2D" parent="StaticBody2D" index="0"]
+texture = ExtResource("2_rcobt")

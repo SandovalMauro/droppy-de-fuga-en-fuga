@@ -14,6 +14,8 @@ var mass_scale_divisor: float = 0.9
 var temperature: float = 12
 
 func _physics_process(delta: float) -> void:
+	print(mass)
+	print({"temperaturaGota": temperature})
 	#Movimiento horizontal
 	var input_vector = Vector2.ZERO
 
@@ -40,8 +42,7 @@ func _physics_process(delta: float) -> void:
 # actualiza masa con la variacion calculada por el nivel
 func update_mass(variacion: float) -> void:
 	mass = clamp(mass + variacion, mass_min, mass_max)
-	print(mass)
-	print({"temperaturaGota": temperature})
+
 	
 func update_temperature(temp: float) -> void:
 	temperature += temp
