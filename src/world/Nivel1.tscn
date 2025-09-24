@@ -18,7 +18,7 @@ texture = ExtResource("2_pufok")
 position = Vector2(32, 536)
 
 [node name="PlataformaNormal2" parent="." index="2" instance=ExtResource("3_hki6x")]
-position = Vector2(1522, 237)
+position = Vector2(1515, 250)
 
 [node name="PlataformaNormal3" parent="." index="3" instance=ExtResource("3_hki6x")]
 position = Vector2(2736, 580)
