@@ -4,19 +4,21 @@ extends Node
 # temperature_air: temperatura ambiente (°C)
 # humidity: humedad relativa (0.0 - 1.0)
 # pressure_atm:: presión ambiente (atm)
-@export var temperature_air: float #= 0
-@export var humidity: float #= 0
-@export var pressure_atm: float #= 0
+@export var temperature_air = 22.0 #= 0
+@export var humidity = 0.9 #= 0
+@export var pressure_atm = 0.9 #= 0
 
 	# Ajustar para calibrar el peso de cada variable
-@export var k_presion = 0.5
-@export var k_humedad = 0.3
-@export var k_Taire = 0.005
-@export var k_Tdrop = 0.008
+@export var hardLevel: bool
+@export var k_presion = 0.5 #0
+@export var k_humedad = 0.3 #0
+@export var k_Taire = 0.005 #0
+@export var k_Tdrop = 0.008 #0
 
 const K := 0.05  # coeficiente general para ajustar el juego
 
 @export var droppy: Droppy
+
 
 #func _ready() -> void:
 	#temperature_air = 22#30
@@ -34,15 +36,27 @@ func calcular_estado(t_drop: float, t_air: float, hum: float, p_atm: float, m: f
 	var T_ref = 20.0   # °C
 	var RH_ref = 0.5   # 50%
 	var P_ref = 1.0    # atm
-
+	
 	# Calculo, resto el valor de equilibrio a los pasados por parametro y multiplico por el peso
-	var w_presion = k_presion * (p_atm - P_ref)
-	var w_humedad = k_humedad * (hum - RH_ref)
-	var w_Taire = -k_Taire * (t_air - T_ref)
-	var w_Tdrop = -k_Tdrop * (t_drop - T_ref)
+	var w_presion
+	var w_humedad
+	var w_Taire
+	var w_Tdrop
+	var dm_dt
 
-	# Calculo el cambio masa
-	var dm_dt = w_presion + w_humedad + w_Taire + w_Tdrop
-	print({"presion:": w_presion, "humedad:":w_humedad, "temp aire:":w_Taire, "temp gota:": w_Tdrop})
-	print({"dm" : dm_dt, "dm-K" : dm_dt * K})
+	if hardLevel:
+		w_presion = k_presion * (p_atm - P_ref)
+		w_humedad = k_humedad * (hum - RH_ref)
+		w_Taire   = -k_Taire * (t_air - T_ref)
+		w_Tdrop   = -k_Tdrop * (t_drop - T_ref)
+		# Calculo el cambio masa
+		dm_dt = w_presion + w_humedad + w_Taire + w_Tdrop
+	else:
+		var diff_temp = t_drop - T_ref
+		var k_temp_easy = 0.01
+		dm_dt = -k_temp_easy * diff_temp
+		print(dm_dt)
+
+	#print({"presion:": w_presion, "humedad:":w_humedad, "temp aire:":w_Taire, "temp gota:": w_Tdrop})
+	#print({"dm" : dm_dt, "dm-K" : dm_dt * K})
 	return dm_dt * K

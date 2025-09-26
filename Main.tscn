@@ -11,4 +11,4 @@ script = ExtResource("1_ig7tw")
 droppy = NodePath("Droppy")
 
 [node name="Droppy" parent="Nivel1" instance=ExtResource("2_0xm2m")]
-position = Vector2(118, 156)
+position = Vector2(71, 438)

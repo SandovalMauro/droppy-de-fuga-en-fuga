@@ -12,13 +12,13 @@ var mass_scale_max: float = 3.5
 var mass_min: float = 0.8
 var mass_max: float = 1.2
 var mass_scale_divisor: float = 0.9
-var temperature: float = 12
+var temperature: float = 20
 
 
 func _physics_process(delta: float) -> void:
-	print("Raycast colisiona:", ray_cast_floot.is_colliding())
-	print(mass)
-	print({"temperaturaGota": temperature})
+	#print("Raycast colisiona:", ray_cast_floot.is_colliding())
+	#print(mass)
+	#print({"temperaturaGota": temperature})
 	
 	ray_cast_floot.global_rotation = 0
 	#Movimiento horizontal
@@ -52,5 +52,6 @@ func update_mass(variacion: float) -> void:
 
 	
 func update_temperature(temp: float) -> void:
+	print("Temp of this platform is:", temp)
 	temperature += temp
 	
