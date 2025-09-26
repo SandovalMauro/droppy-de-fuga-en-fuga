@@ -14,13 +14,13 @@ script = ExtResource("1_odf2y")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(120.0401, 2.003148)
-scale = Vector2(4.092497, -0.34365162)
+position = Vector2(120.04, 2.00315)
+scale = Vector2(4.0925, -0.343652)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(120.25, 1.25)
 shape = SubResource("RectangleShape2D_yc5i5")
-debug_color = Color(0.9122268, 0.18778217, 0.57010293, 0.41960785)
+debug_color = Color(0.912227, 0.187782, 0.570103, 0.419608)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(0, -19)
