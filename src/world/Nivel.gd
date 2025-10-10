@@ -28,8 +28,6 @@ const K := 0.05  # coeficiente general para ajustar el juego
 func _physics_process(delta: float) -> void:
 	var dm = calcular_estado(droppy.temperature, temperature_air, humidity, pressure_atm, droppy.mass)
 	droppy.update_mass(dm * delta)
-	print({"dm * delta":dm * delta})
-
 
 func calcular_estado(t_drop: float, t_air: float, hum: float, p_atm: float, m: float) -> float:
 	# Referencias que definen el equilibrio
@@ -55,8 +53,11 @@ func calcular_estado(t_drop: float, t_air: float, hum: float, p_atm: float, m: f
 		var diff_temp = t_drop - T_ref
 		var k_temp_easy = 0.01
 		dm_dt = -k_temp_easy * diff_temp
-		print(dm_dt)
 
 	#print({"presion:": w_presion, "humedad:":w_humedad, "temp aire:":w_Taire, "temp gota:": w_Tdrop})
 	#print({"dm" : dm_dt, "dm-K" : dm_dt * K})
 	return dm_dt * K
+
+
+func _on_death_floor_fall() -> void:
+	get_tree().reload_current_scene()

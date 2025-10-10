@@ -52,6 +52,5 @@ func update_mass(variacion: float) -> void:
 
 	
 func update_temperature(temp: float) -> void:
-	print("Temp of this platform is:", temp)
 	temperature += temp
 	
