@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmyxmqdjcmwb3"]
+[gd_scene load_steps=5 format=3 uid="uid://cmyxmqdjcmwb3"]
 
 [ext_resource type="Script" uid="uid://84k6sawf73vg" path="res://Main.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://cj7f4do8q77kv" path="res://src/player/Droppy.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://codfo418w6ulc" path="res://src/world/Nivel1.tscn" id="2_r0du0"]
+[ext_resource type="PackedScene" uid="uid://dgec8mk17x6oy" path="res://start.tscn" id="4_cm0pq"]
 
 [node name="main" type="Node"]
 script = ExtResource("1_ig7tw")
@@ -12,3 +13,7 @@ droppy = NodePath("Droppy")
 
 [node name="Droppy" parent="Nivel1" instance=ExtResource("2_0xm2m")]
 position = Vector2(71, 438)
+
+[node name="Start" parent="." instance=ExtResource("4_cm0pq")]
+
+[connection signal="start_game" from="Start" to="." method="_on_start_start_game"]
