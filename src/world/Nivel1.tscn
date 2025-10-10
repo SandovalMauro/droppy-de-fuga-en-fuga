@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://codfo418w6ulc"]
+[gd_scene load_steps=10 format=3 uid="uid://codfo418w6ulc"]
 
 [ext_resource type="PackedScene" uid="uid://3y6jxu3clq88" path="res://src/world/Nivel.tscn" id="1_jmrn7"]
 [ext_resource type="Texture2D" uid="uid://b8gehsdhym0am" path="res://assets/world/backgroud/DesertSunset.png" id="2_pufok"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://f3ffea40tvt2" path="res://src/world/PlataformaFria.tscn" id="4_oafgn"]
 [ext_resource type="PackedScene" uid="uid://beld6jgwmtm5l" path="res://src/world/PlataformaCaliente.tscn" id="5_8slun"]
 [ext_resource type="Texture2D" uid="uid://b62dlyvbjg74i" path="res://assets/world/plataformaNormal.png" id="6_oafgn"]
+[ext_resource type="PackedScene" uid="uid://wh1wo3lj7vic" path="res://src/world/DeathFloor.tscn" id="7_8slun"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8slun"]
 size = Vector2(64.6154, 63.8236)
@@ -90,7 +91,6 @@ texture = ExtResource("6_oafgn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall" index="1"]
 position = Vector2(-0.676918, -0.00446129)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_8slun")
 
 [node name="Wall2" type="StaticBody2D" parent="." index="23"]
@@ -102,5 +102,9 @@ texture = ExtResource("6_oafgn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2" index="1"]
 position = Vector2(-0.00195313, 0.000424385)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_hjmv8")
+
+[node name="DeathFloor" parent="." index="24" instance=ExtResource("7_8slun")]
+position = Vector2(3900, 700)
+
+[connection signal="fall" from="DeathFloor" to="." method="_on_death_floor_fall"]
