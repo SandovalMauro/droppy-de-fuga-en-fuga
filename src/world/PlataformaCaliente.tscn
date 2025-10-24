@@ -1,10 +1,60 @@
-[gd_scene load_steps=3 format=3 uid="uid://beld6jgwmtm5l"]
+[gd_scene load_steps=6 format=4 uid="uid://beld6jgwmtm5l"]
 
 [ext_resource type="PackedScene" uid="uid://b56dqpcl8gajh" path="res://src/world/Plataforma.tscn" id="1_lbnn7"]
 [ext_resource type="Texture2D" uid="uid://cs2lre07kaowu" path="res://assets/world/plataformaCaliente.png" id="2_forda"]
+[ext_resource type="Texture2D" uid="uid://cso6bofli8ml8" path="res://assets/kenney_1-bit-pack/Tilemap/tileset_legacy.png" id="3_forda"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_synmv"]
+texture = ExtResource("3_forda")
+separation = Vector2i(1, 1)
+6:13/0 = 0
+6:13/0/terrain_set = 0
+6:13/0/terrain = 0
+6:13/0/terrains_peering_bit/right_side = 0
+6:13/0/terrains_peering_bit/bottom_right_corner = 0
+6:13/0/terrains_peering_bit/bottom_side = 0
+6:13/0/terrains_peering_bit/bottom_left_corner = 0
+6:13/0/terrains_peering_bit/left_side = 0
+6:13/0/terrains_peering_bit/top_left_corner = 0
+6:13/0/terrains_peering_bit/top_side = 0
+6:13/0/terrains_peering_bit/top_right_corner = 0
+6:11/0 = 0
+6:11/0/terrain_set = 0
+6:11/0/terrain = 0
+6:11/0/terrains_peering_bit/right_side = 0
+6:11/0/terrains_peering_bit/bottom_right_corner = 0
+6:11/0/terrains_peering_bit/bottom_side = 0
+6:11/0/terrains_peering_bit/bottom_left_corner = 0
+6:11/0/terrains_peering_bit/left_side = 0
+6:11/0/terrains_peering_bit/top_left_corner = 0
+6:11/0/terrains_peering_bit/top_side = 0
+6:11/0/terrains_peering_bit/top_right_corner = 0
+7:15/0 = 0
+7:15/0/terrain_set = 0
+7:15/0/terrain = 0
+7:15/0/terrains_peering_bit/right_side = 0
+7:15/0/terrains_peering_bit/bottom_right_corner = 0
+7:15/0/terrains_peering_bit/bottom_side = 0
+7:15/0/terrains_peering_bit/bottom_left_corner = 0
+7:15/0/terrains_peering_bit/left_side = 0
+7:15/0/terrains_peering_bit/top_left_corner = 0
+7:15/0/terrains_peering_bit/top_side = 0
+7:15/0/terrains_peering_bit/top_right_corner = 0
+
+[sub_resource type="TileSet" id="TileSet_xo2jm"]
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "plataforma caliente"
+terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
+sources/0 = SubResource("TileSetAtlasSource_synmv")
 
 [node name="PlataformaCaliente" instance=ExtResource("1_lbnn7")]
 temp = 20.0
 
 [node name="Sprite2D" parent="StaticBody2D" index="0"]
 texture = ExtResource("2_forda")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." index="3"]
+position = Vector2(11.055, -8.78)
+scale = Vector2(1.36, 1.36)
+tile_map_data = PackedByteArray("AAAKAAAAAAAGAAsAAAAJAAAAAAAGAAsAAAAIAAAAAAAHAA8AAAAHAAAAAAAGAA0AAAAGAAAAAAAHAA8AAAAFAAAAAAAHAA8AAAAEAAAAAAAGAAsAAAADAAAAAAAHAA8AAAACAAAAAAAGAAsAAAABAAAAAAAHAA8AAAAAAAAAAAAGAAsAAAD//wAAAAAGAAsAAAA=")
+tile_set = SubResource("TileSet_xo2jm")
