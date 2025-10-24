@@ -44,10 +44,9 @@ func _physics_process(delta: float) -> void:
 	#escala el sprite y el collisionShape dependiendo la cantidad de masa
 	#el remap esta para que se exagere un poco mas el tamaño de la imagen en realacion con los valores de la masa
 	var scale_factor = remap(mass, mass_min, mass_max, mass_scale_min, mass_scale_max)
-	var scale_base = 0.11
 	#print(scale_factor)
 	var scale = Vector2.ONE * scale_factor
-	animated_sprite_2d.scale = scale * scale_base
+	animated_sprite_2d.scale = scale 
 	collision_shape_2d.scale = scale
 	ray_cast_floot.scale = scale
 
