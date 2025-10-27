@@ -20,7 +20,9 @@ scale = Vector2(0.49770376, 0.21220258)
 position = Vector2(71, 438)
 
 [node name="PauseMenu" type="CanvasLayer" parent="."]
+process_mode = 2
 script = ExtResource("3_0usyc")
+main_menu_scene_path = "res://Main.tscn"
 
 [node name="OptionsMenu" type="Control" parent="PauseMenu"]
 layout_mode = 3

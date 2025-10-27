@@ -70,3 +70,4 @@ func reset():
 	
 func pause():
 	$PauseMenu.show()
+	get_tree().paused = true
