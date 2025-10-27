@@ -1,9 +1,93 @@
-[gd_scene load_steps=3 format=3 uid="uid://5r0b7fkjl4oa"]
+[gd_scene load_steps=6 format=4 uid="uid://5r0b7fkjl4oa"]
 
 [ext_resource type="PackedScene" uid="uid://b56dqpcl8gajh" path="res://src/world/Plataforma.tscn" id="1_hig8e"]
 [ext_resource type="Texture2D" uid="uid://b62dlyvbjg74i" path="res://assets/world/plataformaNormal.png" id="2_q4dc3"]
+[ext_resource type="Texture2D" uid="uid://cso6bofli8ml8" path="res://assets/kenney_1-bit-pack/Tilemap/tileset_legacy.png" id="3_q4dc3"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_weufw"]
+texture = ExtResource("3_q4dc3")
+separation = Vector2i(1, 1)
+16:13/0 = 0
+16:13/0/terrain_set = 0
+16:13/0/terrain = 0
+16:13/0/terrains_peering_bit/right_side = 0
+16:13/0/terrains_peering_bit/bottom_right_corner = 0
+16:13/0/terrains_peering_bit/bottom_side = 0
+17:13/0 = 0
+17:13/0/terrain_set = 0
+17:13/0/terrain = 0
+17:13/0/terrains_peering_bit/right_side = 0
+17:13/0/terrains_peering_bit/bottom_right_corner = 0
+17:13/0/terrains_peering_bit/bottom_side = 0
+17:13/0/terrains_peering_bit/bottom_left_corner = 0
+17:13/0/terrains_peering_bit/left_side = 0
+18:13/0 = 0
+18:13/0/terrain_set = 0
+18:13/0/terrain = 0
+18:13/0/terrains_peering_bit/bottom_side = 0
+18:13/0/terrains_peering_bit/bottom_left_corner = 0
+18:13/0/terrains_peering_bit/left_side = 0
+18:14/0 = 0
+18:14/0/terrain_set = 0
+18:14/0/terrain = 0
+18:14/0/terrains_peering_bit/bottom_side = 0
+18:14/0/terrains_peering_bit/bottom_left_corner = 0
+18:14/0/terrains_peering_bit/left_side = 0
+18:14/0/terrains_peering_bit/top_left_corner = 0
+18:14/0/terrains_peering_bit/top_side = 0
+18:15/0 = 0
+18:15/0/terrain_set = 0
+18:15/0/terrain = 0
+18:15/0/terrains_peering_bit/left_side = 0
+18:15/0/terrains_peering_bit/top_left_corner = 0
+18:15/0/terrains_peering_bit/top_side = 0
+17:15/0 = 0
+17:15/0/terrain_set = 0
+17:15/0/terrain = 0
+17:15/0/terrains_peering_bit/right_side = 0
+17:15/0/terrains_peering_bit/left_side = 0
+17:15/0/terrains_peering_bit/top_left_corner = 0
+17:15/0/terrains_peering_bit/top_side = 0
+17:15/0/terrains_peering_bit/top_right_corner = 0
+16:15/0 = 0
+16:15/0/terrain_set = 0
+16:15/0/terrain = 0
+16:15/0/terrains_peering_bit/right_side = 0
+16:15/0/terrains_peering_bit/top_side = 0
+16:15/0/terrains_peering_bit/top_right_corner = 0
+16:14/0 = 0
+16:14/0/terrain_set = 0
+16:14/0/terrain = 0
+16:14/0/terrains_peering_bit/right_side = 0
+16:14/0/terrains_peering_bit/bottom_right_corner = 0
+16:14/0/terrains_peering_bit/bottom_side = 0
+16:14/0/terrains_peering_bit/top_side = 0
+16:14/0/terrains_peering_bit/top_right_corner = 0
+17:14/0 = 0
+17:14/0/terrain_set = 0
+17:14/0/terrain = 0
+17:14/0/terrains_peering_bit/right_side = 0
+17:14/0/terrains_peering_bit/bottom_right_corner = 0
+17:14/0/terrains_peering_bit/bottom_side = 0
+17:14/0/terrains_peering_bit/bottom_left_corner = 0
+17:14/0/terrains_peering_bit/left_side = 0
+17:14/0/terrains_peering_bit/top_left_corner = 0
+17:14/0/terrains_peering_bit/top_side = 0
+17:14/0/terrains_peering_bit/top_right_corner = 0
+
+[sub_resource type="TileSet" id="TileSet_6m8tx"]
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "plataforma normal"
+terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
+sources/0 = SubResource("TileSetAtlasSource_weufw")
 
 [node name="PlataformaNormal" instance=ExtResource("1_hig8e")]
 
 [node name="Sprite2D" parent="StaticBody2D" index="0"]
 texture = ExtResource("2_q4dc3")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." index="3"]
+position = Vector2(-0.12, 1.45)
+scale = Vector2(0.655, 0.655)
+tile_map_data = PackedByteArray("AAAXAAAAAAASAA8AAAAXAP//AAASAA0AAAAWAAAAAAARAA8AAAAWAP//AAARAA0AAAAVAAAAAAARAA8AAAAVAP//AAARAA0AAAAUAAAAAAARAA8AAAAUAP//AAARAA0AAAATAAAAAAARAA8AAAATAP//AAARAA0AAAASAAAAAAARAA8AAAASAP//AAARAA0AAAARAAAAAAARAA8AAAARAP//AAARAA0AAAAQAAAAAAARAA8AAAAQAP//AAARAA0AAAAPAAAAAAARAA8AAAAPAP//AAARAA0AAAAOAAAAAAARAA8AAAAOAP//AAARAA0AAAANAAAAAAARAA8AAAANAP//AAARAA0AAAAMAAAAAAARAA8AAAAMAP//AAARAA0AAAALAAAAAAARAA8AAAALAP//AAARAA0AAAAKAAAAAAARAA8AAAAKAP//AAARAA0AAAAJAAAAAAARAA8AAAAJAP//AAARAA0AAAAIAAAAAAARAA8AAAAIAP//AAARAA0AAAAHAAAAAAARAA8AAAAHAP//AAARAA0AAAAGAAAAAAARAA8AAAAGAP//AAARAA0AAAAFAAAAAAARAA8AAAAFAP//AAARAA0AAAAEAAAAAAARAA8AAAAEAP//AAARAA0AAAADAAAAAAARAA8AAAADAP//AAARAA0AAAACAAAAAAARAA8AAAACAP//AAARAA0AAAABAAAAAAARAA8AAAABAP//AAARAA0AAAAAAAAAAAARAA8AAAAAAP//AAARAA0AAAD//wAAAAAQAA8AAAD/////AAAQAA0AAAA=")
+tile_set = SubResource("TileSet_6m8tx")
