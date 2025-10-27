@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://3y6jxu3clq88"]
+[gd_scene load_steps=4 format=3 uid="uid://3y6jxu3clq88"]
 
 [ext_resource type="Script" uid="uid://dqprhwxp64hbw" path="res://src/world/Nivel.gd" id="1_xigpd"]
 [ext_resource type="PackedScene" uid="uid://cj7f4do8q77kv" path="res://src/player/Droppy.tscn" id="2_koqm3"]
+[ext_resource type="Script" uid="uid://gt2uo0e4o257" path="res://src/world/Pause_menu.gd" id="3_0usyc"]
 
 [node name="Nivel" type="Node" node_paths=PackedStringArray("droppy")]
 script = ExtResource("1_xigpd")
@@ -17,3 +18,58 @@ scale = Vector2(0.49770376, 0.21220258)
 
 [node name="Droppy" parent="." instance=ExtResource("2_koqm3")]
 position = Vector2(71, 438)
+
+[node name="PauseMenu" type="CanvasLayer" parent="."]
+script = ExtResource("3_0usyc")
+
+[node name="OptionsMenu" type="Control" parent="PauseMenu"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelMenu" type="Panel" parent="PauseMenu/OptionsMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 200.0
+offset_top = 150.0
+offset_right = -200.0
+offset_bottom = -150.0
+
+[node name="ButtonContainer" type="VBoxContainer" parent="PauseMenu/OptionsMenu/PanelMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -190.0
+offset_top = -64.5
+offset_right = 196.0
+offset_bottom = 64.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="ResumeButton" type="Button" parent="PauseMenu/OptionsMenu/PanelMenu/ButtonContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Resume"
+
+[node name="MainMenuButton" type="Button" parent="PauseMenu/OptionsMenu/PanelMenu/ButtonContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Main menu"
+
+[node name="ExitButton" type="Button" parent="PauseMenu/OptionsMenu/PanelMenu/ButtonContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Exit"
+
+[connection signal="pressed" from="PauseMenu/OptionsMenu/PanelMenu/ButtonContainer/ResumeButton" to="PauseMenu" method="_on_resume_button_pressed"]
+[connection signal="pressed" from="PauseMenu/OptionsMenu/PanelMenu/ButtonContainer/MainMenuButton" to="PauseMenu" method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="PauseMenu/OptionsMenu/PanelMenu/ButtonContainer/ExitButton" to="PauseMenu" method="_on_exit_button_pressed"]

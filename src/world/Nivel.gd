@@ -28,6 +28,9 @@ const K := 0.05  # coeficiente general para ajustar el juego
 func _physics_process(delta: float) -> void:
 	var dm = calcular_estado(droppy.temperature, temperature_air, humidity, pressure_atm, droppy.mass)
 	droppy.update_mass(dm * delta)
+	
+	if Input.is_action_pressed("esq"):
+		$PauseMenu.show()
 
 func calcular_estado(t_drop: float, t_air: float, hum: float, p_atm: float, m: float) -> float:
 	# Referencias que definen el equilibrio
