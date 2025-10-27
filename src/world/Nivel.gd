@@ -30,7 +30,7 @@ func _physics_process(delta: float) -> void:
 	droppy.update_mass(dm * delta)
 	
 	if Input.is_action_pressed("esq"):
-		$PauseMenu.show()
+		pause()
 
 func calcular_estado(t_drop: float, t_air: float, hum: float, p_atm: float, m: float) -> float:
 	# Referencias que definen el equilibrio
@@ -67,3 +67,6 @@ func _on_death_floor_fall() -> void:
 
 func reset():
 	get_tree().reload_current_scene()
+	
+func pause():
+	$PauseMenu.show()
