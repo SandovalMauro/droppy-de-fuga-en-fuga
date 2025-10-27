@@ -1,9 +1,9 @@
 extends RigidBody2D
 class_name Droppy
 
-@onready var sprite = $Sprite2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var ray_cast_floot: RayCast2D = $RayCastFloot
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 var speed: float = 250 
 var jump_impulse: float = 700 
@@ -19,7 +19,7 @@ func _physics_process(delta: float) -> void:
 	#print("Raycast colisiona:", ray_cast_floot.is_colliding())
 	#print(mass)
 	#print({"temperaturaGota": temperature})
-	
+	animated_sprite_2d.global_rotation = 0
 	ray_cast_floot.global_rotation = 0
 	#Movimiento horizontal
 	var input_vector = Vector2.ZERO
@@ -32,6 +32,9 @@ func _physics_process(delta: float) -> void:
 	if input_vector != Vector2.ZERO:
 		input_vector = input_vector.normalized() * speed
 		apply_central_force(input_vector)
+		animated_sprite_2d.play("walk")
+	else:
+		animated_sprite_2d.play("idle")
 		
 	#Salto
 	if Input.is_action_just_pressed("up") and ray_cast_floot.is_colliding():
@@ -42,9 +45,10 @@ func _physics_process(delta: float) -> void:
 	#el remap esta para que se exagere un poco mas el tamaño de la imagen en realacion con los valores de la masa
 	var scale_factor = remap(mass, mass_min, mass_max, mass_scale_min, mass_scale_max)
 	#print(scale_factor)
-	sprite.scale = Vector2.ONE * scale_factor
-	collision_shape_2d.scale = sprite.scale
-	ray_cast_floot.scale = sprite.scale
+	var scale = Vector2.ONE * scale_factor
+	animated_sprite_2d.scale = scale 
+	collision_shape_2d.scale = scale
+	ray_cast_floot.scale = scale
 
 # actualiza masa con la variacion calculada por el nivel
 func update_mass(variacion: float) -> void:
