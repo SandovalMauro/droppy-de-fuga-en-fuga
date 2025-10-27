@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://3y6jxu3clq88"]
+[gd_scene load_steps=3 format=3 uid="uid://3y6jxu3clq88"]
 
 [ext_resource type="Script" uid="uid://dqprhwxp64hbw" path="res://src/world/Nivel.gd" id="1_xigpd"]
+[ext_resource type="PackedScene" uid="uid://cj7f4do8q77kv" path="res://src/player/Droppy.tscn" id="2_koqm3"]
 
-[node name="Nivel" type="Node"]
+[node name="Nivel" type="Node" node_paths=PackedStringArray("droppy")]
 script = ExtResource("1_xigpd")
+droppy = NodePath("Droppy")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -12,3 +14,6 @@ layer = -1
 offset_right = 2312.6208
 offset_bottom = 3053.6858
 scale = Vector2(0.49770376, 0.21220258)
+
+[node name="Droppy" parent="." instance=ExtResource("2_koqm3")]
+position = Vector2(71, 438)
