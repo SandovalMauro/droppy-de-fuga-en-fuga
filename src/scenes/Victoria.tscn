@@ -1,18 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmyxmqdjcmwb3"]
+[gd_scene load_steps=3 format=3 uid="uid://dl7x1vfy2nale"]
 
-[ext_resource type="Script" uid="uid://84k6sawf73vg" path="res://Main.gd" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://codfo418w6ulc" path="res://src/world/Nivel1.tscn" id="2_r0du0"]
+[ext_resource type="Script" uid="uid://84k6sawf73vg" path="res://Main.gd" id="1_x55aj"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uu6xs"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4wudy"]
 bg_color = Color(0.49803922, 0.7176471, 0.8039216, 1)
 corner_radius_top_left = 15
 corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[node name="main" type="Node"]
-script = ExtResource("1_ig7tw")
-level = ExtResource("2_r0du0")
+[node name="Victoria" type="Node"]
+script = ExtResource("1_x55aj")
 
 [node name="MainMenu" type="CanvasLayer" parent="."]
 
@@ -41,7 +39,7 @@ offset_left = 200.0
 offset_top = 150.0
 offset_right = -200.0
 offset_bottom = -150.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_uu6xs")
+theme_override_styles/panel = SubResource("StyleBoxFlat_4wudy")
 
 [node name="ButtonContainer" type="VBoxContainer" parent="MainMenu/OptionsMenu/PanelMenu"]
 layout_mode = 1
@@ -80,9 +78,6 @@ offset_bottom = 115.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.1553083, 0.5487825, 0.76678735, 1)
 theme_override_font_sizes/font_size = 60
-text = "Droppy de fuga en fuga"
+text = "Ganaste!!!"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[connection signal="pressed" from="MainMenu/OptionsMenu/PanelMenu/ButtonContainer/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="MainMenu/OptionsMenu/PanelMenu/ButtonContainer/ExitButton" to="." method="_on_exit_button_pressed"]
