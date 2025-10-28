@@ -1,8 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://3y6jxu3clq88"]
+[gd_scene load_steps=5 format=3 uid="uid://3y6jxu3clq88"]
 
 [ext_resource type="Script" uid="uid://dqprhwxp64hbw" path="res://src/world/Nivel.gd" id="1_xigpd"]
 [ext_resource type="PackedScene" uid="uid://cj7f4do8q77kv" path="res://src/player/Droppy.tscn" id="2_koqm3"]
 [ext_resource type="Script" uid="uid://gt2uo0e4o257" path="res://src/world/Pause_menu.gd" id="3_0usyc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0usyc"]
+bg_color = Color(0.49803922, 0.7176471, 0.8039216, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0.22085884, 0.38555405, 0.4480906, 1)
+shadow_size = 10
 
 [node name="Nivel" type="Node" node_paths=PackedStringArray("droppy")]
 script = ExtResource("1_xigpd")
@@ -41,6 +50,7 @@ offset_left = 200.0
 offset_top = 150.0
 offset_right = -200.0
 offset_bottom = -150.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0usyc")
 
 [node name="ButtonContainer" type="VBoxContainer" parent="PauseMenu/OptionsMenu/PanelMenu"]
 layout_mode = 1
