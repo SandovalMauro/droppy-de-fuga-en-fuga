@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://codfo418w6ulc"]
+[gd_scene load_steps=17 format=4 uid="uid://codfo418w6ulc"]
 
 [ext_resource type="PackedScene" uid="uid://3y6jxu3clq88" path="res://src/world/Nivel.tscn" id="1_jmrn7"]
 [ext_resource type="Texture2D" uid="uid://b8gehsdhym0am" path="res://assets/world/backgroud/DesertSunset.png" id="2_pufok"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://beld6jgwmtm5l" path="res://src/world/PlataformaCaliente.tscn" id="5_8slun"]
 [ext_resource type="Texture2D" uid="uid://b62dlyvbjg74i" path="res://assets/world/plataformaNormal.png" id="6_oafgn"]
 [ext_resource type="PackedScene" uid="uid://wh1wo3lj7vic" path="res://src/world/DeathFloor.tscn" id="7_8slun"]
+[ext_resource type="PackedScene" uid="uid://cdjcv7nokvebj" path="res://src/scenes/Llegada.tscn" id="7_kyg4f"]
 [ext_resource type="Texture2D" uid="uid://cso6bofli8ml8" path="res://assets/kenney_1-bit-pack/Tilemap/tileset_legacy.png" id="8_hjmv8"]
 [ext_resource type="Texture2D" uid="uid://cma8ca5cw1fd6" path="res://assets/platformer-pack/Spritesheets/spritesheet-backgrounds-default.png" id="9_pb5wv"]
 
@@ -316,7 +317,10 @@ position = Vector2(5771, 436)
 [node name="PlataformaCaliente11" parent="." index="22" instance=ExtResource("5_8slun")]
 position = Vector2(6382, 622)
 
-[node name="Wall" type="StaticBody2D" parent="." index="23"]
+[node name="Llegada" parent="." index="23" instance=ExtResource("7_kyg4f")]
+position = Vector2(7566, 517)
+
+[node name="Wall" type="StaticBody2D" parent="." index="24"]
 position = Vector2(10.72, 172.495)
 scale = Vector2(0.325, 11.765)
 
@@ -327,7 +331,7 @@ texture = ExtResource("6_oafgn")
 position = Vector2(-0.676918, -0.00446129)
 shape = SubResource("RectangleShape2D_8slun")
 
-[node name="Wall2" type="StaticBody2D" parent="." index="24"]
+[node name="Wall2" type="StaticBody2D" parent="." index="25"]
 position = Vector2(7800, 172.495)
 scale = Vector2(0.325, 11.765)
 
@@ -338,16 +342,13 @@ texture = ExtResource("6_oafgn")
 position = Vector2(-0.00195313, 0.000424385)
 shape = SubResource("RectangleShape2D_hjmv8")
 
-[node name="DeathFloor" parent="." index="25" instance=ExtResource("7_8slun")]
+[node name="DeathFloor" parent="." index="26" instance=ExtResource("7_8slun")]
 position = Vector2(3900, 700)
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." index="26"]
+[node name="TileMapLayer" type="TileMapLayer" parent="." index="27"]
 position = Vector2(0, -10.2)
 scale = Vector2(1.295, 1.295)
 tile_map_data = PackedByteArray("AAAAAAwAAAAJABEAAAAAAAsAAAAJABIAAAAAAAoAAAAJABEAAAAAAAkAAAAJABEAAAAAAAgAAAAJABEAAAAAAAcAAAAJABEAAAAAAAYAAAAJABEAAAAAAAUAAAAJABEAAAAAAAQAAAAJABEAAAAAAAMAAAAJABEAAAAAAAIAAAAJABEAAAAAAAEAAAAJABEAAAAAAAAAAAAJABEAAAAAAP//AAAJABEAAAAAAP7/AAAJABEAAAAAAP3/AAAJABEAAAAAAPz/AAAJABEAAAAAAPv/AAAJABEAAAAAAPr/AAAJABEAAAAAAPn/AAAJABEAAAAAAPj/AAAJABEAAAAAAPf/AAAJABEAAAAAAPb/AAAJABAAAAAAABoAAAAJABIAAAAAABkAAAAJABEAAAAAABgAAAAJABEAAAAAABcAAAAJABEAAAAAABYAAAAJABEAAAAAABUAAAAJABEAAAAAABQAAAAJABEAAAAAABMAAAAJABEAAAAAABIAAAAJABEAAAAAABEAAAAJABEAAAAAABAAAAAJABEAAAAAAA8AAAAJABEAAAAAAA4AAAAJABEAAAAAAA0AAAAJABEAAAB4ARoAAAAJABIAAAB4ARkAAAAJABEAAAB4ARgAAAAJABEAAAB4ARcAAAAJABEAAAB4ARYAAAAJABEAAAB4ARUAAAAJABEAAAB4ARQAAAAJABEAAAB4ARMAAAAJABEAAAB4ARIAAAAJABEAAAB4AREAAAAJABEAAAB4ARAAAAAJABEAAAB4AQ8AAAAJABEAAAB4AQ4AAAAJABEAAAB4AQ0AAAAJABEAAAB4AQwAAAAJABEAAAB4AQsAAAAJABEAAAB4AQoAAAAJABEAAAB4AQkAAAAJABEAAAB4AQgAAAAJABEAAAB4AQcAAAAJABEAAAB4AQYAAAAJABEAAAB4AQUAAAAJABEAAAB4AQQAAAAJABEAAAB4AQMAAAAJABEAAAB4AQIAAAAJABEAAAB4AQEAAAAJABEAAAB4AQAAAAAJABEAAAB4Af//AAAJABEAAAB4Af7/AAAJABEAAAB4Af3/AAAJABEAAAB4Afz/AAAJABEAAAB4Afv/AAAJABEAAAB4Afr/AAAJABEAAAB4Afn/AAAJABEAAAB4Afj/AAAJABEAAAB4Aff/AAAJABAAAAA=")
 tile_set = SubResource("TileSet_kyg4f")
-
-[node name="PauseMenu" parent="." index="28"]
-main_menu_scene_path = "res://Main.tscn"
 
 [connection signal="fall" from="DeathFloor" to="." method="_on_death_floor_fall"]
