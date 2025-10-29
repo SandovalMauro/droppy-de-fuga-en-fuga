@@ -29,7 +29,7 @@ scale = Vector2(0.49770376, 0.21220258)
 position = Vector2(71, 438)
 
 [node name="PauseMenu" type="CanvasLayer" parent="."]
-process_mode = 2
+process_mode = 3
 script = ExtResource("3_0usyc")
 main_menu_scene_path = "res://Main.tscn"
 
@@ -68,6 +68,7 @@ grow_vertical = 2
 theme_override_constants/separation = 15
 
 [node name="ResumeButton" type="Button" parent="PauseMenu/OptionsMenu/PanelMenu/ButtonContainer"]
+process_mode = 3
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Resume"

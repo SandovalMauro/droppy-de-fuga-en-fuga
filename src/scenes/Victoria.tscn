@@ -1,16 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dl7x1vfy2nale"]
+[gd_scene load_steps=2 format=3 uid="uid://dl7x1vfy2nale"]
 
-[ext_resource type="Script" uid="uid://84k6sawf73vg" path="res://Main.gd" id="1_x55aj"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4wudy"]
-bg_color = Color(0.49803922, 0.7176471, 0.8039216, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
+[ext_resource type="PackedScene" uid="uid://dcio6fls64rp" path="res://src/scenes/options_menu_victoria.tscn" id="2_4wudy"]
 
 [node name="Victoria" type="Node"]
-script = ExtResource("1_x55aj")
 
 [node name="MainMenu" type="CanvasLayer" parent="."]
 
@@ -22,52 +14,9 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.7627308, 0.933145, 0.98940843, 1)
 
-[node name="OptionsMenu" type="Control" parent="MainMenu"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="OptionsMenuVictoria" parent="MainMenu" instance=ExtResource("2_4wudy")]
 
-[node name="PanelMenu" type="Panel" parent="MainMenu/OptionsMenu"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 200.0
-offset_top = 150.0
-offset_right = -200.0
-offset_bottom = -150.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_4wudy")
-
-[node name="ButtonContainer" type="VBoxContainer" parent="MainMenu/OptionsMenu/PanelMenu"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -190.0
-offset_top = -64.5
-offset_right = 196.0
-offset_bottom = 64.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 15
-
-[node name="StartButton" type="Button" parent="MainMenu/OptionsMenu/PanelMenu/ButtonContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 35
-text = "Start"
-
-[node name="ExitButton" type="Button" parent="MainMenu/OptionsMenu/PanelMenu/ButtonContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 35
-text = "Exit"
-
-[node name="Label" type="Label" parent="MainMenu/OptionsMenu"]
-layout_mode = 1
+[node name="Label" type="Label" parent="MainMenu"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
