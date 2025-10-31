@@ -71,7 +71,6 @@ theme_override_font_sizes/font_size = 46
 text = "Efectos"
 
 [node name="Volume" type="HBoxContainer" parent="VBoxContainer"]
-visible = false
 layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/Volume"]

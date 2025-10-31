@@ -40,8 +40,12 @@ func _physics_process(delta: float) -> void:
 	#Salto
 	if Input.is_action_just_pressed("up") and ray_cast_floot.is_colliding():
 		apply_impulse(Vector2(0, -jump_impulse))
-		audio_manager.get_node("jump_sound_normal").play()
-		
+		if mass <= 0.96:
+			audio_manager.get_node("jump_sound_small").play()
+		elif mass >= 1.05:
+			audio_manager.get_node("jump_sound_big").play()
+		else:
+			audio_manager.get_node("jump_sound_normal").play()
 	
 	#escala el sprite y el collisionShape dependiendo la cantidad de masa
 	#el remap esta para que se exagere un poco mas el tamaño de la imagen en realacion con los valores de la masa
@@ -55,7 +59,6 @@ func _physics_process(delta: float) -> void:
 # actualiza masa con la variacion calculada por el nivel
 func update_mass(variacion: float) -> void:
 	mass = clamp(mass + variacion, mass_min, mass_max)
-
 	
 func update_temperature(temp: float) -> void:
 	temperature += temp
