@@ -19,7 +19,6 @@ func _on_h_slider_value_changed(value: float) -> void:
 
 func _on_check_box_sfx_toggled(toggled_on: bool) -> void:
 	audio_manager.toggle_sfx_mute(not toggled_on)
-	print("entro a apagar sfx")
 	audio_manager.save_settings()
 
 
