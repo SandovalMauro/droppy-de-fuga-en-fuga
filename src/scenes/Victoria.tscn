@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dl7x1vfy2nale"]
+[gd_scene load_steps=4 format=3 uid="uid://dl7x1vfy2nale"]
 
 [ext_resource type="Script" uid="uid://84k6sawf73vg" path="res://Main.gd" id="1_x55aj"]
+[ext_resource type="PackedScene" uid="uid://ckheptltfq8j" path="res://src/audio/audio.tscn" id="2_4wudy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4wudy"]
 bg_color = Color(0.49803922, 0.7176471, 0.8039216, 1)
@@ -81,3 +82,5 @@ theme_override_font_sizes/font_size = 60
 text = "Ganaste!!!"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioManager" parent="." instance=ExtResource("2_4wudy")]

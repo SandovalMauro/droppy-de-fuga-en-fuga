@@ -4,6 +4,7 @@ class_name Droppy
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var ray_cast_floot: RayCast2D = $RayCastFloot
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var audio_manager: Node2D = $"../AudioManager"
 
 var speed: float = 250 
 var jump_impulse: float = 700 
@@ -39,6 +40,7 @@ func _physics_process(delta: float) -> void:
 	#Salto
 	if Input.is_action_just_pressed("up") and ray_cast_floot.is_colliding():
 		apply_impulse(Vector2(0, -jump_impulse))
+		audio_manager.get_node("jump_sound_normal").play()
 		
 	
 	#escala el sprite y el collisionShape dependiendo la cantidad de masa

@@ -19,11 +19,16 @@ const K := 0.05  # coeficiente general para ajustar el juego
 
 @export var droppy: Droppy
 
+@onready var audio_manager: Node2D = $AudioManager
 
-#func _ready() -> void:
+
+func _ready() -> void:
 	#temperature_air = 22#30
 	#humidity = 0.9#0.5
 	#pressure_atm = 0.5 #1
+	AudioManager.set_music_volume(0.6)
+	AudioManager.toggle_sfx_mute(false)
+	audio_manager.get_node("music").play()
 
 func _physics_process(delta: float) -> void:
 	var dm = calcular_estado(droppy.temperature, temperature_air, humidity, pressure_atm, droppy.mass)

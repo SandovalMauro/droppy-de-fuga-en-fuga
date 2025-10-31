@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmyxmqdjcmwb3"]
+[gd_scene load_steps=6 format=3 uid="uid://cmyxmqdjcmwb3"]
 
 [ext_resource type="Script" uid="uid://84k6sawf73vg" path="res://Main.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://codfo418w6ulc" path="res://src/world/Nivel1.tscn" id="2_r0du0"]
+[ext_resource type="PackedScene" uid="uid://ckheptltfq8j" path="res://src/audio/audio.tscn" id="3_r0du0"]
+[ext_resource type="PackedScene" uid="uid://dwecqaiipqlbx" path="res://src/audio/audio_configuration.tscn" id="4_cm0pq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uu6xs"]
 bg_color = Color(0.49803922, 0.7176471, 0.8039216, 1)
@@ -13,6 +15,8 @@ corner_radius_bottom_left = 15
 [node name="main" type="Node"]
 script = ExtResource("1_ig7tw")
 level = ExtResource("2_r0du0")
+
+[node name="AudioManager" parent="." instance=ExtResource("3_r0du0")]
 
 [node name="MainMenu" type="CanvasLayer" parent="."]
 
@@ -63,6 +67,11 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Start"
 
+[node name="Audio" type="Button" parent="MainMenu/OptionsMenu/PanelMenu/ButtonContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Audio"
+
 [node name="ExitButton" type="Button" parent="MainMenu/OptionsMenu/PanelMenu/ButtonContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
@@ -84,5 +93,14 @@ text = "Droppy de fuga en fuga"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="AudioConfiguration" parent="MainMenu/OptionsMenu" instance=ExtResource("4_cm0pq")]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+offset_right = -131.64594
+offset_bottom = -75.43359
+scale = Vector2(1.13, 1.13)
+
 [connection signal="pressed" from="MainMenu/OptionsMenu/PanelMenu/ButtonContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MainMenu/OptionsMenu/PanelMenu/ButtonContainer/Audio" to="." method="_on_audio_pressed"]
 [connection signal="pressed" from="MainMenu/OptionsMenu/PanelMenu/ButtonContainer/ExitButton" to="." method="_on_exit_button_pressed"]

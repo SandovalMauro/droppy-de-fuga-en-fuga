@@ -2,6 +2,7 @@ extends CanvasLayer
 
 #@export var menu: PackedScene
 @export_file_path("*.tscn") var main_menu_scene_path: String
+@onready var audio_manager: Node2D = $"../AudioManager"
 
 func _ready() -> void:
 	self.hide()
