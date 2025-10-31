@@ -26,8 +26,6 @@ func _ready() -> void:
 	#temperature_air = 22#30
 	#humidity = 0.9#0.5
 	#pressure_atm = 0.5 #1
-	AudioManager.set_music_volume(0.6)
-	AudioManager.toggle_sfx_mute(false)
 	audio_manager.get_node("music").play()
 
 func _physics_process(delta: float) -> void:

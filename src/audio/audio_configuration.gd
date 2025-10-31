@@ -6,23 +6,25 @@ extends Control
 @onready var audio_manager: Node2D = $AudioManager
 
 func _ready():
-	slider_volumen.value = audio_manager.music_vol
+	await get_tree().process_frame
+	slider_volumen.value = audio_manager.master_vol
 	check_musica.button_pressed = !audio_manager.music_mute
 	check_sfx.button_pressed = !audio_manager.sfx_mute
 
 
 func _on_h_slider_value_changed(value: float) -> void:
-	audio_manager.set_music_volume(value)
+	audio_manager.set_master_volume(value / 100)
 	audio_manager.save_settings()
 
 
 func _on_check_box_sfx_toggled(toggled_on: bool) -> void:
-	audio_manager.toggle_sfx_mute(toggled_on)
+	audio_manager.toggle_sfx_mute(not toggled_on)
+	print("entro a apagar sfx")
 	audio_manager.save_settings()
 
 
 func _on_check_box_music_toggled(toggled_on: bool) -> void:
-	audio_manager.toggle_music_mute(toggled_on)
+	audio_manager.toggle_music_mute(not toggled_on)
 	audio_manager.save_settings()
 
 
