@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dl7x1vfy2nale"]
 
-[ext_resource type="Script" uid="uid://84k6sawf73vg" path="res://Main.gd" id="1_x55aj"]
+[ext_resource type="Script" uid="uid://dhqqvpfxxy0ys" path="res://src/scenes/victoria.gd" id="1_4wudy"]
 [ext_resource type="PackedScene" uid="uid://ckheptltfq8j" path="res://src/audio/audio.tscn" id="2_4wudy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4wudy"]
@@ -11,7 +11,9 @@ corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
 [node name="Victoria" type="Node"]
-script = ExtResource("1_x55aj")
+script = ExtResource("1_4wudy")
+level_path = "res://src/world/Nivel1.tscn"
+main_menu_scene_path = "res://Main.tscn"
 
 [node name="MainMenu" type="CanvasLayer" parent="."]
 
@@ -60,7 +62,12 @@ theme_override_constants/separation = 15
 [node name="StartButton" type="Button" parent="MainMenu/OptionsMenu/PanelMenu/ButtonContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
-text = "Start"
+text = "Reset"
+
+[node name="MainMenuButton" type="Button" parent="MainMenu/OptionsMenu/PanelMenu/ButtonContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Main menu"
 
 [node name="ExitButton" type="Button" parent="MainMenu/OptionsMenu/PanelMenu/ButtonContainer"]
 layout_mode = 2
@@ -84,3 +91,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AudioManager" parent="." instance=ExtResource("2_4wudy")]
+
+[connection signal="pressed" from="MainMenu/OptionsMenu/PanelMenu/ButtonContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MainMenu/OptionsMenu/PanelMenu/ButtonContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="MainMenu/OptionsMenu/PanelMenu/ButtonContainer/ExitButton" to="." method="_on_exit_button_pressed"]
