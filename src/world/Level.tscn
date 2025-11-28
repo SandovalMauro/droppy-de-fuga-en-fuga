@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://3y6jxu3clq88"]
 
-[ext_resource type="Script" uid="uid://dqprhwxp64hbw" path="res://src/world/Nivel.gd" id="1_xigpd"]
+[ext_resource type="Script" uid="uid://dqprhwxp64hbw" path="res://src/world/Level.gd" id="1_xigpd"]
 [ext_resource type="PackedScene" uid="uid://cj7f4do8q77kv" path="res://src/player/Droppy.tscn" id="2_koqm3"]
 [ext_resource type="Script" uid="uid://gt2uo0e4o257" path="res://src/world/Pause_menu.gd" id="3_0usyc"]
 

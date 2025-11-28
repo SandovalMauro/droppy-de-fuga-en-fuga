@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cmyxmqdjcmwb3"]
 
 [ext_resource type="Script" uid="uid://84k6sawf73vg" path="res://Main.gd" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://codfo418w6ulc" path="res://src/world/Nivel1.tscn" id="2_r0du0"]
+[ext_resource type="PackedScene" uid="uid://b7cru4ifcvdxa" path="res://src/scenes/LevelSelector.tscn" id="2_cm0pq"]
 [ext_resource type="PackedScene" uid="uid://ckheptltfq8j" path="res://src/audio/audio.tscn" id="3_r0du0"]
 [ext_resource type="PackedScene" uid="uid://dwecqaiipqlbx" path="res://src/audio/audio_configuration.tscn" id="4_cm0pq"]
 
@@ -14,7 +14,7 @@ corner_radius_bottom_left = 15
 
 [node name="main" type="Node"]
 script = ExtResource("1_ig7tw")
-level = ExtResource("2_r0du0")
+level = ExtResource("2_cm0pq")
 
 [node name="AudioManager" parent="." instance=ExtResource("3_r0du0")]
 

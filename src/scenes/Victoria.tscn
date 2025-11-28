@@ -10,7 +10,9 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[node name="Victoria" type="Node"]
+[node name="Victoria" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_4wudy")
 level_path = "res://src/world/Nivel1.tscn"
 main_menu_scene_path = "res://Main.tscn"
@@ -18,6 +20,7 @@ main_menu_scene_path = "res://Main.tscn"
 [node name="MainMenu" type="CanvasLayer" parent="."]
 
 [node name="Background" type="ColorRect" parent="MainMenu"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -62,17 +65,17 @@ theme_override_constants/separation = 15
 [node name="StartButton" type="Button" parent="MainMenu/OptionsMenu/PanelMenu/ButtonContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
-text = "Reset"
+text = "Siguiente nivel"
 
 [node name="MainMenuButton" type="Button" parent="MainMenu/OptionsMenu/PanelMenu/ButtonContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
-text = "Main menu"
+text = "Volver al inicio"
 
 [node name="ExitButton" type="Button" parent="MainMenu/OptionsMenu/PanelMenu/ButtonContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
-text = "Exit"
+text = "Salir del juego"
 
 [node name="Label" type="Label" parent="MainMenu/OptionsMenu"]
 layout_mode = 1
@@ -86,7 +89,7 @@ offset_bottom = 115.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.1553083, 0.5487825, 0.76678735, 1)
 theme_override_font_sizes/font_size = 60
-text = "Ganaste!!!"
+text = "Ganaste!"
 horizontal_alignment = 1
 vertical_alignment = 1
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cdjcv7nokvebj"]
 
-[ext_resource type="Script" uid="uid://c8ro5hydps0up" path="res://llegada.gd" id="1_xpugu"]
+[ext_resource type="Script" uid="uid://c8ro5hydps0up" path="res://src/scenes/llegada.gd" id="1_xpugu"]
 [ext_resource type="PackedScene" uid="uid://dl7x1vfy2nale" path="res://src/scenes/Victoria.tscn" id="2_lpbn3"]
 [ext_resource type="PackedScene" uid="uid://ckheptltfq8j" path="res://src/audio/audio.tscn" id="3_3qwxi"]
 
@@ -9,7 +9,6 @@ size = Vector2(216, 20)
 
 [node name="Llegada" type="Node2D"]
 script = ExtResource("1_xpugu")
-llegadoNivel = ExtResource("2_lpbn3")
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -21,6 +20,9 @@ shape = SubResource("RectangleShape2D_sqq1m")
 wait_time = 1.5
 
 [node name="AudioManager" parent="." instance=ExtResource("3_3qwxi")]
+visible = false
+
+[node name="Victoria" parent="." instance=ExtResource("2_lpbn3")]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

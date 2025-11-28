@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7cru4ifcvdxa"]
+
+[ext_resource type="Script" uid="uid://bg2rh8mxqotid" path="res://src/scenes/level_selector.gd" id="1_mxy3n"]
+
+[node name="LevelSelector" type="Node"]
+script = ExtResource("1_mxy3n")
