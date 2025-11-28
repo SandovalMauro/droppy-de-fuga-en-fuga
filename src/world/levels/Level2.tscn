@@ -262,16 +262,16 @@ position = Vector2(32, 536)
 position = Vector2(345, 409)
 
 [node name="PlataformaNormal6" parent="." index="4" instance=ExtResource("3_bgw3x")]
-position = Vector2(1059, 493)
+position = Vector2(992, 493)
 
 [node name="PlataformaNormal7" parent="." index="5" instance=ExtResource("3_bgw3x")]
-position = Vector2(1431, 538)
+position = Vector2(1397, 538)
 
 [node name="PlataformaNormal3" parent="." index="6" instance=ExtResource("3_bgw3x")]
-position = Vector2(2952, 456)
+position = Vector2(2922, 456)
 
 [node name="PlataformaNormal8" parent="." index="7" instance=ExtResource("3_bgw3x")]
-position = Vector2(3430, 525)
+position = Vector2(3420, 525)
 
 [node name="PlataformaNormal5" parent="." index="8" instance=ExtResource("3_bgw3x")]
 position = Vector2(4408, 493)
@@ -292,19 +292,19 @@ position = Vector2(3968, 406)
 position = Vector2(6229, 264)
 
 [node name="PlataformaFria8" parent="." index="14" instance=ExtResource("4_ffk3v")]
-position = Vector2(6629, 383)
+position = Vector2(6618, 383)
 
 [node name="PlataformaFria7" parent="." index="15" instance=ExtResource("4_ffk3v")]
 position = Vector2(7066, 488)
 
 [node name="PlataformaCaliente" parent="." index="16" instance=ExtResource("5_yk44d")]
-position = Vector2(1802, 459)
+position = Vector2(1771, 459)
 
 [node name="PlataformaCaliente2" parent="." index="17" instance=ExtResource("5_yk44d")]
-position = Vector2(2131, 343)
+position = Vector2(2108, 343)
 
 [node name="PlataformaCaliente7" parent="." index="18" instance=ExtResource("5_yk44d")]
-position = Vector2(2495, 242)
+position = Vector2(2472, 242)
 
 [node name="PlataformaCaliente8" parent="." index="19" instance=ExtResource("5_yk44d")]
 position = Vector2(5399, 485)
@@ -384,9 +384,9 @@ vertical_alignment = 1
 anchors_preset = -1
 anchor_right = 0.21900001
 anchor_bottom = 0.21900001
-offset_left = 2086.0
+offset_left = 2070.0
 offset_top = 176.0
-offset_right = 2160.712
+offset_right = 2144.712
 offset_bottom = 104.088
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
@@ -399,9 +399,9 @@ vertical_alignment = 1
 anchors_preset = -1
 anchor_right = 0.21900001
 anchor_bottom = 0.21900001
-offset_left = 2633.0
+offset_left = 2632.0
 offset_top = 176.0
-offset_right = 3011.712
+offset_right = 3010.712
 offset_bottom = 104.088
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
