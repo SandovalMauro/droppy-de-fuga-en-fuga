@@ -65,7 +65,7 @@ theme_override_constants/separation = 15
 [node name="StartButton" type="Button" parent="MainMenu/OptionsMenu/PanelMenu/ButtonContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
-text = "Start"
+text = "Comenzar"
 
 [node name="Audio" type="Button" parent="MainMenu/OptionsMenu/PanelMenu/ButtonContainer"]
 layout_mode = 2
@@ -75,7 +75,7 @@ text = "Audio"
 [node name="ExitButton" type="Button" parent="MainMenu/OptionsMenu/PanelMenu/ButtonContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
-text = "Exit"
+text = "Salir del juego"
 
 [node name="Label" type="Label" parent="MainMenu/OptionsMenu"]
 layout_mode = 1

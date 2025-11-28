@@ -71,17 +71,17 @@ theme_override_constants/separation = 15
 [node name="ResumeButton" type="Button" parent="PauseMenu/OptionsMenu/PanelMenu/ButtonContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
-text = "Resume"
+text = "Continuar"
 
 [node name="MainMenuButton" type="Button" parent="PauseMenu/OptionsMenu/PanelMenu/ButtonContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
-text = "Main menu"
+text = "Volver al inicio"
 
 [node name="ExitButton" type="Button" parent="PauseMenu/OptionsMenu/PanelMenu/ButtonContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
-text = "Exit"
+text = "Salir del juego"
 
 [node name="DeathFloor" parent="." instance=ExtResource("4_5t86u")]
 position = Vector2(3900, 700)
