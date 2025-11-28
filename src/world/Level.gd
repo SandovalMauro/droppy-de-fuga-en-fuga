@@ -19,7 +19,11 @@ const K := 0.05  # coeficiente general para ajustar el juego
 
 @export var droppy: Droppy
 
+var level_selector = Level_selector.new()
+
 @onready var audio_manager: Node2D = $AudioManager
+
+
 
 
 func _ready() -> void:

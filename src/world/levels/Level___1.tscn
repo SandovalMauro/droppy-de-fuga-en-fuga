@@ -1,14 +1,18 @@
-[gd_scene load_steps=14 format=4 uid="uid://b88bmm6mge7v8"]
+[gd_scene load_steps=19 format=4 uid="uid://cxv6wsar05ijf"]
 
-[ext_resource type="PackedScene" uid="uid://3y6jxu3clq88" path="res://src/world/Level.tscn" id="1_eae0t"]
+[ext_resource type="Script" uid="uid://dqprhwxp64hbw" path="res://src/world/Level.gd" id="1_mysqf"]
+[ext_resource type="Texture2D" uid="uid://b8gehsdhym0am" path="res://assets/world/backgroud/DesertSunset.png" id="2_pufok"]
 [ext_resource type="PackedScene" uid="uid://5r0b7fkjl4oa" path="res://src/world/PlataformaNormal.tscn" id="3_hki6x"]
 [ext_resource type="Texture2D" uid="uid://b62dlyvbjg74i" path="res://assets/world/plataformaNormal.png" id="6_oafgn"]
+[ext_resource type="PackedScene" uid="uid://wh1wo3lj7vic" path="res://src/world/DeathFloor.tscn" id="7_8slun"]
 [ext_resource type="PackedScene" uid="uid://cdjcv7nokvebj" path="res://src/scenes/Llegada.tscn" id="7_kyg4f"]
 [ext_resource type="Texture2D" uid="uid://cso6bofli8ml8" path="res://assets/kenney_1-bit-pack/Tilemap/tileset_legacy.png" id="8_hjmv8"]
+[ext_resource type="PackedScene" uid="uid://cj7f4do8q77kv" path="res://src/player/Droppy.tscn" id="8_lrfuv"]
+[ext_resource type="Script" uid="uid://gt2uo0e4o257" path="res://src/world/Pause_menu.gd" id="9_mysqf"]
 [ext_resource type="Texture2D" uid="uid://cma8ca5cw1fd6" path="res://assets/platformer-pack/Spritesheets/spritesheet-backgrounds-default.png" id="9_pb5wv"]
 [ext_resource type="PackedScene" uid="uid://ckheptltfq8j" path="res://src/audio/audio.tscn" id="11_urec6"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uv5si"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4hfyg"]
 texture = ExtResource("9_pb5wv")
 texture_region_size = Vector2i(256, 256)
 4:4/0 = 0
@@ -190,19 +194,19 @@ texture_region_size = Vector2i(256, 256)
 2:0/0/terrains_peering_bit/top_side = 0
 2:0/0/terrains_peering_bit/top_right_corner = 0
 
-[sub_resource type="TileSet" id="TileSet_7u3di"]
+[sub_resource type="TileSet" id="TileSet_j6cnu"]
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "background"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
-sources/0 = SubResource("TileSetAtlasSource_uv5si")
+sources/0 = SubResource("TileSetAtlasSource_4hfyg")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7bwb"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j0nji"]
 size = Vector2(64.6154, 63.8236)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0nfd"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wxtt2"]
 size = Vector2(61.5386, 63.6634)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_btumj"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n50kj"]
 texture = ExtResource("8_hjmv8")
 separation = Vector2i(1, 1)
 9:16/0 = 0
@@ -233,90 +237,165 @@ separation = Vector2i(1, 1)
 9:18/0/terrains_peering_bit/top_side = 0
 9:18/0/terrains_peering_bit/top_right_corner = 0
 
-[sub_resource type="TileSet" id="TileSet_mqhcr"]
+[sub_resource type="TileSet" id="TileSet_ch35b"]
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "walls"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
-sources/0 = SubResource("TileSetAtlasSource_btumj")
+sources/0 = SubResource("TileSetAtlasSource_n50kj")
 
-[node name="Nivel1" instance=ExtResource("1_eae0t")]
-temperature_air = 22.0
-humidity = 0.9
-pressure_atm = 0.9
-hardLevel = false
-k_presion = 0.5
-k_humedad = 0.3
-k_Taire = 0.005
-k_Tdrop = 0.008
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j6o0s"]
+bg_color = Color(0.49803922, 0.7176471, 0.8039216, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0.22085884, 0.38555405, 0.4480906, 1)
+shadow_size = 10
 
-[node name="Background" type="TileMapLayer" parent="." index="0"]
+[node name="Level1" type="Node"]
+script = ExtResource("1_mysqf")
+
+[node name="Background" type="TileMapLayer" parent="."]
 position = Vector2(0, 300)
 scale = Vector2(3.11, 3.11)
 tile_map_data = PackedByteArray("AAAAAAAAAAABAAMAAAAMAP7/AAAGAAUAAAAOAP//AAAEAAcAAAAOAAAAAAAFAAUAAAAQAAAAAAABAAEAAAAgAAAAAAADAAEAAAAvAAAAAAACAAAAAAA/AAAAAAABAAMAAABOAAAAAAADAAEAAABeAAAAAAABAAMAAABuAAAAAAACAAAAAAB+AAAAAAABAAEAAACeAAAAAAABAAMAAACOAAAAAAADAAEAAAA=")
-tile_set = SubResource("TileSet_7u3di")
+tile_set = SubResource("TileSet_j6cnu")
 
-[node name="PlataformaNormal" parent="." index="4" instance=ExtResource("3_hki6x")]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+visible = false
+offset_right = 2312.6208
+offset_bottom = 3053.6858
+scale = Vector2(0.49770376, 0.21220258)
+texture = ExtResource("2_pufok")
+
+[node name="PlataformaNormal" parent="." instance=ExtResource("3_hki6x")]
 position = Vector2(32, 536)
 
-[node name="PlataformaNormal2" parent="." index="5" instance=ExtResource("3_hki6x")]
+[node name="PlataformaNormal2" parent="." instance=ExtResource("3_hki6x")]
 position = Vector2(361, 580)
 
-[node name="PlataformaNormal3" parent="." index="6" instance=ExtResource("3_hki6x")]
+[node name="PlataformaNormal3" parent="." instance=ExtResource("3_hki6x")]
 position = Vector2(793, 513)
 
-[node name="PlataformaNormal5" parent="." index="7" instance=ExtResource("3_hki6x")]
+[node name="PlataformaNormal5" parent="." instance=ExtResource("3_hki6x")]
 position = Vector2(1518, 331)
 
-[node name="PlataformaNormal7" parent="." index="8" instance=ExtResource("3_hki6x")]
+[node name="PlataformaNormal7" parent="." instance=ExtResource("3_hki6x")]
 position = Vector2(2030, 443)
 
-[node name="PlataformaNormal8" parent="." index="9" instance=ExtResource("3_hki6x")]
+[node name="PlataformaNormal8" parent="." instance=ExtResource("3_hki6x")]
 position = Vector2(2438, 443)
 
-[node name="PlataformaNormal9" parent="." index="10" instance=ExtResource("3_hki6x")]
+[node name="PlataformaNormal9" parent="." instance=ExtResource("3_hki6x")]
 position = Vector2(2813, 606)
 
-[node name="PlataformaNormal10" parent="." index="11" instance=ExtResource("3_hki6x")]
+[node name="PlataformaNormal10" parent="." instance=ExtResource("3_hki6x")]
 position = Vector2(3182, 510)
 
-[node name="PlataformaNormal6" parent="." index="12" instance=ExtResource("3_hki6x")]
+[node name="PlataformaNormal6" parent="." instance=ExtResource("3_hki6x")]
 position = Vector2(1205, 476)
 
-[node name="PlataformaNormal4" parent="." index="13" instance=ExtResource("3_hki6x")]
+[node name="PlataformaNormal4" parent="." instance=ExtResource("3_hki6x")]
 position = Vector2(3648, 582.505)
 
-[node name="Llegada" parent="." index="14" instance=ExtResource("7_kyg4f")]
+[node name="Llegada" parent="." instance=ExtResource("7_kyg4f")]
 position = Vector2(3648, 559)
 
-[node name="Wall" type="StaticBody2D" parent="." index="15"]
+[node name="Wall" type="StaticBody2D" parent="."]
 position = Vector2(10.72, 172.495)
 scale = Vector2(0.325, 11.765)
 
-[node name="Sprite2D" type="Sprite2D" parent="Wall" index="0"]
+[node name="Sprite2D" type="Sprite2D" parent="Wall"]
 texture = ExtResource("6_oafgn")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
 position = Vector2(-0.676918, -0.00446129)
-shape = SubResource("RectangleShape2D_t7bwb")
+shape = SubResource("RectangleShape2D_j0nji")
 
-[node name="Wall2" type="StaticBody2D" parent="." index="16"]
+[node name="Wall2" type="StaticBody2D" parent="."]
 position = Vector2(3898, 219)
 scale = Vector2(0.325, 11.765)
 
-[node name="Sprite2D" type="Sprite2D" parent="Wall2" index="0"]
+[node name="Sprite2D" type="Sprite2D" parent="Wall2"]
 texture = ExtResource("6_oafgn")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
 position = Vector2(-0.00195313, 0.000424385)
-shape = SubResource("RectangleShape2D_m0nfd")
+shape = SubResource("RectangleShape2D_wxtt2")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." index="17"]
+[node name="DeathFloor" parent="." instance=ExtResource("7_8slun")]
+position = Vector2(3900, 700)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(0, -10.2)
 scale = Vector2(1.295, 1.295)
 tile_map_data = PackedByteArray("AAAAAAwAAAAJABEAAAAAAAsAAAAJABIAAAAAAAoAAAAJABEAAAAAAAkAAAAJABEAAAAAAAgAAAAJABEAAAAAAAcAAAAJABEAAAAAAAYAAAAJABEAAAAAAAUAAAAJABEAAAAAAAQAAAAJABEAAAAAAAMAAAAJABEAAAAAAAIAAAAJABEAAAAAAAEAAAAJABEAAAAAAAAAAAAJABEAAAAAAP//AAAJABEAAAAAAP7/AAAJABEAAAAAAP3/AAAJABEAAAAAAPz/AAAJABEAAAAAAPv/AAAJABEAAAAAAPr/AAAJABEAAAAAAPn/AAAJABEAAAAAAPj/AAAJABEAAAAAAPf/AAAJABEAAAAAAPb/AAAJABAAAAAAABoAAAAJABIAAAAAABkAAAAJABEAAAAAABgAAAAJABEAAAAAABcAAAAJABEAAAAAABYAAAAJABEAAAAAABUAAAAJABEAAAAAABQAAAAJABEAAAAAABMAAAAJABEAAAAAABIAAAAJABEAAAAAABEAAAAJABEAAAAAABAAAAAJABEAAAAAAA8AAAAJABEAAAAAAA4AAAAJABEAAAAAAA0AAAAJABEAAAC7ABwAAAAJABIAAAC7ABsAAAAJABEAAAC7ABoAAAAJABEAAAC7ABkAAAAJABEAAAC7ABgAAAAJABEAAAC7ABcAAAAJABEAAAC7ABYAAAAJABEAAAC7ABUAAAAJABEAAAC7ABQAAAAJABEAAAC7ABMAAAAJABEAAAC7ABIAAAAJABEAAAC7ABEAAAAJABEAAAC7ABAAAAAJABEAAAC7AA8AAAAJABEAAAC7AA4AAAAJABEAAAC7AA0AAAAJABEAAAC7AAwAAAAJABEAAAC7AAsAAAAJABEAAAC7AAoAAAAJABEAAAC7AAkAAAAJABEAAAC7AAgAAAAJABEAAAC7AAcAAAAJABEAAAC7AAYAAAAJABEAAAC7AAUAAAAJABEAAAC7AAQAAAAJABEAAAC7AAMAAAAJABEAAAC7AAIAAAAJABEAAAC7AAEAAAAJABEAAAC7AAAAAAAJABEAAAC7AP//AAAJABEAAAC7AP7/AAAJABEAAAC7AP3/AAAJABEAAAC7APz/AAAJABEAAAC7APv/AAAJABEAAAC7APr/AAAJABEAAAC7APn/AAAJABEAAAC7APj/AAAJABEAAAC7APf/AAAJABAAAAA=")
-tile_set = SubResource("TileSet_mqhcr")
+tile_set = SubResource("TileSet_ch35b")
 
-[node name="Label" type="Label" parent="." index="18"]
+[node name="Droppy" parent="." instance=ExtResource("8_lrfuv")]
+position = Vector2(71, 438)
+
+[node name="PauseMenu" type="CanvasLayer" parent="."]
+process_mode = 2
+visible = false
+script = ExtResource("9_mysqf")
+main_menu_scene_path = "res://Main.tscn"
+
+[node name="OptionsMenu" type="Control" parent="PauseMenu"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelMenu" type="Panel" parent="PauseMenu/OptionsMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 200.0
+offset_top = 150.0
+offset_right = -200.0
+offset_bottom = -150.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_j6o0s")
+
+[node name="ButtonContainer" type="VBoxContainer" parent="PauseMenu/OptionsMenu/PanelMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -190.0
+offset_top = -64.5
+offset_right = 196.0
+offset_bottom = 64.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="ResumeButton" type="Button" parent="PauseMenu/OptionsMenu/PanelMenu/ButtonContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Resume"
+
+[node name="MainMenuButton" type="Button" parent="PauseMenu/OptionsMenu/PanelMenu/ButtonContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Main menu"
+
+[node name="ExitButton" type="Button" parent="PauseMenu/OptionsMenu/PanelMenu/ButtonContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Exit"
+
+[node name="AudioManager" parent="." instance=ExtResource("11_urec6")]
+
+[node name="Label" type="Label" parent="."]
 anchors_preset = -1
 anchor_right = 0.21900001
 anchor_bottom = 0.21900001
@@ -331,7 +410,7 @@ text = "Presioná las teclas
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="." index="19"]
+[node name="Label2" type="Label" parent="."]
 anchors_preset = -1
 anchor_right = 0.21900001
 anchor_bottom = 0.21900001
@@ -345,4 +424,7 @@ text = "Saltá presionando ↑"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AudioManager" parent="." index="20" instance=ExtResource("11_urec6")]
+[connection signal="fall" from="DeathFloor" to="." method="_on_death_floor_fall"]
+[connection signal="pressed" from="PauseMenu/OptionsMenu/PanelMenu/ButtonContainer/ResumeButton" to="PauseMenu" method="_on_resume_button_pressed"]
+[connection signal="pressed" from="PauseMenu/OptionsMenu/PanelMenu/ButtonContainer/MainMenuButton" to="PauseMenu" method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="PauseMenu/OptionsMenu/PanelMenu/ButtonContainer/ExitButton" to="PauseMenu" method="_on_exit_button_pressed"]

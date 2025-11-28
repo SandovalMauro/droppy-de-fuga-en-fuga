@@ -20,7 +20,6 @@ shape = SubResource("RectangleShape2D_sqq1m")
 wait_time = 1.5
 
 [node name="AudioManager" parent="." instance=ExtResource("3_3qwxi")]
-visible = false
 
 [node name="Victoria" parent="." instance=ExtResource("2_lpbn3")]
 

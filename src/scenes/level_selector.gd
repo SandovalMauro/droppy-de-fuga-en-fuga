@@ -1,12 +1,14 @@
+class_name Level_selector
 extends Node
 
 var levels := [
 	"res://src/world/levels/Level1.tscn",
 	"res://src/world/levels/Level2.tscn",
-	"res://src/world/levels/Level3.tscn",
+	"res://src/world/levels/Level3.tscn"
 ]
 
 var current_level_index := 0
+var current_level_node: Node = null
 
 func _ready():
 	load_level(current_level_index)
@@ -16,6 +18,7 @@ func load_level(index: int):
 	var level_scene = load(level_path)
 	var level_instance = level_scene.instantiate()
 	add_child(level_instance)
+	
 
 	var llegada = level_instance.get_node("Llegada")
 	var victoria = llegada.get_node("Victoria")
@@ -33,5 +36,12 @@ func load_level(index: int):
 func go_next_level():
 	current_level_index += 1
 
+	if current_level_index >= levels.size():
+		get_tree().quit()
+		return
+
 	get_child(0).queue_free()
 	load_level(current_level_index)
+	
+
+	
