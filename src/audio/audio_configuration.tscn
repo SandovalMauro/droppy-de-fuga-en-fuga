@@ -1,9 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://dwecqaiipqlbx"]
+[gd_scene load_steps=8 format=3 uid="uid://dwecqaiipqlbx"]
 
 [ext_resource type="Script" uid="uid://2anklcn13t10" path="res://src/audio/audio_configuration.gd" id="1_vg5ni"]
+[ext_resource type="Texture2D" uid="uid://b7o1m8p3hufbr" path="res://assets/world/backgroud/background_menu.png" id="2_g61r3"]
 [ext_resource type="PackedScene" uid="uid://ckheptltfq8j" path="res://src/audio/audio.tscn" id="2_l2y41"]
+[ext_resource type="FontFile" uid="uid://dlr6pulax7536" path="res://assets/font/Spicy Sale.otf" id="3_ccegt"]
+[ext_resource type="Texture2D" uid="uid://iiwegbb41ivg" path="res://assets/ui/button_rectangle_depth_gloss.png" id="4_f2prp"]
 
 [sub_resource type="Theme" id="Theme_l2y41"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5cg3w"]
+texture = ExtResource("4_f2prp")
 
 [node name="AudioConfiguration" type="Control"]
 layout_mode = 3
@@ -14,7 +20,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vg5ni")
 
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_g61r3")
+expand_mode = 1
+
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -42,8 +59,9 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ccegt")
 theme_override_font_sizes/font_size = 76
-text = "Configuración de audio"
+text = "Configuracion de audio"
 
 [node name="SwitchMusic" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -55,8 +73,9 @@ button_pressed = true
 
 [node name="Label" type="Label" parent="VBoxContainer/SwitchMusic"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ccegt")
 theme_override_font_sizes/font_size = 46
-text = "Música"
+text = "Musica"
 
 [node name="SwitchSFX" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -67,6 +86,7 @@ button_pressed = true
 
 [node name="Label" type="Label" parent="VBoxContainer/SwitchSFX"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ccegt")
 theme_override_font_sizes/font_size = 46
 text = "Efectos"
 
@@ -75,6 +95,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/Volume"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ccegt")
 theme_override_font_sizes/font_size = 46
 text = "Volumen"
 
@@ -88,7 +109,10 @@ ticks_on_borders = true
 
 [node name="Volver" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_ccegt")
 theme_override_font_sizes/font_size = 41
+theme_override_styles/normal = SubResource("StyleBoxTexture_5cg3w")
 text = "Volver"
 
 [node name="AudioManager" parent="." instance=ExtResource("2_l2y41")]

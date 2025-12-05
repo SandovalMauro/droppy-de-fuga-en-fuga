@@ -241,12 +241,16 @@ terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_btumj")
 
 [node name="Nivel1" instance=ExtResource("1_eae0t")]
+limite_level = 3898
 
 [node name="Background" type="TileMapLayer" parent="." index="0"]
 position = Vector2(0, 300)
 scale = Vector2(3.11, 3.11)
 tile_map_data = PackedByteArray("AAAAAAAAAAABAAMAAAAMAP7/AAAGAAUAAAAOAP//AAAEAAcAAAAOAAAAAAAFAAUAAAAQAAAAAAABAAEAAAAgAAAAAAADAAEAAAAvAAAAAAACAAAAAAA/AAAAAAABAAMAAABOAAAAAAADAAEAAABeAAAAAAABAAMAAABuAAAAAAACAAAAAAA=")
 tile_set = SubResource("TileSet_7u3di")
+
+[node name="PauseMenu" parent="." index="3"]
+visible = false
 
 [node name="PlataformaNormal" parent="." index="4" instance=ExtResource("3_hki6x")]
 position = Vector2(32, 536)

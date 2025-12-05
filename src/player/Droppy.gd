@@ -5,6 +5,7 @@ class_name Droppy
 @onready var ray_cast_floot: RayCast2D = $RayCastFloot
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var audio_manager: Node2D = $"../AudioManager"
+@onready var camera: Camera2D = $Camera2D
 
 var speed: float = 250 
 var jump_impulse: float = 700 
@@ -63,3 +64,5 @@ func update_mass(variacion: float) -> void:
 func update_temperature(temp: float) -> void:
 	temperature += temp
 	
+func limit_camera(limite : float):
+	camera.limit_right = limite

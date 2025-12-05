@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://3y6jxu3clq88"]
+[gd_scene load_steps=11 format=3 uid="uid://3y6jxu3clq88"]
 
 [ext_resource type="Script" uid="uid://dqprhwxp64hbw" path="res://src/world/Level.gd" id="1_xigpd"]
 [ext_resource type="PackedScene" uid="uid://cj7f4do8q77kv" path="res://src/player/Droppy.tscn" id="2_koqm3"]
 [ext_resource type="Script" uid="uid://gt2uo0e4o257" path="res://src/world/Pause_menu.gd" id="3_0usyc"]
 [ext_resource type="PackedScene" uid="uid://wh1wo3lj7vic" path="res://src/world/DeathFloor.tscn" id="4_5t86u"]
+[ext_resource type="FontFile" uid="uid://dlr6pulax7536" path="res://assets/font/Spicy Sale.otf" id="4_pb0ii"]
+[ext_resource type="Texture2D" uid="uid://iiwegbb41ivg" path="res://assets/ui/button_rectangle_depth_gloss.png" id="5_ltkpa"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0usyc"]
 bg_color = Color(0.49803922, 0.7176471, 0.8039216, 1)
@@ -13,6 +15,15 @@ corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 shadow_color = Color(0.22085884, 0.38555405, 0.4480906, 1)
 shadow_size = 10
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mexis"]
+texture = ExtResource("5_ltkpa")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s64q8"]
+texture = ExtResource("5_ltkpa")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bp3e0"]
+texture = ExtResource("5_ltkpa")
 
 [node name="Nivel" type="Node" node_paths=PackedStringArray("droppy")]
 script = ExtResource("1_xigpd")
@@ -60,27 +71,36 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -190.0
-offset_top = -64.5
-offset_right = 196.0
-offset_bottom = 64.5
+offset_left = -237.0
+offset_top = -103.5
+offset_right = 237.0
+offset_bottom = 103.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 15
 
 [node name="ResumeButton" type="Button" parent="PauseMenu/OptionsMenu/PanelMenu/ButtonContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("4_pb0ii")
 theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxTexture_mexis")
 text = "Continuar"
 
 [node name="MainMenuButton" type="Button" parent="PauseMenu/OptionsMenu/PanelMenu/ButtonContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("4_pb0ii")
 theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxTexture_s64q8")
 text = "Volver al inicio"
 
 [node name="ExitButton" type="Button" parent="PauseMenu/OptionsMenu/PanelMenu/ButtonContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("4_pb0ii")
 theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxTexture_bp3e0")
 text = "Salir del juego"
 
 [node name="DeathFloor" parent="." instance=ExtResource("4_5t86u")]

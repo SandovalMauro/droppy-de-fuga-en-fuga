@@ -1,10 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dl7x1vfy2nale"]
+[gd_scene load_steps=9 format=3 uid="uid://2edog04xsei2"]
 
-[ext_resource type="Script" uid="uid://dhqqvpfxxy0ys" path="res://src/scenes/victoria.gd" id="1_4wudy"]
-[ext_resource type="FontFile" uid="uid://dlr6pulax7536" path="res://assets/font/Spicy Sale.otf" id="2_4pt0d"]
-[ext_resource type="PackedScene" uid="uid://ckheptltfq8j" path="res://src/audio/audio.tscn" id="2_4wudy"]
-[ext_resource type="Texture2D" uid="uid://b7o1m8p3hufbr" path="res://assets/world/backgroud/background_menu.png" id="2_pn24e"]
-[ext_resource type="Texture2D" uid="uid://iiwegbb41ivg" path="res://assets/ui/button_rectangle_depth_gloss.png" id="3_pn24e"]
+[ext_resource type="Script" uid="uid://dhqqvpfxxy0ys" path="res://src/scenes/victoria.gd" id="1_igawm"]
+[ext_resource type="FontFile" uid="uid://dlr6pulax7536" path="res://assets/font/Spicy Sale.otf" id="2_8g2fn"]
+[ext_resource type="Texture2D" uid="uid://b7o1m8p3hufbr" path="res://assets/world/backgroud/background_menu.png" id="2_f7l11"]
+[ext_resource type="Texture2D" uid="uid://iiwegbb41ivg" path="res://assets/ui/button_rectangle_depth_gloss.png" id="3_f7l11"]
+[ext_resource type="PackedScene" uid="uid://ckheptltfq8j" path="res://src/audio/audio.tscn" id="4_ud3p2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4wudy"]
 bg_color = Color(0.49803922, 0.7176471, 0.8039216, 1)
@@ -13,19 +13,16 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s2kx6"]
-texture = ExtResource("3_pn24e")
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u2bgj"]
-texture = ExtResource("3_pn24e")
+texture = ExtResource("3_f7l11")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2pvbu"]
-texture = ExtResource("3_pn24e")
+texture = ExtResource("3_f7l11")
 
-[node name="Victoria" type="Control"]
+[node name="Final" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_4wudy")
+script = ExtResource("1_igawm")
 level_path = "res://src/world/Nivel1.tscn"
 main_menu_scene_path = "res://Main.tscn"
 
@@ -55,7 +52,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_pn24e")
+texture = ExtResource("2_f7l11")
 expand_mode = 1
 
 [node name="PanelMenu" type="Panel" parent="MainMenu/OptionsMenu"]
@@ -84,18 +81,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 15
 
-[node name="StartButton" type="Button" parent="MainMenu/OptionsMenu/PanelMenu/ButtonContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("2_4pt0d")
-theme_override_font_sizes/font_size = 35
-theme_override_styles/normal = SubResource("StyleBoxTexture_s2kx6")
-text = "Siguiente nivel"
-
 [node name="MainMenuButton" type="Button" parent="MainMenu/OptionsMenu/PanelMenu/ButtonContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("2_4pt0d")
+theme_override_fonts/font = ExtResource("2_8g2fn")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxTexture_u2bgj")
 text = "Volver al inicio"
@@ -103,7 +92,7 @@ text = "Volver al inicio"
 [node name="ExitButton" type="Button" parent="MainMenu/OptionsMenu/PanelMenu/ButtonContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("2_4pt0d")
+theme_override_fonts/font = ExtResource("2_8g2fn")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxTexture_2pvbu")
 text = "Salir del juego"
@@ -119,14 +108,13 @@ offset_right = 339.0
 offset_bottom = 115.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.1553083, 0.5487825, 0.76678735, 1)
-theme_override_fonts/font = ExtResource("2_4pt0d")
+theme_override_fonts/font = ExtResource("2_8g2fn")
 theme_override_font_sizes/font_size = 60
-text = "Ganaste!"
+text = "Gracias por jugar!!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AudioManager" parent="." instance=ExtResource("2_4wudy")]
+[node name="AudioManager" parent="." instance=ExtResource("4_ud3p2")]
 
-[connection signal="pressed" from="MainMenu/OptionsMenu/PanelMenu/ButtonContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MainMenu/OptionsMenu/PanelMenu/ButtonContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
 [connection signal="pressed" from="MainMenu/OptionsMenu/PanelMenu/ButtonContainer/ExitButton" to="." method="_on_exit_button_pressed"]

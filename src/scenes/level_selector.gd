@@ -7,6 +7,9 @@ var levels := [
 	"res://src/world/levels/Level3.tscn"
 ]
 
+var final_scene = "res://src/scenes/final.tscn"
+
+
 var current_level_index := 0
 var current_level_node: Node = null
 
@@ -37,11 +40,18 @@ func go_next_level():
 	current_level_index += 1
 
 	if current_level_index >= levels.size():
-		get_tree().quit()
+		show_final_screen()
 		return
 
 	get_child(0).queue_free()
 	load_level(current_level_index)
 	
+func show_final_screen():
+	# Limpiar el nivel actual si existe
+	if get_child_count() > 0:
+		get_child(0).queue_free()
 
+	var final = load(final_scene)
+	var final_instance = final.instantiate()
+	add_child(final_instance)
 	

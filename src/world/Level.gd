@@ -15,6 +15,8 @@ extends Node
 @export var k_Taire = 0.005 #0
 @export var k_Tdrop = 0.008 #0
 
+@export var limite_level = 1000000
+
 const K := 0.05  # coeficiente general para ajustar el juego
 
 @export var droppy: Droppy
@@ -31,6 +33,7 @@ func _ready() -> void:
 	#humidity = 0.9#0.5
 	#pressure_atm = 0.5 #1
 	audio_manager.get_node("music").play()
+	droppy.limit_camera(limite_level)
 
 func _physics_process(delta: float) -> void:
 	var dm = calcular_estado(droppy.temperature, temperature_air, humidity, pressure_atm, droppy.mass)
