@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b54brjgcte5qh"]
+
+[ext_resource type="PackedScene" uid="uid://5r0b7fkjl4oa" path="res://src/world/PlataformaNormal.tscn" id="1_l5rlb"]
+
+[node name="PlataformaNormalMediana" instance=ExtResource("1_l5rlb")]
+scale = Vector2(0.685, 1)

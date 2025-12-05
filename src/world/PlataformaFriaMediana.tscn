@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1rab8ndklfu6"]
+
+[ext_resource type="PackedScene" uid="uid://f3ffea40tvt2" path="res://src/world/PlataformaFria.tscn" id="1_xg6j7"]
+
+[node name="PlataformaFriaMediana" instance=ExtResource("1_xg6j7")]
+scale = Vector2(0.73, 1)

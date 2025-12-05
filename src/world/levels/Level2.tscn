@@ -1,15 +1,19 @@
-[gd_scene load_steps=18 format=4 uid="uid://codfo418w6ulc"]
+[gd_scene load_steps=22 format=4 uid="uid://codfo418w6ulc"]
 
 [ext_resource type="Texture2D" uid="uid://cma8ca5cw1fd6" path="res://assets/platformer-pack/Spritesheets/spritesheet-backgrounds-default.png" id="1_0dkxx"]
 [ext_resource type="PackedScene" uid="uid://3y6jxu3clq88" path="res://src/world/Level.tscn" id="1_xksbl"]
 [ext_resource type="Texture2D" uid="uid://b8gehsdhym0am" path="res://assets/world/backgroud/DesertSunset.png" id="2_d7vpv"]
 [ext_resource type="PackedScene" uid="uid://5r0b7fkjl4oa" path="res://src/world/PlataformaNormal.tscn" id="3_bgw3x"]
 [ext_resource type="PackedScene" uid="uid://f3ffea40tvt2" path="res://src/world/PlataformaFria.tscn" id="4_ffk3v"]
+[ext_resource type="PackedScene" uid="uid://b54brjgcte5qh" path="res://src/world/PlataformaNormalMediana.tscn" id="5_ffk3v"]
 [ext_resource type="PackedScene" uid="uid://beld6jgwmtm5l" path="res://src/world/PlataformaCaliente.tscn" id="5_yk44d"]
 [ext_resource type="PackedScene" uid="uid://cdjcv7nokvebj" path="res://src/scenes/Llegada.tscn" id="6_m5l8j"]
+[ext_resource type="PackedScene" uid="uid://d1rab8ndklfu6" path="res://src/world/PlataformaFriaMediana.tscn" id="7_yk44d"]
 [ext_resource type="Texture2D" uid="uid://b62dlyvbjg74i" path="res://assets/world/plataformaNormal.png" id="7_yu3mv"]
 [ext_resource type="PackedScene" uid="uid://wh1wo3lj7vic" path="res://src/world/DeathFloor.tscn" id="8_5lxh4"]
+[ext_resource type="PackedScene" uid="uid://bsyu0c7om55ww" path="res://src/world/PlataformaCalienteChica.tscn" id="8_m5l8j"]
 [ext_resource type="Texture2D" uid="uid://cso6bofli8ml8" path="res://assets/kenney_1-bit-pack/Tilemap/tileset_legacy.png" id="9_vegnh"]
+[ext_resource type="PackedScene" uid="uid://82kv42drovhu" path="res://src/world/PlataformaCalienteMediana.tscn" id="9_yu3mv"]
 [ext_resource type="PackedScene" uid="uid://ckheptltfq8j" path="res://src/audio/audio.tscn" id="12_vq3oj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mysqf"]
@@ -264,58 +268,83 @@ position = Vector2(345, 409)
 [node name="PlataformaNormal6" parent="." index="4" instance=ExtResource("3_bgw3x")]
 position = Vector2(992, 493)
 
-[node name="PlataformaNormal7" parent="." index="5" instance=ExtResource("3_bgw3x")]
-position = Vector2(1397, 538)
+[node name="PlataformaNormalMediana" parent="." index="5" instance=ExtResource("5_ffk3v")]
+position = Vector2(1342, 539)
 
-[node name="PlataformaNormal3" parent="." index="6" instance=ExtResource("3_bgw3x")]
-position = Vector2(2922, 456)
+[node name="PlataformaNormalMediana2" parent="." index="6" instance=ExtResource("5_ffk3v")]
+position = Vector2(3025, 473)
 
-[node name="PlataformaNormal8" parent="." index="7" instance=ExtResource("3_bgw3x")]
-position = Vector2(3420, 525)
+[node name="PlataformaNormalMediana3" parent="." index="7" instance=ExtResource("5_ffk3v")]
+position = Vector2(4950, 338)
 
-[node name="PlataformaNormal5" parent="." index="8" instance=ExtResource("3_bgw3x")]
-position = Vector2(4408, 493)
+[node name="PlataformaNormalMediana4" parent="." index="8" instance=ExtResource("5_ffk3v")]
+position = Vector2(5974, 354)
 
-[node name="PlataformaNormal9" parent="." index="9" instance=ExtResource("3_bgw3x")]
-position = Vector2(4895, 382)
+[node name="PlataformaNormal3" parent="." index="9" instance=ExtResource("3_bgw3x")]
+position = Vector2(2682, 366)
 
-[node name="PlataformaNormal4" parent="." index="10" instance=ExtResource("3_bgw3x")]
+[node name="PlataformaNormal7" parent="." index="10" instance=ExtResource("3_bgw3x")]
+position = Vector2(3296, 553)
+
+[node name="PlataformaNormal5" parent="." index="11" instance=ExtResource("3_bgw3x")]
+position = Vector2(4474, 503)
+
+[node name="PlataformaNormal9" parent="." index="12" instance=ExtResource("3_bgw3x")]
+position = Vector2(4911, 627)
+
+[node name="PlataformaNormal10" parent="." index="13" instance=ExtResource("3_bgw3x")]
+position = Vector2(5662, 485)
+
+[node name="PlataformaNormal11" parent="." index="14" instance=ExtResource("3_bgw3x")]
+position = Vector2(7179, 538)
+
+[node name="PlataformaNormal4" parent="." index="15" instance=ExtResource("3_bgw3x")]
 position = Vector2(7550, 536)
 
-[node name="PlataformaFria2" parent="." index="11" instance=ExtResource("4_ffk3v")]
+[node name="PlataformaFria2" parent="." index="16" instance=ExtResource("4_ffk3v")]
 position = Vector2(674, 494)
 
-[node name="PlataformaFria5" parent="." index="12" instance=ExtResource("4_ffk3v")]
-position = Vector2(3968, 406)
+[node name="PlataformaFria5" parent="." index="17" instance=ExtResource("4_ffk3v")]
+position = Vector2(3636, 462)
 
-[node name="PlataformaFria6" parent="." index="13" instance=ExtResource("4_ffk3v")]
+[node name="PlataformaFriaMediana" parent="." index="18" instance=ExtResource("7_yk44d")]
+position = Vector2(3965.0002, 564)
+
+[node name="PlataformaFriaMediana2" parent="." index="19" instance=ExtResource("7_yk44d")]
+position = Vector2(3965.0002, 564)
+
+[node name="PlataformaFriaMediana3" parent="." index="20" instance=ExtResource("7_yk44d")]
+position = Vector2(5323, 337)
+
+[node name="PlataformaFriaMediana4" parent="." index="21" instance=ExtResource("7_yk44d")]
+position = Vector2(6913, 453)
+
+[node name="PlataformaCalienteFria" parent="." index="22" instance=ExtResource("8_m5l8j")]
+position = Vector2(4227, 502)
+
+[node name="PlataformaCalienteMediana2" parent="." index="23" instance=ExtResource("9_yu3mv")]
+position = Vector2(5329, 630)
+
+[node name="PlataformaCalienteMediana" parent="." index="24" instance=ExtResource("9_yu3mv")]
+position = Vector2(1991, 366)
+
+[node name="PlataformaFria6" parent="." index="25" instance=ExtResource("4_ffk3v")]
 position = Vector2(6229, 264)
 
-[node name="PlataformaFria8" parent="." index="14" instance=ExtResource("4_ffk3v")]
-position = Vector2(6618, 383)
+[node name="PlataformaCaliente" parent="." index="26" instance=ExtResource("5_yk44d")]
+position = Vector2(1616, 477)
 
-[node name="PlataformaFria7" parent="." index="15" instance=ExtResource("4_ffk3v")]
-position = Vector2(7066, 488)
+[node name="PlataformaCaliente7" parent="." index="27" instance=ExtResource("5_yk44d")]
+position = Vector2(2300, 284)
 
-[node name="PlataformaCaliente" parent="." index="16" instance=ExtResource("5_yk44d")]
-position = Vector2(1771, 459)
+[node name="PlataformaCaliente8" parent="." index="28" instance=ExtResource("5_yk44d")]
+position = Vector2(6566, 347)
 
-[node name="PlataformaCaliente2" parent="." index="17" instance=ExtResource("5_yk44d")]
-position = Vector2(2108, 343)
-
-[node name="PlataformaCaliente7" parent="." index="18" instance=ExtResource("5_yk44d")]
-position = Vector2(2472, 242)
-
-[node name="PlataformaCaliente8" parent="." index="19" instance=ExtResource("5_yk44d")]
-position = Vector2(5399, 485)
-
-[node name="PlataformaCaliente9" parent="." index="20" instance=ExtResource("5_yk44d")]
-position = Vector2(5854, 393)
-
-[node name="Llegada" parent="." index="21" instance=ExtResource("6_m5l8j")]
+[node name="Llegada" parent="." index="29" instance=ExtResource("6_m5l8j")]
 position = Vector2(7566, 517)
 
-[node name="Wall" type="StaticBody2D" parent="." index="22"]
+[node name="Wall" type="StaticBody2D" parent="." index="30"]
+visible = false
 position = Vector2(10.72, 172.495)
 scale = Vector2(0.325, 11.765)
 
@@ -326,7 +355,8 @@ texture = ExtResource("7_yu3mv")
 position = Vector2(-0.676918, -0.00446129)
 shape = SubResource("RectangleShape2D_8slun")
 
-[node name="Wall2" type="StaticBody2D" parent="." index="23"]
+[node name="Wall2" type="StaticBody2D" parent="." index="31"]
+visible = false
 position = Vector2(7800, 172.495)
 scale = Vector2(0.325, 11.765)
 
@@ -337,21 +367,20 @@ texture = ExtResource("7_yu3mv")
 position = Vector2(-0.00195313, 0.000424385)
 shape = SubResource("RectangleShape2D_hjmv8")
 
-[node name="DeathFloor2" parent="." index="24" instance=ExtResource("8_5lxh4")]
+[node name="DeathFloor2" parent="." index="32" instance=ExtResource("8_5lxh4")]
 position = Vector2(3900, 700)
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." index="25"]
+[node name="TileMapLayer" type="TileMapLayer" parent="." index="33"]
 position = Vector2(0, -10.2)
 scale = Vector2(1.295, 1.295)
-tile_map_data = PackedByteArray("AAAAAAwAAAAJABEAAAAAAAsAAAAJABIAAAAAAAoAAAAJABEAAAAAAAkAAAAJABEAAAAAAAgAAAAJABEAAAAAAAcAAAAJABEAAAAAAAYAAAAJABEAAAAAAAUAAAAJABEAAAAAAAQAAAAJABEAAAAAAAMAAAAJABEAAAAAAAIAAAAJABEAAAAAAAEAAAAJABEAAAAAAAAAAAAJABEAAAAAAP//AAAJABEAAAAAAP7/AAAJABEAAAAAAP3/AAAJABEAAAAAAPz/AAAJABEAAAAAAPv/AAAJABEAAAAAAPr/AAAJABEAAAAAAPn/AAAJABEAAAAAAPj/AAAJABEAAAAAAPf/AAAJABEAAAAAAPb/AAAJABAAAAAAABoAAAAJABIAAAAAABkAAAAJABEAAAAAABgAAAAJABEAAAAAABcAAAAJABEAAAAAABYAAAAJABEAAAAAABUAAAAJABEAAAAAABQAAAAJABEAAAAAABMAAAAJABEAAAAAABIAAAAJABEAAAAAABEAAAAJABEAAAAAABAAAAAJABEAAAAAAA8AAAAJABEAAAAAAA4AAAAJABEAAAAAAA0AAAAJABEAAAB4ARoAAAAJABIAAAB4ARkAAAAJABEAAAB4ARgAAAAJABEAAAB4ARcAAAAJABEAAAB4ARYAAAAJABEAAAB4ARUAAAAJABEAAAB4ARQAAAAJABEAAAB4ARMAAAAJABEAAAB4ARIAAAAJABEAAAB4AREAAAAJABEAAAB4ARAAAAAJABEAAAB4AQ8AAAAJABEAAAB4AQ4AAAAJABEAAAB4AQ0AAAAJABEAAAB4AQwAAAAJABEAAAB4AQsAAAAJABEAAAB4AQoAAAAJABEAAAB4AQkAAAAJABEAAAB4AQgAAAAJABEAAAB4AQcAAAAJABEAAAB4AQYAAAAJABEAAAB4AQUAAAAJABEAAAB4AQQAAAAJABEAAAB4AQMAAAAJABEAAAB4AQIAAAAJABEAAAB4AQEAAAAJABEAAAB4AQAAAAAJABEAAAB4Af//AAAJABEAAAB4Af7/AAAJABEAAAB4Af3/AAAJABEAAAB4Afz/AAAJABEAAAB4Afv/AAAJABEAAAB4Afr/AAAJABEAAAB4Afn/AAAJABEAAAB4Afj/AAAJABEAAAB4Aff/AAAJABAAAAA=")
 tile_set = SubResource("TileSet_kyg4f")
 
 [node name="OptionsMenu" parent="PauseMenu" index="0"]
 visible = false
 
-[node name="AudioManager" parent="." index="28" instance=ExtResource("12_vq3oj")]
+[node name="AudioManager" parent="." index="36" instance=ExtResource("12_vq3oj")]
 
-[node name="PlataformaAgua" type="Label" parent="." index="30"]
+[node name="PlataformaAgua" type="Label" parent="." index="38"]
 anchors_preset = -1
 anchor_right = 0.21900001
 anchor_bottom = 0.21900001
@@ -366,28 +395,28 @@ te hace más grande"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PlataformaAgua2" type="Label" parent="." index="31"]
+[node name="PlataformaAgua2" type="Label" parent="." index="39"]
 anchors_preset = -1
 anchor_right = 0.21900001
 anchor_bottom = 0.21900001
-offset_left = 1239.0
-offset_top = 364.0
-offset_right = 1617.712
-offset_bottom = 292.088
+offset_left = 1123.0
+offset_top = 385.0
+offset_right = 1501.712
+offset_bottom = 313.088
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "y te hace más lento..."
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PlataformaFuego" type="Label" parent="." index="32"]
+[node name="PlataformaFuego" type="Label" parent="." index="40"]
 anchors_preset = -1
 anchor_right = 0.21900001
 anchor_bottom = 0.21900001
-offset_left = 2070.0
-offset_top = 176.0
-offset_right = 2144.712
-offset_bottom = 104.088
+offset_left = 1912.0
+offset_top = 192.0
+offset_right = 1986.712
+offset_bottom = 120.088
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Evaporar agua en zonas calientes 
@@ -395,14 +424,14 @@ te achica!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PlataformaFuego2" type="Label" parent="." index="33"]
+[node name="PlataformaFuego2" type="Label" parent="." index="41"]
 anchors_preset = -1
 anchor_right = 0.21900001
 anchor_bottom = 0.21900001
-offset_left = 2632.0
-offset_top = 176.0
-offset_right = 3010.712
-offset_bottom = 104.088
+offset_left = 2493.0
+offset_top = 203.0
+offset_right = 2871.712
+offset_bottom = 131.088
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "pero te hace más ágil!"

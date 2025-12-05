@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsyu0c7om55ww"]
+
+[ext_resource type="PackedScene" uid="uid://beld6jgwmtm5l" path="res://src/world/PlataformaCaliente.tscn" id="1_srdui"]
+
+[node name="PlataformaCalienteFria" instance=ExtResource("1_srdui")]
+scale = Vector2(0.54, 1)

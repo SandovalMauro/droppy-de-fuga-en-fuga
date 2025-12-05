@@ -1,14 +1,19 @@
-[gd_scene load_steps=16 format=4 uid="uid://ba1w1mcdp5ly0"]
+[gd_scene load_steps=19 format=4 uid="uid://ba1w1mcdp5ly0"]
 
 [ext_resource type="Texture2D" uid="uid://cma8ca5cw1fd6" path="res://assets/platformer-pack/Spritesheets/spritesheet-backgrounds-default.png" id="1_f3v4a"]
 [ext_resource type="PackedScene" uid="uid://3y6jxu3clq88" path="res://src/world/Level.tscn" id="1_jsku2"]
 [ext_resource type="PackedScene" uid="uid://5r0b7fkjl4oa" path="res://src/world/PlataformaNormal.tscn" id="3_l6bix"]
 [ext_resource type="PackedScene" uid="uid://f3ffea40tvt2" path="res://src/world/PlataformaFria.tscn" id="4_4hnea"]
+[ext_resource type="PackedScene" uid="uid://b54brjgcte5qh" path="res://src/world/PlataformaNormalMediana.tscn" id="4_5n8fo"]
+[ext_resource type="PackedScene" uid="uid://bmbwiak60l4lj" path="res://src/world/PlataformaNormalChica.tscn" id="5_l6bix"]
 [ext_resource type="PackedScene" uid="uid://beld6jgwmtm5l" path="res://src/world/PlataformaCaliente.tscn" id="5_onx6j"]
 [ext_resource type="PackedScene" uid="uid://cdjcv7nokvebj" path="res://src/scenes/Llegada.tscn" id="6_akuli"]
+[ext_resource type="PackedScene" uid="uid://d1rab8ndklfu6" path="res://src/world/PlataformaFriaMediana.tscn" id="7_4hnea"]
 [ext_resource type="Texture2D" uid="uid://b62dlyvbjg74i" path="res://assets/world/plataformaNormal.png" id="7_eue6p"]
-[ext_resource type="Texture2D" uid="uid://cso6bofli8ml8" path="res://assets/kenney_1-bit-pack/Tilemap/tileset_legacy.png" id="9_sh2ro"]
+[ext_resource type="PackedScene" uid="uid://82kv42drovhu" path="res://src/world/PlataformaCalienteMediana.tscn" id="9_onx6j"]
 [ext_resource type="PackedScene" uid="uid://ckheptltfq8j" path="res://src/audio/audio.tscn" id="12_mreys"]
+[ext_resource type="PackedScene" uid="uid://t07qut70e3l5" path="res://src/world/PlataformaFriaChica.tscn" id="14_4hnea"]
+[ext_resource type="PackedScene" uid="uid://bsyu0c7om55ww" path="res://src/world/PlataformaCalienteChica.tscn" id="14_l6bix"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b51iq"]
 texture = ExtResource("1_f3v4a")
@@ -204,43 +209,6 @@ size = Vector2(64.6154, 63.8236)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jvvrk"]
 size = Vector2(61.5386, 63.6634)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4akve"]
-texture = ExtResource("9_sh2ro")
-separation = Vector2i(1, 1)
-9:16/0 = 0
-9:16/0/terrain_set = 0
-9:16/0/terrain = 0
-9:16/0/terrains_peering_bit/right_side = 0
-9:16/0/terrains_peering_bit/bottom_right_corner = 0
-9:16/0/terrains_peering_bit/bottom_side = 0
-9:16/0/terrains_peering_bit/bottom_left_corner = 0
-9:16/0/terrains_peering_bit/left_side = 0
-9:17/0 = 0
-9:17/0/terrain_set = 0
-9:17/0/terrain = 0
-9:17/0/terrains_peering_bit/right_side = 0
-9:17/0/terrains_peering_bit/bottom_right_corner = 0
-9:17/0/terrains_peering_bit/bottom_side = 0
-9:17/0/terrains_peering_bit/bottom_left_corner = 0
-9:17/0/terrains_peering_bit/left_side = 0
-9:17/0/terrains_peering_bit/top_left_corner = 0
-9:17/0/terrains_peering_bit/top_side = 0
-9:17/0/terrains_peering_bit/top_right_corner = 0
-9:18/0 = 0
-9:18/0/terrain_set = 0
-9:18/0/terrain = 0
-9:18/0/terrains_peering_bit/right_side = 0
-9:18/0/terrains_peering_bit/left_side = 0
-9:18/0/terrains_peering_bit/top_left_corner = 0
-9:18/0/terrains_peering_bit/top_side = 0
-9:18/0/terrains_peering_bit/top_right_corner = 0
-
-[sub_resource type="TileSet" id="TileSet_6aouc"]
-terrain_set_0/mode = 0
-terrain_set_0/terrain_0/name = "walls"
-terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
-sources/0 = SubResource("TileSetAtlasSource_4akve")
-
 [node name="Nivel" instance=ExtResource("1_jsku2")]
 
 [node name="Background" type="TileMapLayer" parent="." index="0"]
@@ -253,91 +221,129 @@ tile_set = SubResource("TileSet_fl88i")
 position = Vector2(32, 536)
 
 [node name="PlataformaNormal2" parent="." index="6" instance=ExtResource("3_l6bix")]
-position = Vector2(1814, 297)
+position = Vector2(1673, 554)
 
 [node name="PlataformaNormal3" parent="." index="7" instance=ExtResource("3_l6bix")]
-position = Vector2(2736, 580)
+position = Vector2(2565, 576)
 
-[node name="PlataformaNormal5" parent="." index="8" instance=ExtResource("3_l6bix")]
-position = Vector2(4914, 593)
+[node name="PlataformaNormal6" parent="." index="8" instance=ExtResource("3_l6bix")]
+position = Vector2(3350, 572)
 
-[node name="PlataformaNormal4" parent="." index="9" instance=ExtResource("3_l6bix")]
+[node name="PlataformaNormal5" parent="." index="9" instance=ExtResource("3_l6bix")]
+position = Vector2(4974, 228)
+
+[node name="PlataformaNormal4" parent="." index="10" instance=ExtResource("3_l6bix")]
 position = Vector2(7550, 536)
 
-[node name="PlataformaFria" parent="." index="10" instance=ExtResource("4_4hnea")]
+[node name="PlataformaNormalMediana" parent="." index="11" instance=ExtResource("4_5n8fo")]
+position = Vector2(2294, 364)
+
+[node name="PlataformaNormalMediana2" parent="." index="12" instance=ExtResource("4_5n8fo")]
+position = Vector2(2530, 298)
+
+[node name="PlataformaNormalMediana3" parent="." index="13" instance=ExtResource("4_5n8fo")]
+position = Vector2(4034.9998, 576)
+
+[node name="PlataformaNormalMediana4" parent="." index="14" instance=ExtResource("4_5n8fo")]
+position = Vector2(4034.9998, 576)
+
+[node name="PlataformaNormalMediana5" parent="." index="15" instance=ExtResource("4_5n8fo")]
+position = Vector2(5529, 385)
+
+[node name="PlataformaNormalMediana6" parent="." index="16" instance=ExtResource("4_5n8fo")]
+position = Vector2(6366, 492)
+
+[node name="PlataformaNormalChica" parent="." index="17" instance=ExtResource("5_l6bix")]
+position = Vector2(2738, 227)
+
+[node name="PlataformaFria" parent="." index="18" instance=ExtResource("4_4hnea")]
 position = Vector2(390, 386)
 
-[node name="PlataformaFria2" parent="." index="11" instance=ExtResource("4_4hnea")]
+[node name="PlataformaFria2" parent="." index="19" instance=ExtResource("4_4hnea")]
 position = Vector2(712, 535)
 
-[node name="PlataformaFria3" parent="." index="12" instance=ExtResource("4_4hnea")]
-position = Vector2(1512, 444)
-
-[node name="PlataformaFria4" parent="." index="13" instance=ExtResource("4_4hnea")]
+[node name="PlataformaFria4" parent="." index="20" instance=ExtResource("4_4hnea")]
 position = Vector2(4308, 409)
 
-[node name="PlataformaFria5" parent="." index="14" instance=ExtResource("4_4hnea")]
-position = Vector2(3858, 627)
+[node name="PlataformaFria8" parent="." index="21" instance=ExtResource("4_4hnea")]
+position = Vector2(3603, 206)
 
-[node name="PlataformaFria6" parent="." index="15" instance=ExtResource("4_4hnea")]
-position = Vector2(6234, 244)
+[node name="PlataformaFria5" parent="." index="22" instance=ExtResource("4_4hnea")]
+position = Vector2(2909, 575)
 
-[node name="PlataformaFria7" parent="." index="16" instance=ExtResource("4_4hnea")]
-position = Vector2(6855, 376)
+[node name="PlataformaFria6" parent="." index="23" instance=ExtResource("4_4hnea")]
+position = Vector2(6600, 608)
 
-[node name="PlataformaCaliente" parent="." index="17" instance=ExtResource("5_onx6j")]
-position = Vector2(1175, 567)
+[node name="PlataformaFriaMediana" parent="." index="24" instance=ExtResource("7_4hnea")]
+position = Vector2(1438, 450)
 
-[node name="PlataformaCaliente3" parent="." index="18" instance=ExtResource("5_onx6j")]
-position = Vector2(2264, 273)
+[node name="PlataformaFriaMediana2" parent="." index="25" instance=ExtResource("7_4hnea")]
+position = Vector2(2915, 315)
 
-[node name="PlataformaCaliente4" parent="." index="19" instance=ExtResource("5_onx6j")]
-position = Vector2(3044, 297)
+[node name="PlataformaFriaMediana3" parent="." index="26" instance=ExtResource("7_4hnea")]
+position = Vector2(4660, 315)
 
-[node name="PlataformaCaliente5" parent="." index="20" instance=ExtResource("5_onx6j")]
-position = Vector2(3466, 448)
+[node name="PlataformaFriaMediana4" parent="." index="27" instance=ExtResource("7_4hnea")]
+position = Vector2(6100, 373)
 
-[node name="PlataformaCaliente6" parent="." index="21" instance=ExtResource("5_onx6j")]
-position = Vector2(3877, 95)
+[node name="PlataformaCaliente3" parent="." index="28" instance=ExtResource("5_onx6j")]
+position = Vector2(1987, 461)
 
-[node name="PlataformaCaliente8" parent="." index="22" instance=ExtResource("5_onx6j")]
-position = Vector2(4901, 205)
+[node name="PlataformaCaliente5" parent="." index="29" instance=ExtResource("5_onx6j")]
+position = Vector2(3695, 575)
 
-[node name="PlataformaCaliente10" parent="." index="23" instance=ExtResource("5_onx6j")]
-position = Vector2(5771, 436)
+[node name="PlataformaCalienteMediana" parent="." index="30" instance=ExtResource("9_onx6j")]
+position = Vector2(1209, 568)
 
-[node name="PlataformaCaliente11" parent="." index="24" instance=ExtResource("5_onx6j")]
-position = Vector2(6382, 622)
+[node name="PlataformaCalienteMediana2" parent="." index="31" instance=ExtResource("9_onx6j")]
+position = Vector2(3178.9998, 382)
 
-[node name="Llegada" parent="." index="25" instance=ExtResource("6_akuli")]
+[node name="PlataformaCaliente10" parent="." index="32" instance=ExtResource("5_onx6j")]
+position = Vector2(5797, 475)
+
+[node name="PlataformaCaliente11" parent="." index="33" instance=ExtResource("5_onx6j")]
+position = Vector2(6590, 341)
+
+[node name="Llegada" parent="." index="34" instance=ExtResource("6_akuli")]
 position = Vector2(7566, 517)
 
-[node name="Wall" type="StaticBody2D" parent="." index="26"]
+[node name="Wall" type="StaticBody2D" parent="." index="35"]
 position = Vector2(10.72, 172.495)
 scale = Vector2(0.325, 11.765)
 
 [node name="Sprite2D" type="Sprite2D" parent="Wall" index="0"]
+visible = false
 texture = ExtResource("7_eue6p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall" index="1"]
 position = Vector2(-0.676918, -0.00446129)
 shape = SubResource("RectangleShape2D_jeprh")
 
-[node name="Wall2" type="StaticBody2D" parent="." index="27"]
+[node name="Wall2" type="StaticBody2D" parent="." index="36"]
 position = Vector2(7800, 172.495)
 scale = Vector2(0.325, 11.765)
 
 [node name="Sprite2D" type="Sprite2D" parent="Wall2" index="0"]
+visible = false
 texture = ExtResource("7_eue6p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2" index="1"]
 position = Vector2(-0.00195313, 0.000424385)
 shape = SubResource("RectangleShape2D_jvvrk")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." index="28"]
-position = Vector2(0, -10.2)
-scale = Vector2(1.295, 1.295)
-tile_map_data = PackedByteArray("AAAAAAwAAAAJABEAAAAAAAsAAAAJABIAAAAAAAoAAAAJABEAAAAAAAkAAAAJABEAAAAAAAgAAAAJABEAAAAAAAcAAAAJABEAAAAAAAYAAAAJABEAAAAAAAUAAAAJABEAAAAAAAQAAAAJABEAAAAAAAMAAAAJABEAAAAAAAIAAAAJABEAAAAAAAEAAAAJABEAAAAAAAAAAAAJABEAAAAAAP//AAAJABEAAAAAAP7/AAAJABEAAAAAAP3/AAAJABEAAAAAAPz/AAAJABEAAAAAAPv/AAAJABEAAAAAAPr/AAAJABEAAAAAAPn/AAAJABEAAAAAAPj/AAAJABEAAAAAAPf/AAAJABEAAAAAAPb/AAAJABAAAAAAABoAAAAJABIAAAAAABkAAAAJABEAAAAAABgAAAAJABEAAAAAABcAAAAJABEAAAAAABYAAAAJABEAAAAAABUAAAAJABEAAAAAABQAAAAJABEAAAAAABMAAAAJABEAAAAAABIAAAAJABEAAAAAABEAAAAJABEAAAAAABAAAAAJABEAAAAAAA8AAAAJABEAAAAAAA4AAAAJABEAAAAAAA0AAAAJABEAAAB4ARoAAAAJABIAAAB4ARkAAAAJABEAAAB4ARgAAAAJABEAAAB4ARcAAAAJABEAAAB4ARYAAAAJABEAAAB4ARUAAAAJABEAAAB4ARQAAAAJABEAAAB4ARMAAAAJABEAAAB4ARIAAAAJABEAAAB4AREAAAAJABEAAAB4ARAAAAAJABEAAAB4AQ8AAAAJABEAAAB4AQ4AAAAJABEAAAB4AQ0AAAAJABEAAAB4AQwAAAAJABEAAAB4AQsAAAAJABEAAAB4AQoAAAAJABEAAAB4AQkAAAAJABEAAAB4AQgAAAAJABEAAAB4AQcAAAAJABEAAAB4AQYAAAAJABEAAAB4AQUAAAAJABEAAAB4AQQAAAAJABEAAAB4AQMAAAAJABEAAAB4AQIAAAAJABEAAAB4AQEAAAAJABEAAAB4AQAAAAAJABEAAAB4Af//AAAJABEAAAB4Af7/AAAJABEAAAB4Af3/AAAJABEAAAB4Afz/AAAJABEAAAB4Afv/AAAJABEAAAB4Afr/AAAJABEAAAB4Afn/AAAJABEAAAB4Afj/AAAJABEAAAB4Aff/AAAJABAAAAA=")
-tile_set = SubResource("TileSet_6aouc")
+[node name="AudioManager" parent="." index="37" instance=ExtResource("12_mreys")]
 
-[node name="AudioManager" parent="." index="29" instance=ExtResource("12_mreys")]
+[node name="PlataformaCalienteFria" parent="." index="38" instance=ExtResource("14_l6bix")]
+position = Vector2(4089, 208)
+
+[node name="PlataformaCalienteFria2" parent="." index="39" instance=ExtResource("14_l6bix")]
+position = Vector2(5304, 317)
+
+[node name="PlataformaFriaChica" parent="." index="40" instance=ExtResource("14_4hnea")]
+position = Vector2(6932, 374)
+
+[node name="PlataformaFriaChica2" parent="." index="41" instance=ExtResource("14_4hnea")]
+position = Vector2(7138.0005, 455)
+
+[node name="PlataformaFriaChica3" parent="." index="42" instance=ExtResource("14_4hnea")]
+position = Vector2(7339, 530)

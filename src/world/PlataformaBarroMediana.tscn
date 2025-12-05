@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddpmkj8mx3e5"]
+
+[ext_resource type="PackedScene" uid="uid://b5eq17r2cid1g" path="res://src/world/PlataformaBarro.tscn" id="1_543se"]
+
+[node name="PlataformaBarroMediana" instance=ExtResource("1_543se")]
+scale = Vector2(0.72, 1)
