@@ -1,15 +1,27 @@
-[gd_scene load_steps=8 format=3 uid="uid://dwecqaiipqlbx"]
+[gd_scene load_steps=15 format=3 uid="uid://dwecqaiipqlbx"]
 
 [ext_resource type="Script" uid="uid://2anklcn13t10" path="res://src/audio/audio_configuration.gd" id="1_vg5ni"]
 [ext_resource type="Texture2D" uid="uid://b7o1m8p3hufbr" path="res://assets/world/backgroud/background_menu.png" id="2_g61r3"]
 [ext_resource type="PackedScene" uid="uid://ckheptltfq8j" path="res://src/audio/audio.tscn" id="2_l2y41"]
 [ext_resource type="FontFile" uid="uid://dlr6pulax7536" path="res://assets/font/Spicy Sale.otf" id="3_ccegt"]
+[ext_resource type="Texture2D" uid="uid://mmujrdjmft0k" path="res://assets/ui/check_square_color_checkmark.png" id="4_5cg3w"]
 [ext_resource type="Texture2D" uid="uid://iiwegbb41ivg" path="res://assets/ui/button_rectangle_depth_gloss.png" id="4_f2prp"]
+[ext_resource type="Texture2D" uid="uid://dhedt3w5n0ytu" path="res://assets/ui/check_square_color.png" id="5_fewfv"]
+[ext_resource type="Texture2D" uid="uid://c8i0fpi3d55k" path="res://assets/ui/button_rectangle_depth_line.png" id="7_fewfv"]
+[ext_resource type="Texture2D" uid="uid://b0yoth3mgd0hj" path="res://assets/ui/button_rectangle_flat.png" id="8_e8wm4"]
 
 [sub_resource type="Theme" id="Theme_l2y41"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e8wm4"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5cg3w"]
 texture = ExtResource("4_f2prp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jv344"]
+texture = ExtResource("7_fewfv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r3ovc"]
+texture = ExtResource("8_e8wm4")
 
 [node name="AudioConfiguration" type="Control"]
 layout_mode = 3
@@ -69,6 +81,8 @@ layout_mode = 2
 [node name="CheckBoxMusic" type="CheckBox" parent="VBoxContainer/SwitchMusic"]
 layout_mode = 2
 theme = SubResource("Theme_l2y41")
+theme_override_icons/checked = ExtResource("4_5cg3w")
+theme_override_icons/unchecked = ExtResource("5_fewfv")
 button_pressed = true
 
 [node name="Label" type="Label" parent="VBoxContainer/SwitchMusic"]
@@ -82,6 +96,9 @@ layout_mode = 2
 
 [node name="CheckBoxSFX" type="CheckBox" parent="VBoxContainer/SwitchSFX"]
 layout_mode = 2
+theme_override_styles/pressed = SubResource("StyleBoxTexture_e8wm4")
+theme_override_icons/checked = ExtResource("4_5cg3w")
+theme_override_icons/unchecked = ExtResource("5_fewfv")
 button_pressed = true
 
 [node name="Label" type="Label" parent="VBoxContainer/SwitchSFX"]
@@ -113,6 +130,8 @@ size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("3_ccegt")
 theme_override_font_sizes/font_size = 41
 theme_override_styles/normal = SubResource("StyleBoxTexture_5cg3w")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jv344")
+theme_override_styles/hover = SubResource("StyleBoxTexture_r3ovc")
 text = "Volver"
 
 [node name="AudioManager" parent="." instance=ExtResource("2_l2y41")]

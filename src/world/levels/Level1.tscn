@@ -1,13 +1,17 @@
-[gd_scene load_steps=15 format=4 uid="uid://b88bmm6mge7v8"]
+[gd_scene load_steps=19 format=4 uid="uid://b88bmm6mge7v8"]
 
-[ext_resource type="PackedScene" uid="uid://3y6jxu3clq88" path="res://src/world/Level.tscn" id="1_eae0t"]
+[ext_resource type="PackedScene" uid="uid://3y6jxu3clq88" path="res://src/world/levels/Level.tscn" id="1_eae0t"]
 [ext_resource type="PackedScene" uid="uid://5r0b7fkjl4oa" path="res://src/world/PlataformaNormal.tscn" id="3_hki6x"]
 [ext_resource type="PackedScene" uid="uid://b54brjgcte5qh" path="res://src/world/PlataformaNormalMediana.tscn" id="4_wkke5"]
 [ext_resource type="Texture2D" uid="uid://b62dlyvbjg74i" path="res://assets/world/plataformaNormal.png" id="6_oafgn"]
 [ext_resource type="PackedScene" uid="uid://cdjcv7nokvebj" path="res://src/scenes/Llegada.tscn" id="7_kyg4f"]
 [ext_resource type="Texture2D" uid="uid://cso6bofli8ml8" path="res://assets/kenney_1-bit-pack/Tilemap/tileset_legacy.png" id="8_hjmv8"]
+[ext_resource type="FontFile" uid="uid://djfjsc8xkbbuq" path="res://assets/font/Candy Beans.otf" id="8_hl14j"]
 [ext_resource type="Texture2D" uid="uid://cma8ca5cw1fd6" path="res://assets/platformer-pack/Spritesheets/spritesheet-backgrounds-default.png" id="9_pb5wv"]
+[ext_resource type="Texture2D" uid="uid://b2cox0jhf4t0n" path="res://assets/ui/arrow_basic_w.png" id="10_8kfjx"]
+[ext_resource type="Texture2D" uid="uid://b5auyasvuxpc8" path="res://assets/ui/arrow_basic_e.png" id="11_8fx2k"]
 [ext_resource type="PackedScene" uid="uid://ckheptltfq8j" path="res://src/audio/audio.tscn" id="11_urec6"]
+[ext_resource type="Texture2D" uid="uid://y230dakofxqw" path="res://assets/ui/arrow_basic_n.png" id="12_ux6d1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uv5si"]
 texture = ExtResource("9_pb5wv")
@@ -244,60 +248,126 @@ sources/0 = SubResource("TileSetAtlasSource_btumj")
 limite_level = 3898
 
 [node name="Background" type="TileMapLayer" parent="." index="0"]
+visible = false
 position = Vector2(0, 300)
 scale = Vector2(3.11, 3.11)
 tile_map_data = PackedByteArray("AAAAAAAAAAABAAMAAAAMAP7/AAAGAAUAAAAOAP//AAAEAAcAAAAOAAAAAAAFAAUAAAAQAAAAAAABAAEAAAAgAAAAAAADAAEAAAAvAAAAAAACAAAAAAA/AAAAAAABAAMAAABOAAAAAAADAAEAAABeAAAAAAABAAMAAABuAAAAAAACAAAAAAA=")
 tile_set = SubResource("TileSet_7u3di")
 
-[node name="PauseMenu" parent="." index="3"]
-visible = false
+[node name="TextureRect" parent="." index="1"]
+modulate = Color(1, 1, 1, 0.7294118)
 
-[node name="PlataformaNormal" parent="." index="4" instance=ExtResource("3_hki6x")]
+[node name="TextureRect2" parent="." index="2"]
+modulate = Color(1, 1, 1, 0.7294118)
+
+[node name="TextureRect3" parent="." index="3"]
+modulate = Color(1, 1, 1, 0.7294118)
+
+[node name="ArrowBasicW" type="Sprite2D" parent="." index="4"]
+position = Vector2(140, 404.06)
+scale = Vector2(1.24, 1.24)
+texture = ExtResource("10_8kfjx")
+
+[node name="ArrowBasicE" type="Sprite2D" parent="." index="5"]
+position = Vector2(200, 404.06)
+scale = Vector2(1.24, 1.24)
+texture = ExtResource("11_8fx2k")
+
+[node name="ArrowBasicN" type="Sprite2D" parent="." index="6"]
+position = Vector2(817.6, 430)
+scale = Vector2(1.24, 1.24)
+texture = ExtResource("12_ux6d1")
+
+[node name="Movilidad" type="Label" parent="." index="7"]
+offset_left = 35.2
+offset_top = 340.0
+offset_right = 270.20007
+offset_bottom = 448.0
+scale = Vector2(1.205, 1.205)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_hl14j")
+theme_override_font_sizes/font_size = 25
+text = "PRESIONA LAS TECLAS
+ 
+PARA MOVERTE!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Movilidad3" type="Label" parent="." index="8"]
+offset_left = 3369.0002
+offset_top = 260.0
+offset_right = 3520.0002
+offset_bottom = 357.0
+scale = Vector2(1.205, 1.205)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_hl14j")
+theme_override_font_sizes/font_size = 25
+text = "EXCELENTE!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Movilidad2" type="Label" parent="." index="9"]
+offset_left = 698.465
+offset_top = 357.78
+offset_right = 910.465
+offset_bottom = 502.78
+scale = Vector2(1.205, 1.205)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_hl14j")
+theme_override_font_sizes/font_size = 25
+text = "SALTA PRESIONANDO
+
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlataformaNormal" parent="." index="10" instance=ExtResource("3_hki6x")]
 position = Vector2(32, 536)
 
-[node name="PlataformaNormal2" parent="." index="5" instance=ExtResource("3_hki6x")]
+[node name="PlataformaNormal2" parent="." index="11" instance=ExtResource("3_hki6x")]
 position = Vector2(361, 580)
 
-[node name="PlataformaNormal3" parent="." index="6" instance=ExtResource("3_hki6x")]
+[node name="PlataformaNormal3" parent="." index="12" instance=ExtResource("3_hki6x")]
 position = Vector2(700, 513)
 
-[node name="PlataformaNormalMediana" parent="." index="7" instance=ExtResource("4_wkke5")]
+[node name="PlataformaNormalMediana" parent="." index="13" instance=ExtResource("4_wkke5")]
 position = Vector2(1031, 478)
 
-[node name="PlataformaNormalMediana3" parent="." index="8" instance=ExtResource("4_wkke5")]
+[node name="PlataformaNormalMediana3" parent="." index="14" instance=ExtResource("4_wkke5")]
 position = Vector2(1307, 478)
 
-[node name="PlataformaNormalMediana4" parent="." index="9" instance=ExtResource("4_wkke5")]
+[node name="PlataformaNormalMediana4" parent="." index="15" instance=ExtResource("4_wkke5")]
 position = Vector2(1847, 421)
 
-[node name="PlataformaNormalMediana5" parent="." index="10" instance=ExtResource("4_wkke5")]
+[node name="PlataformaNormalMediana5" parent="." index="16" instance=ExtResource("4_wkke5")]
 position = Vector2(2660, 511)
 
-[node name="PlataformaNormalMediana6" parent="." index="11" instance=ExtResource("4_wkke5")]
+[node name="PlataformaNormalMediana6" parent="." index="17" instance=ExtResource("4_wkke5")]
 position = Vector2(3436, 450)
 
-[node name="PlataformaNormalMediana2" parent="." index="12" instance=ExtResource("4_wkke5")]
+[node name="PlataformaNormalMediana2" parent="." index="18" instance=ExtResource("4_wkke5")]
 position = Vector2(2415, 447)
 
-[node name="PlataformaNormal5" parent="." index="13" instance=ExtResource("3_hki6x")]
+[node name="PlataformaNormal5" parent="." index="19" instance=ExtResource("3_hki6x")]
 position = Vector2(1532, 343)
 
-[node name="PlataformaNormal7" parent="." index="14" instance=ExtResource("3_hki6x")]
+[node name="PlataformaNormal7" parent="." index="20" instance=ExtResource("3_hki6x")]
 position = Vector2(2085, 557)
 
-[node name="PlataformaNormal9" parent="." index="15" instance=ExtResource("3_hki6x")]
+[node name="PlataformaNormal9" parent="." index="21" instance=ExtResource("3_hki6x")]
 position = Vector2(2860, 604)
 
-[node name="PlataformaNormal10" parent="." index="16" instance=ExtResource("3_hki6x")]
+[node name="PlataformaNormal10" parent="." index="22" instance=ExtResource("3_hki6x")]
 position = Vector2(3115, 502)
 
-[node name="PlataformaNormal4" parent="." index="17" instance=ExtResource("3_hki6x")]
+[node name="PlataformaNormal4" parent="." index="23" instance=ExtResource("3_hki6x")]
 position = Vector2(3648, 582.505)
 
-[node name="Llegada" parent="." index="18" instance=ExtResource("7_kyg4f")]
+[node name="Llegada" parent="." index="24" instance=ExtResource("7_kyg4f")]
 position = Vector2(3648, 559)
 
-[node name="Wall" type="StaticBody2D" parent="." index="19"]
+[node name="Wall" type="StaticBody2D" parent="." index="25"]
 visible = false
 position = Vector2(10.72, 172.495)
 scale = Vector2(0.325, 11.765)
@@ -309,7 +379,7 @@ texture = ExtResource("6_oafgn")
 position = Vector2(-0.676918, -0.00446129)
 shape = SubResource("RectangleShape2D_t7bwb")
 
-[node name="Wall2" type="StaticBody2D" parent="." index="20"]
+[node name="Wall2" type="StaticBody2D" parent="." index="26"]
 position = Vector2(3898, 219)
 scale = Vector2(0.325, 11.765)
 
@@ -321,38 +391,15 @@ texture = ExtResource("6_oafgn")
 position = Vector2(-0.00195313, 0.000424385)
 shape = SubResource("RectangleShape2D_m0nfd")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." index="21"]
+[node name="TileMapLayer" type="TileMapLayer" parent="." index="27"]
 position = Vector2(0, -10.2)
 scale = Vector2(1.295, 1.295)
 tile_set = SubResource("TileSet_mqhcr")
 
-[node name="Movilidad" type="Label" parent="." index="22"]
-anchors_preset = -1
-anchor_right = 0.21900001
-anchor_bottom = 0.21900001
-offset_left = 43.0
-offset_top = 386.0
-offset_right = -29.28801
-offset_bottom = 314.088
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 16
-text = "Presioná las teclas
- ← y → para moverte!"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="AudioManager" parent="." index="28" instance=ExtResource("11_urec6")]
 
-[node name="Movilidad2" type="Label" parent="." index="23"]
-anchors_preset = -1
-anchor_right = 0.21900001
-anchor_bottom = 0.21900001
-offset_left = 392.0
-offset_top = 470.0
-offset_right = 319.71198
-offset_bottom = 398.088
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 16
-text = "Saltá presionando ↑"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Droppy" parent="." index="30"]
+position = Vector2(71, -100)
 
-[node name="AudioManager" parent="." index="24" instance=ExtResource("11_urec6")]
+[node name="PauseMenu" parent="." index="31"]
+visible = false

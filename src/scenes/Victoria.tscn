@@ -1,26 +1,47 @@
-[gd_scene load_steps=10 format=3 uid="uid://dl7x1vfy2nale"]
+[gd_scene load_steps=19 format=3 uid="uid://dl7x1vfy2nale"]
 
 [ext_resource type="Script" uid="uid://dhqqvpfxxy0ys" path="res://src/scenes/victoria.gd" id="1_4wudy"]
 [ext_resource type="FontFile" uid="uid://dlr6pulax7536" path="res://assets/font/Spicy Sale.otf" id="2_4pt0d"]
 [ext_resource type="PackedScene" uid="uid://ckheptltfq8j" path="res://src/audio/audio.tscn" id="2_4wudy"]
 [ext_resource type="Texture2D" uid="uid://b7o1m8p3hufbr" path="res://assets/world/backgroud/background_menu.png" id="2_pn24e"]
 [ext_resource type="Texture2D" uid="uid://iiwegbb41ivg" path="res://assets/ui/button_rectangle_depth_gloss.png" id="3_pn24e"]
+[ext_resource type="Texture2D" uid="uid://bv33aafpr78w5" path="res://assets/ui/button_rectangle_line.png" id="3_s2kx6"]
+[ext_resource type="Texture2D" uid="uid://c8i0fpi3d55k" path="res://assets/ui/button_rectangle_depth_line.png" id="6_2pvbu"]
+[ext_resource type="Texture2D" uid="uid://cxb1cniwqccxi" path="res://assets/ui/button_rectangle_depth_flat.png" id="6_u2bgj"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4wudy"]
-bg_color = Color(0.49803922, 0.7176471, 0.8039216, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1l10g"]
+texture = ExtResource("3_s2kx6")
+expand_margin_left = 296.0
+expand_margin_top = 168.0
+expand_margin_right = 296.0
+expand_margin_bottom = 175.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s2kx6"]
 texture = ExtResource("3_pn24e")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_28lt8"]
+texture = ExtResource("6_2pvbu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hsqtc"]
+texture = ExtResource("6_u2bgj")
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u2bgj"]
 texture = ExtResource("3_pn24e")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8v3w8"]
+texture = ExtResource("6_2pvbu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1utry"]
+texture = ExtResource("6_u2bgj")
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2pvbu"]
 texture = ExtResource("3_pn24e")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n68ho"]
+texture = ExtResource("6_2pvbu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hwa7h"]
+texture = ExtResource("6_u2bgj")
 
 [node name="Victoria" type="Control"]
 layout_mode = 3
@@ -32,7 +53,6 @@ main_menu_scene_path = "res://Main.tscn"
 [node name="MainMenu" type="CanvasLayer" parent="."]
 
 [node name="Background" type="ColorRect" parent="MainMenu"]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -60,14 +80,14 @@ expand_mode = 1
 
 [node name="PanelMenu" type="Panel" parent="MainMenu/OptionsMenu"]
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 200.0
-offset_top = 150.0
-offset_right = -200.0
-offset_bottom = -150.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_4wudy")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_1l10g")
 
 [node name="ButtonContainer" type="VBoxContainer" parent="MainMenu/OptionsMenu/PanelMenu"]
 layout_mode = 1
@@ -79,7 +99,7 @@ anchor_bottom = 0.5
 offset_left = -236.5
 offset_top = -103.5
 offset_right = 236.5
-offset_bottom = 103.5
+offset_bottom = 103.50006
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 15
@@ -90,6 +110,8 @@ size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_4pt0d")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxTexture_s2kx6")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_28lt8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hsqtc")
 text = "Siguiente nivel"
 
 [node name="MainMenuButton" type="Button" parent="MainMenu/OptionsMenu/PanelMenu/ButtonContainer"]
@@ -98,6 +120,8 @@ size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_4pt0d")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxTexture_u2bgj")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8v3w8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_1utry")
 text = "Volver al inicio"
 
 [node name="ExitButton" type="Button" parent="MainMenu/OptionsMenu/PanelMenu/ButtonContainer"]
@@ -106,17 +130,21 @@ size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_4pt0d")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxTexture_2pvbu")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_n68ho")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hwa7h")
 text = "Salir del juego"
 
 [node name="Label" type="Label" parent="MainMenu/OptionsMenu"]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = -1
 anchor_left = 0.5
+anchor_top = 0.33900002
 anchor_right = 0.5
+anchor_bottom = 0.33900002
 offset_left = -339.0
-offset_top = 32.0
+offset_top = -149.67201
 offset_right = 339.0
-offset_bottom = 115.0
+offset_bottom = -66.67201
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.1553083, 0.5487825, 0.76678735, 1)
 theme_override_fonts/font = ExtResource("2_4pt0d")

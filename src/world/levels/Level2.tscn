@@ -1,7 +1,7 @@
-[gd_scene load_steps=22 format=4 uid="uid://codfo418w6ulc"]
+[gd_scene load_steps=23 format=4 uid="uid://codfo418w6ulc"]
 
 [ext_resource type="Texture2D" uid="uid://cma8ca5cw1fd6" path="res://assets/platformer-pack/Spritesheets/spritesheet-backgrounds-default.png" id="1_0dkxx"]
-[ext_resource type="PackedScene" uid="uid://3y6jxu3clq88" path="res://src/world/Level.tscn" id="1_xksbl"]
+[ext_resource type="PackedScene" uid="uid://3y6jxu3clq88" path="res://src/world/levels/Level.tscn" id="1_xksbl"]
 [ext_resource type="Texture2D" uid="uid://b8gehsdhym0am" path="res://assets/world/backgroud/DesertSunset.png" id="2_d7vpv"]
 [ext_resource type="PackedScene" uid="uid://5r0b7fkjl4oa" path="res://src/world/PlataformaNormal.tscn" id="3_bgw3x"]
 [ext_resource type="PackedScene" uid="uid://f3ffea40tvt2" path="res://src/world/PlataformaFria.tscn" id="4_ffk3v"]
@@ -15,8 +15,9 @@
 [ext_resource type="Texture2D" uid="uid://cso6bofli8ml8" path="res://assets/kenney_1-bit-pack/Tilemap/tileset_legacy.png" id="9_vegnh"]
 [ext_resource type="PackedScene" uid="uid://82kv42drovhu" path="res://src/world/PlataformaCalienteMediana.tscn" id="9_yu3mv"]
 [ext_resource type="PackedScene" uid="uid://ckheptltfq8j" path="res://src/audio/audio.tscn" id="12_vq3oj"]
+[ext_resource type="FontFile" uid="uid://djfjsc8xkbbuq" path="res://assets/font/Candy Beans.otf" id="15_yk44d"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mysqf"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yk44d"]
 texture = ExtResource("1_0dkxx")
 texture_region_size = Vector2i(256, 256)
 4:4/0 = 0
@@ -202,7 +203,7 @@ texture_region_size = Vector2i(256, 256)
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "background"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
-sources/0 = SubResource("TileSetAtlasSource_mysqf")
+sources/0 = SubResource("TileSetAtlasSource_yk44d")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8slun"]
 size = Vector2(64.6154, 63.8236)
@@ -251,100 +252,97 @@ sources/0 = SubResource("TileSetAtlasSource_8kfjx")
 limite_level = 7800
 
 [node name="Background" type="TileMapLayer" parent="." index="0"]
+visible = false
 position = Vector2(0, 300)
 scale = Vector2(3.11, 3.11)
 tile_map_data = PackedByteArray("AAAAAAAAAAABAAMAAAAMAP7/AAAGAAUAAAAOAP//AAAEAAcAAAAOAAAAAAAFAAUAAAAQAAAAAAABAAEAAAAgAAAAAAADAAEAAAAvAAAAAAACAAAAAAA/AAAAAAABAAMAAABOAAAAAAADAAEAAABeAAAAAAABAAMAAABuAAAAAAACAAAAAAB+AAAAAAABAAEAAACeAAAAAAABAAMAAACOAAAAAAADAAEAAAA=")
 tile_set = SubResource("TileSet_urec6")
 
-[node name="TextureRect" parent="CanvasLayer" index="0"]
-visible = false
-texture = ExtResource("2_d7vpv")
-
-[node name="PlataformaNormal" parent="." index="2" instance=ExtResource("3_bgw3x")]
+[node name="PlataformaNormal" parent="." index="4" instance=ExtResource("3_bgw3x")]
 position = Vector2(32, 536)
 
-[node name="PlataformaNormal2" parent="." index="3" instance=ExtResource("3_bgw3x")]
+[node name="PlataformaNormal2" parent="." index="5" instance=ExtResource("3_bgw3x")]
 position = Vector2(345, 409)
 
-[node name="PlataformaNormal6" parent="." index="4" instance=ExtResource("3_bgw3x")]
+[node name="PlataformaNormal6" parent="." index="6" instance=ExtResource("3_bgw3x")]
 position = Vector2(992, 493)
 
-[node name="PlataformaNormalMediana" parent="." index="5" instance=ExtResource("5_ffk3v")]
+[node name="PlataformaNormalMediana" parent="." index="7" instance=ExtResource("5_ffk3v")]
 position = Vector2(1342, 539)
 
-[node name="PlataformaNormalMediana2" parent="." index="6" instance=ExtResource("5_ffk3v")]
+[node name="PlataformaNormalMediana2" parent="." index="8" instance=ExtResource("5_ffk3v")]
 position = Vector2(3025, 473)
 
-[node name="PlataformaNormalMediana3" parent="." index="7" instance=ExtResource("5_ffk3v")]
+[node name="PlataformaNormalMediana3" parent="." index="9" instance=ExtResource("5_ffk3v")]
 position = Vector2(4950, 338)
 
-[node name="PlataformaNormalMediana4" parent="." index="8" instance=ExtResource("5_ffk3v")]
+[node name="PlataformaNormalMediana4" parent="." index="10" instance=ExtResource("5_ffk3v")]
 position = Vector2(5974, 354)
 
-[node name="PlataformaNormal3" parent="." index="9" instance=ExtResource("3_bgw3x")]
+[node name="PlataformaNormal3" parent="." index="11" instance=ExtResource("3_bgw3x")]
 position = Vector2(2682, 366)
 
-[node name="PlataformaNormal7" parent="." index="10" instance=ExtResource("3_bgw3x")]
+[node name="PlataformaNormal7" parent="." index="12" instance=ExtResource("3_bgw3x")]
 position = Vector2(3296, 553)
 
-[node name="PlataformaNormal5" parent="." index="11" instance=ExtResource("3_bgw3x")]
+[node name="PlataformaNormal5" parent="." index="13" instance=ExtResource("3_bgw3x")]
 position = Vector2(4474, 503)
 
-[node name="PlataformaNormal9" parent="." index="12" instance=ExtResource("3_bgw3x")]
+[node name="PlataformaNormal9" parent="." index="14" instance=ExtResource("3_bgw3x")]
 position = Vector2(4911, 627)
 
-[node name="PlataformaNormal10" parent="." index="13" instance=ExtResource("3_bgw3x")]
+[node name="PlataformaNormal10" parent="." index="15" instance=ExtResource("3_bgw3x")]
 position = Vector2(5662, 485)
 
-[node name="PlataformaNormal11" parent="." index="14" instance=ExtResource("3_bgw3x")]
+[node name="PlataformaNormal11" parent="." index="16" instance=ExtResource("3_bgw3x")]
 position = Vector2(7179, 538)
 
-[node name="PlataformaNormal4" parent="." index="15" instance=ExtResource("3_bgw3x")]
+[node name="PlataformaNormal4" parent="." index="17" instance=ExtResource("3_bgw3x")]
 position = Vector2(7550, 536)
 
-[node name="PlataformaFria2" parent="." index="16" instance=ExtResource("4_ffk3v")]
+[node name="PlataformaFria2" parent="." index="18" instance=ExtResource("4_ffk3v")]
 position = Vector2(674, 494)
 
-[node name="PlataformaFria5" parent="." index="17" instance=ExtResource("4_ffk3v")]
+[node name="PlataformaFria5" parent="." index="19" instance=ExtResource("4_ffk3v")]
 position = Vector2(3636, 462)
 
-[node name="PlataformaFriaMediana" parent="." index="18" instance=ExtResource("7_yk44d")]
+[node name="PlataformaFriaMediana" parent="." index="20" instance=ExtResource("7_yk44d")]
 position = Vector2(3965.0002, 564)
 
-[node name="PlataformaFriaMediana2" parent="." index="19" instance=ExtResource("7_yk44d")]
+[node name="PlataformaFriaMediana2" parent="." index="21" instance=ExtResource("7_yk44d")]
 position = Vector2(3965.0002, 564)
 
-[node name="PlataformaFriaMediana3" parent="." index="20" instance=ExtResource("7_yk44d")]
+[node name="PlataformaFriaMediana3" parent="." index="22" instance=ExtResource("7_yk44d")]
 position = Vector2(5323, 337)
 
-[node name="PlataformaFriaMediana4" parent="." index="21" instance=ExtResource("7_yk44d")]
+[node name="PlataformaFriaMediana4" parent="." index="23" instance=ExtResource("7_yk44d")]
 position = Vector2(6913, 453)
 
-[node name="PlataformaCalienteFria" parent="." index="22" instance=ExtResource("8_m5l8j")]
+[node name="PlataformaCalienteFria" parent="." index="24" instance=ExtResource("8_m5l8j")]
 position = Vector2(4227, 502)
 
-[node name="PlataformaCalienteMediana2" parent="." index="23" instance=ExtResource("9_yu3mv")]
+[node name="PlataformaCalienteMediana2" parent="." index="25" instance=ExtResource("9_yu3mv")]
 position = Vector2(5329, 630)
 
-[node name="PlataformaCalienteMediana" parent="." index="24" instance=ExtResource("9_yu3mv")]
+[node name="PlataformaCalienteMediana" parent="." index="26" instance=ExtResource("9_yu3mv")]
 position = Vector2(1991, 366)
 
-[node name="PlataformaFria6" parent="." index="25" instance=ExtResource("4_ffk3v")]
+[node name="PlataformaFria6" parent="." index="27" instance=ExtResource("4_ffk3v")]
 position = Vector2(6229, 264)
 
-[node name="PlataformaCaliente" parent="." index="26" instance=ExtResource("5_yk44d")]
+[node name="PlataformaCaliente" parent="." index="28" instance=ExtResource("5_yk44d")]
 position = Vector2(1616, 477)
 
-[node name="PlataformaCaliente7" parent="." index="27" instance=ExtResource("5_yk44d")]
+[node name="PlataformaCaliente7" parent="." index="29" instance=ExtResource("5_yk44d")]
 position = Vector2(2300, 284)
 
-[node name="PlataformaCaliente8" parent="." index="28" instance=ExtResource("5_yk44d")]
+[node name="PlataformaCaliente8" parent="." index="30" instance=ExtResource("5_yk44d")]
 position = Vector2(6566, 347)
 
-[node name="Llegada" parent="." index="29" instance=ExtResource("6_m5l8j")]
+[node name="Llegada" parent="." index="31" instance=ExtResource("6_m5l8j")]
 position = Vector2(7566, 517)
 
-[node name="Wall" type="StaticBody2D" parent="." index="30"]
+[node name="Wall" type="StaticBody2D" parent="." index="32"]
 visible = false
 position = Vector2(10.72, 172.495)
 scale = Vector2(0.325, 11.765)
@@ -356,7 +354,7 @@ texture = ExtResource("7_yu3mv")
 position = Vector2(-0.676918, -0.00446129)
 shape = SubResource("RectangleShape2D_8slun")
 
-[node name="Wall2" type="StaticBody2D" parent="." index="31"]
+[node name="Wall2" type="StaticBody2D" parent="." index="33"]
 visible = false
 position = Vector2(7800, 172.495)
 scale = Vector2(0.325, 11.765)
@@ -368,75 +366,88 @@ texture = ExtResource("7_yu3mv")
 position = Vector2(-0.00195313, 0.000424385)
 shape = SubResource("RectangleShape2D_hjmv8")
 
-[node name="DeathFloor2" parent="." index="32" instance=ExtResource("8_5lxh4")]
+[node name="DeathFloor2" parent="." index="34" instance=ExtResource("8_5lxh4")]
 position = Vector2(3900, 700)
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." index="33"]
+[node name="TileMapLayer" type="TileMapLayer" parent="." index="35"]
 position = Vector2(0, -10.2)
 scale = Vector2(1.295, 1.295)
 tile_set = SubResource("TileSet_kyg4f")
 
+[node name="PlataformaAgua" type="Label" parent="." index="36"]
+offset_left = 618.14
+offset_top = 368.965
+offset_right = 986.14
+offset_bottom = 439.965
+theme_override_colors/font_color = Color(0.8621572, 0.9052051, 0.99571496, 1)
+theme_override_fonts/font = ExtResource("15_yk44d")
+theme_override_font_sizes/font_size = 25
+text = "ABSORBER PLATAFORMAS CON AGUA
+TE HACE MÁS GRANDE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlataformaAgua3" type="Label" parent="." index="37"]
+offset_left = 1275.0
+offset_top = 423.0
+offset_right = 1574.0
+offset_bottom = 482.0
+theme_override_colors/font_color = Color(0.8627451, 0.90588236, 0.99607843, 1)
+theme_override_fonts/font = ExtResource("15_yk44d")
+theme_override_font_sizes/font_size = 25
+text = "TAMBIÉN TE HACE
+MÁS LENTO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlataformaFuego" type="Label" parent="." index="38"]
+offset_left = 1860.36
+offset_top = 239.0
+offset_right = 2260.3608
+offset_bottom = 310.0
+theme_override_colors/font_color = Color(0.99999946, 0.8507637, 0.8371474, 1)
+theme_override_fonts/font = ExtResource("15_yk44d")
+theme_override_font_sizes/font_size = 25
+text = "¡EVAPORAR AGUA EN ZONAS CALIENTES
+TE ACHICA!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlataformaFuego3" type="Label" parent="." index="39"]
+offset_left = 2652.0
+offset_top = 225.0
+offset_right = 2972.0
+offset_bottom = 284.0
+theme_override_colors/font_color = Color(1, 0.8509804, 0.8352941, 1)
+theme_override_fonts/font = ExtResource("15_yk44d")
+theme_override_font_sizes/font_size = 25
+text = "PERO TE HACE MÁS ÁGIL..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SosCapaz" type="Label" parent="." index="40"]
+offset_left = 4315.0
+offset_top = 303.0
+offset_right = 4701.0
+offset_bottom = 374.0
+theme_override_colors/font_color = Color(0.92917454, 0.9999998, 0.9498238, 1)
+theme_override_fonts/font = ExtResource("15_yk44d")
+theme_override_font_sizes/font_size = 25
+text = "¿SOS CAPAZ DE UTILIZAR LAS
+PROPIEDADES DEL AGUA A TU FAVOR?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioManager" parent="." index="41" instance=ExtResource("12_vq3oj")]
+
+[node name="TextureRect" parent="CanvasLayer" index="0"]
+visible = false
+texture = ExtResource("2_d7vpv")
+
+[node name="Droppy" parent="." index="43"]
+position = Vector2(71, -100)
+
 [node name="OptionsMenu" parent="PauseMenu" index="0"]
 visible = false
-
-[node name="AudioManager" parent="." index="36" instance=ExtResource("12_vq3oj")]
-
-[node name="PlataformaAgua" type="Label" parent="." index="38"]
-anchors_preset = -1
-anchor_right = 0.21900001
-anchor_bottom = 0.21900001
-offset_left = 514.0
-offset_top = 326.0
-offset_right = 892.712
-offset_bottom = 254.088
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
-text = "Absorber agua en plataformas 
-te hace más grande"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="PlataformaAgua2" type="Label" parent="." index="39"]
-anchors_preset = -1
-anchor_right = 0.21900001
-anchor_bottom = 0.21900001
-offset_left = 1123.0
-offset_top = 385.0
-offset_right = 1501.712
-offset_bottom = 313.088
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
-text = "y te hace más lento..."
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="PlataformaFuego" type="Label" parent="." index="40"]
-anchors_preset = -1
-anchor_right = 0.21900001
-anchor_bottom = 0.21900001
-offset_left = 1912.0
-offset_top = 192.0
-offset_right = 1986.712
-offset_bottom = 120.088
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
-text = "Evaporar agua en zonas calientes 
-te achica!"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="PlataformaFuego2" type="Label" parent="." index="41"]
-anchors_preset = -1
-anchor_right = 0.21900001
-anchor_bottom = 0.21900001
-offset_left = 2493.0
-offset_top = 203.0
-offset_right = 2871.712
-offset_bottom = 131.088
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
-text = "pero te hace más ágil!"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [connection signal="fall" from="DeathFloor2" to="." method="_on_death_floor_fall"]
