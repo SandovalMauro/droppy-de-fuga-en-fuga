@@ -400,7 +400,19 @@ MÁS LENTO"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PlataformaFuego" type="Label" parent="." index="38"]
+[node name="PlataformaAgua4" type="Label" parent="." index="38"]
+offset_left = 7351.0
+offset_top = 362.0
+offset_right = 7650.0
+offset_bottom = 433.0
+theme_override_colors/font_color = Color(0.8627451, 0.90588236, 0.99607843, 1)
+theme_override_fonts/font = ExtResource("15_yk44d")
+theme_override_font_sizes/font_size = 25
+text = "¡MUY BIEN!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlataformaFuego" type="Label" parent="." index="39"]
 offset_left = 1860.36
 offset_top = 239.0
 offset_right = 2260.3608
@@ -413,7 +425,7 @@ TE ACHICA!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PlataformaFuego3" type="Label" parent="." index="39"]
+[node name="PlataformaFuego3" type="Label" parent="." index="40"]
 offset_left = 2652.0
 offset_top = 225.0
 offset_right = 2972.0
@@ -425,7 +437,7 @@ text = "PERO TE HACE MÁS ÁGIL..."
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SosCapaz" type="Label" parent="." index="40"]
+[node name="SosCapaz" type="Label" parent="." index="41"]
 offset_left = 4315.0
 offset_top = 303.0
 offset_right = 4701.0
@@ -438,13 +450,13 @@ PROPIEDADES DEL AGUA A TU FAVOR?"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AudioManager" parent="." index="41" instance=ExtResource("12_vq3oj")]
+[node name="AudioManager" parent="." index="42" instance=ExtResource("12_vq3oj")]
 
 [node name="TextureRect" parent="CanvasLayer" index="0"]
 visible = false
 texture = ExtResource("2_d7vpv")
 
-[node name="Droppy" parent="." index="43"]
+[node name="Droppy" parent="." index="44"]
 position = Vector2(71, -100)
 
 [node name="OptionsMenu" parent="PauseMenu" index="0"]

@@ -144,6 +144,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_cs5nh")
 text = "Volver al inicio"
 
 [node name="ExitButton" type="Button" parent="PauseMenu/OptionsMenu/PanelMenu/ButtonContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("4_pb0ii")
@@ -154,7 +155,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_2hobq")
 text = "Salir del juego"
 
 [node name="DeathFloor" parent="." instance=ExtResource("4_5t86u")]
-position = Vector2(3900, 700)
+position = Vector2(3900, 1000)
 
 [connection signal="pressed" from="PauseMenu/OptionsMenu/PanelMenu/ButtonContainer/ResumeButton" to="PauseMenu" method="_on_resume_button_pressed"]
 [connection signal="pressed" from="PauseMenu/OptionsMenu/PanelMenu/ButtonContainer/MainMenuButton" to="PauseMenu" method="_on_main_menu_button_pressed"]

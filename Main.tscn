@@ -103,6 +103,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainMenu/OptionsMenu"]
+visible = false
 texture_filter = 1
 position = Vector2(1700, 46)
 scale = Vector2(4.25, 3.875)
@@ -158,6 +159,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_5vvyt")
 text = "Audio"
 
 [node name="ExitButton" type="Button" parent="MainMenu/OptionsMenu/PanelMenu/ButtonContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("4_3dxm6")
