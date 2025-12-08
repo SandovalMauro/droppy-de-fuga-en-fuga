@@ -37,9 +37,7 @@ func save_settings() -> void:
 	cfg.save("user://config.cfg")
 
 func load_settings() -> void:
-	var cfg := ConfigFile.new()
-	if cfg.load("user://config.cfg") == OK:
-		master_vol = float(cfg.get_value("audio","master_vol", 1.0))
-		sfx_vol = float(cfg.get_value("audio","sfx_vol", 1.0))
-		music_mute = bool(cfg.get_value("audio","music_mute", false))
-		sfx_mute = bool(cfg.get_value("audio","sfx_mute", false))
+	master_vol = 0.6
+	sfx_vol = 1.0
+	music_mute = false
+	sfx_mute = false

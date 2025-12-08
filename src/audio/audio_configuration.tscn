@@ -42,30 +42,18 @@ grow_vertical = 2
 texture = ExtResource("2_g61r3")
 expand_mode = 1
 
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -4.0
-offset_bottom = 3.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.05424943, 0.26542705, 0.3191566, 1)
-
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 custom_minimum_size = Vector2(500, 400)
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.28300002
-anchor_top = 0.19100001
-anchor_right = 0.717
-anchor_bottom = 0.809
-offset_left = 159.98398
-offset_top = 129.732
-offset_right = -159.98401
-offset_bottom = -129.732
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -484.0
+offset_top = -200.0
+offset_right = 484.0
+offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
 

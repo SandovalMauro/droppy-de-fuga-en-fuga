@@ -7,8 +7,8 @@ class_name Droppy
 @onready var audio_manager: Node2D = $"../AudioManager"
 @onready var camera: Camera2D = $Camera2D
 
-var speed: float = 250 
-var jump_impulse: float = 700 
+@export var speed: float = 250
+@export var jump_impulse: float = 700 
 var mass_scale_min: float = 1
 var mass_scale_max: float = 3.5
 var mass_min: float = 0.8
@@ -18,11 +18,9 @@ var temperature: float = 20
 
 
 func _physics_process(delta: float) -> void:
-	#print("Raycast colisiona:", ray_cast_floot.is_colliding())
-	#print(mass)
-	#print({"temperaturaGota": temperature})
 	animated_sprite_2d.global_rotation = 0
 	ray_cast_floot.global_rotation = 0
+	
 	#Movimiento horizontal
 	var input_vector = Vector2.ZERO
 

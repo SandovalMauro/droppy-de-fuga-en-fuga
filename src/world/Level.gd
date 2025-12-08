@@ -24,6 +24,7 @@ const K := 0.05  # coeficiente general para ajustar el juego
 var level_selector = Level_selector.new()
 
 @onready var audio_manager: Node2D = $AudioManager
+@onready var audio_configuration: Control = $Nivel/PauseMenu/AudioConfiguration
 
 
 
@@ -67,16 +68,14 @@ func calcular_estado(t_drop: float, t_air: float, hum: float, p_atm: float, m: f
 		var k_temp_easy = 0.01
 		dm_dt = -k_temp_easy * diff_temp
 
-	#print({"presion:": w_presion, "humedad:":w_humedad, "temp aire:":w_Taire, "temp gota:": w_Tdrop})
-	#print({"dm" : dm_dt, "dm-K" : dm_dt * K})
 	return dm_dt * K
 
 
-func _on_death_floor_fall() -> void:
-	reset()
+# func _on_death_floor_fall() -> void:
+#	reset()
 
-func reset():
-	get_tree().reload_current_scene()
+#func reset():
+#	get_tree().reload_current_scene()
 	
 func pause():
 	$PauseMenu.show()

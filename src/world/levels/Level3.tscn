@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=4 uid="uid://ba1w1mcdp5ly0"]
+[gd_scene load_steps=20 format=4 uid="uid://ba1w1mcdp5ly0"]
 
 [ext_resource type="Texture2D" uid="uid://cma8ca5cw1fd6" path="res://assets/platformer-pack/Spritesheets/spritesheet-backgrounds-default.png" id="1_f3v4a"]
 [ext_resource type="PackedScene" uid="uid://3y6jxu3clq88" path="res://src/world/levels/Level.tscn" id="1_jsku2"]
+[ext_resource type="FontFile" uid="uid://djfjsc8xkbbuq" path="res://assets/font/Candy Beans.otf" id="3_4hnea"]
 [ext_resource type="PackedScene" uid="uid://5r0b7fkjl4oa" path="res://src/world/PlataformaNormal.tscn" id="3_l6bix"]
 [ext_resource type="PackedScene" uid="uid://f3ffea40tvt2" path="res://src/world/PlataformaFria.tscn" id="4_4hnea"]
 [ext_resource type="PackedScene" uid="uid://b54brjgcte5qh" path="res://src/world/PlataformaNormalMediana.tscn" id="4_5n8fo"]
@@ -219,97 +220,118 @@ scale = Vector2(3.11, 3.11)
 tile_map_data = PackedByteArray("AAAAAAAAAAABAAMAAAAMAP7/AAAGAAUAAAAOAP//AAAEAAcAAAAOAAAAAAAFAAUAAAAQAAAAAAABAAEAAAAgAAAAAAADAAEAAAAvAAAAAAACAAAAAAA/AAAAAAABAAMAAABOAAAAAAADAAEAAABeAAAAAAABAAMAAABuAAAAAAACAAAAAAB+AAAAAAABAAEAAACeAAAAAAABAAMAAACOAAAAAAADAAEAAAA=")
 tile_set = SubResource("TileSet_fl88i")
 
-[node name="PlataformaNormal" parent="." index="5" instance=ExtResource("3_l6bix")]
+[node name="Label2" type="Label" parent="." index="5"]
+offset_left = 7405.0
+offset_top = 377.0
+offset_right = 7665.0
+offset_bottom = 448.0
+theme_override_fonts/font = ExtResource("3_4hnea")
+theme_override_font_sizes/font_size = 25
+text = "¡YA LE ESTÁS AGARRANDO
+LA MANO!"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="." index="6"]
+offset_left = 889.0
+offset_top = 384.0
+offset_right = 1148.0
+offset_bottom = 455.0
+theme_override_fonts/font = ExtResource("3_4hnea")
+theme_override_font_sizes/font_size = 25
+text = "PROBEMOS AUMENTANDO
+UN POCO LA DIFICULTAD..."
+
+[node name="PlataformaNormal" parent="." index="7" instance=ExtResource("3_l6bix")]
 position = Vector2(32, 536)
 
-[node name="PlataformaNormal2" parent="." index="6" instance=ExtResource("3_l6bix")]
+[node name="PlataformaNormal2" parent="." index="8" instance=ExtResource("3_l6bix")]
 position = Vector2(1673, 554)
 
-[node name="PlataformaNormal3" parent="." index="7" instance=ExtResource("3_l6bix")]
+[node name="PlataformaNormal3" parent="." index="9" instance=ExtResource("3_l6bix")]
 position = Vector2(2565, 576)
 
-[node name="PlataformaNormal6" parent="." index="8" instance=ExtResource("3_l6bix")]
+[node name="PlataformaNormal6" parent="." index="10" instance=ExtResource("3_l6bix")]
 position = Vector2(3350, 572)
 
-[node name="PlataformaNormal5" parent="." index="9" instance=ExtResource("3_l6bix")]
+[node name="PlataformaNormal5" parent="." index="11" instance=ExtResource("3_l6bix")]
 position = Vector2(4974, 228)
 
-[node name="PlataformaNormal4" parent="." index="10" instance=ExtResource("3_l6bix")]
+[node name="PlataformaNormal4" parent="." index="12" instance=ExtResource("3_l6bix")]
 position = Vector2(7550, 536)
 
-[node name="PlataformaNormalMediana" parent="." index="11" instance=ExtResource("4_5n8fo")]
+[node name="PlataformaNormalMediana" parent="." index="13" instance=ExtResource("4_5n8fo")]
 position = Vector2(2294, 364)
 
-[node name="PlataformaNormalMediana2" parent="." index="12" instance=ExtResource("4_5n8fo")]
+[node name="PlataformaNormalMediana2" parent="." index="14" instance=ExtResource("4_5n8fo")]
 position = Vector2(2530, 298)
 
-[node name="PlataformaNormalMediana3" parent="." index="13" instance=ExtResource("4_5n8fo")]
+[node name="PlataformaNormalMediana3" parent="." index="15" instance=ExtResource("4_5n8fo")]
 position = Vector2(4034.9998, 576)
 
-[node name="PlataformaNormalMediana4" parent="." index="14" instance=ExtResource("4_5n8fo")]
+[node name="PlataformaNormalMediana4" parent="." index="16" instance=ExtResource("4_5n8fo")]
 position = Vector2(4034.9998, 576)
 
-[node name="PlataformaNormalMediana5" parent="." index="15" instance=ExtResource("4_5n8fo")]
+[node name="PlataformaNormalMediana5" parent="." index="17" instance=ExtResource("4_5n8fo")]
 position = Vector2(5529, 385)
 
-[node name="PlataformaNormalMediana6" parent="." index="16" instance=ExtResource("4_5n8fo")]
+[node name="PlataformaNormalMediana6" parent="." index="18" instance=ExtResource("4_5n8fo")]
 position = Vector2(6366, 492)
 
-[node name="PlataformaNormalChica" parent="." index="17" instance=ExtResource("5_l6bix")]
+[node name="PlataformaNormalChica" parent="." index="19" instance=ExtResource("5_l6bix")]
 position = Vector2(2738, 227)
 
-[node name="PlataformaFria" parent="." index="18" instance=ExtResource("4_4hnea")]
+[node name="PlataformaFria" parent="." index="20" instance=ExtResource("4_4hnea")]
 position = Vector2(390, 386)
 
-[node name="PlataformaFria2" parent="." index="19" instance=ExtResource("4_4hnea")]
+[node name="PlataformaFria2" parent="." index="21" instance=ExtResource("4_4hnea")]
 position = Vector2(712, 535)
 
-[node name="PlataformaFria4" parent="." index="20" instance=ExtResource("4_4hnea")]
+[node name="PlataformaFria4" parent="." index="22" instance=ExtResource("4_4hnea")]
 position = Vector2(4308, 409)
 
-[node name="PlataformaFria8" parent="." index="21" instance=ExtResource("4_4hnea")]
+[node name="PlataformaFria8" parent="." index="23" instance=ExtResource("4_4hnea")]
 position = Vector2(3603, 206)
 
-[node name="PlataformaFria5" parent="." index="22" instance=ExtResource("4_4hnea")]
+[node name="PlataformaFria5" parent="." index="24" instance=ExtResource("4_4hnea")]
 position = Vector2(2909, 575)
 
-[node name="PlataformaFria6" parent="." index="23" instance=ExtResource("4_4hnea")]
+[node name="PlataformaFria6" parent="." index="25" instance=ExtResource("4_4hnea")]
 position = Vector2(6600, 608)
 
-[node name="PlataformaFriaMediana" parent="." index="24" instance=ExtResource("7_4hnea")]
+[node name="PlataformaFriaMediana" parent="." index="26" instance=ExtResource("7_4hnea")]
 position = Vector2(1438, 450)
 
-[node name="PlataformaFriaMediana2" parent="." index="25" instance=ExtResource("7_4hnea")]
+[node name="PlataformaFriaMediana2" parent="." index="27" instance=ExtResource("7_4hnea")]
 position = Vector2(2915, 315)
 
-[node name="PlataformaFriaMediana3" parent="." index="26" instance=ExtResource("7_4hnea")]
+[node name="PlataformaFriaMediana3" parent="." index="28" instance=ExtResource("7_4hnea")]
 position = Vector2(4660, 315)
 
-[node name="PlataformaFriaMediana4" parent="." index="27" instance=ExtResource("7_4hnea")]
+[node name="PlataformaFriaMediana4" parent="." index="29" instance=ExtResource("7_4hnea")]
 position = Vector2(6100, 373)
 
-[node name="PlataformaCaliente3" parent="." index="28" instance=ExtResource("5_onx6j")]
+[node name="PlataformaCaliente3" parent="." index="30" instance=ExtResource("5_onx6j")]
 position = Vector2(1987, 461)
 
-[node name="PlataformaCaliente5" parent="." index="29" instance=ExtResource("5_onx6j")]
+[node name="PlataformaCaliente5" parent="." index="31" instance=ExtResource("5_onx6j")]
 position = Vector2(3695, 575)
 
-[node name="PlataformaCalienteMediana" parent="." index="30" instance=ExtResource("9_onx6j")]
+[node name="PlataformaCalienteMediana" parent="." index="32" instance=ExtResource("9_onx6j")]
 position = Vector2(1209, 568)
 
-[node name="PlataformaCalienteMediana2" parent="." index="31" instance=ExtResource("9_onx6j")]
-position = Vector2(3178.9998, 382)
+[node name="PlataformaCalienteMediana2" parent="." index="33" instance=ExtResource("9_onx6j")]
+position = Vector2(3178.9998, 492)
 
-[node name="PlataformaCaliente10" parent="." index="32" instance=ExtResource("5_onx6j")]
+[node name="PlataformaCaliente10" parent="." index="34" instance=ExtResource("5_onx6j")]
 position = Vector2(5797, 475)
 
-[node name="PlataformaCaliente11" parent="." index="33" instance=ExtResource("5_onx6j")]
+[node name="PlataformaCaliente11" parent="." index="35" instance=ExtResource("5_onx6j")]
 position = Vector2(6590, 341)
 
-[node name="Llegada" parent="." index="34" instance=ExtResource("6_akuli")]
-position = Vector2(7566, 517)
+[node name="Llegada" parent="." index="36" instance=ExtResource("6_akuli")]
+position = Vector2(7547, 515)
 
-[node name="Wall" type="StaticBody2D" parent="." index="35"]
+[node name="Wall" type="StaticBody2D" parent="." index="37"]
 position = Vector2(10.72, 172.495)
 scale = Vector2(0.325, 11.765)
 
@@ -321,7 +343,7 @@ texture = ExtResource("7_eue6p")
 position = Vector2(-0.676918, -0.00446129)
 shape = SubResource("RectangleShape2D_jeprh")
 
-[node name="Wall2" type="StaticBody2D" parent="." index="36"]
+[node name="Wall2" type="StaticBody2D" parent="." index="38"]
 position = Vector2(7800, 172.495)
 scale = Vector2(0.325, 11.765)
 
@@ -333,22 +355,22 @@ texture = ExtResource("7_eue6p")
 position = Vector2(-0.00195313, 0.000424385)
 shape = SubResource("RectangleShape2D_jvvrk")
 
-[node name="AudioManager" parent="." index="37" instance=ExtResource("12_mreys")]
+[node name="AudioManager" parent="." index="39" instance=ExtResource("12_mreys")]
 
-[node name="PlataformaCalienteFria" parent="." index="38" instance=ExtResource("14_l6bix")]
+[node name="PlataformaCalienteFria" parent="." index="40" instance=ExtResource("14_l6bix")]
 position = Vector2(4089, 208)
 
-[node name="PlataformaCalienteFria2" parent="." index="39" instance=ExtResource("14_l6bix")]
+[node name="PlataformaCalienteFria2" parent="." index="41" instance=ExtResource("14_l6bix")]
 position = Vector2(5304, 317)
 
-[node name="PlataformaFriaChica" parent="." index="40" instance=ExtResource("14_4hnea")]
+[node name="PlataformaFriaChica" parent="." index="42" instance=ExtResource("14_4hnea")]
 position = Vector2(6932, 374)
 
-[node name="PlataformaFriaChica2" parent="." index="41" instance=ExtResource("14_4hnea")]
+[node name="PlataformaFriaChica2" parent="." index="43" instance=ExtResource("14_4hnea")]
 position = Vector2(7138.0005, 455)
 
-[node name="PlataformaFriaChica3" parent="." index="42" instance=ExtResource("14_4hnea")]
+[node name="PlataformaFriaChica3" parent="." index="44" instance=ExtResource("14_4hnea")]
 position = Vector2(7339, 530)
 
-[node name="Droppy" parent="." index="43"]
+[node name="Droppy" parent="." index="45"]
 position = Vector2(71, -100)

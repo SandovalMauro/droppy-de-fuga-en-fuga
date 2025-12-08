@@ -7,7 +7,7 @@ extends Control
 
 func _ready():
 	await get_tree().process_frame
-	slider_volumen.value = audio_manager.master_vol
+	slider_volumen.value = audio_manager.master_vol * 100.0
 	check_musica.button_pressed = !audio_manager.music_mute
 	check_sfx.button_pressed = !audio_manager.sfx_mute
 

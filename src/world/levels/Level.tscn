@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://3y6jxu3clq88"]
+[gd_scene load_steps=22 format=3 uid="uid://3y6jxu3clq88"]
 
 [ext_resource type="Script" uid="uid://dqprhwxp64hbw" path="res://src/world/Level.gd" id="1_xigpd"]
 [ext_resource type="PackedScene" uid="uid://cj7f4do8q77kv" path="res://src/player/Droppy.tscn" id="2_koqm3"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://iiwegbb41ivg" path="res://assets/ui/button_rectangle_depth_gloss.png" id="5_ltkpa"]
 [ext_resource type="Texture2D" uid="uid://chm3al4n54tce" path="res://assets/ui/button_rectangle_depth_border.png" id="6_mexis"]
 [ext_resource type="Texture2D" uid="uid://cxb1cniwqccxi" path="res://assets/ui/button_rectangle_depth_flat.png" id="7_s64q8"]
+[ext_resource type="PackedScene" uid="uid://dwecqaiipqlbx" path="res://src/audio/audio_configuration.tscn" id="11_o5qmv"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8d5sx"]
 texture = ExtResource("4_s64q8")
@@ -50,7 +51,7 @@ script = ExtResource("1_xigpd")
 droppy = NodePath("Droppy")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-modulate = Color(1, 1, 1, 0.53333336)
+modulate = Color(1, 1, 1, 0.7294118)
 offset_left = 3.0
 offset_top = -290.0
 offset_right = 2913.0
@@ -58,7 +59,7 @@ offset_bottom = 977.0
 texture = ExtResource("2_saclr")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
-modulate = Color(1, 1, 1, 0.53333336)
+modulate = Color(1, 1, 1, 0.7294118)
 offset_left = 2913.0
 offset_top = -290.0
 offset_right = 5823.0
@@ -66,7 +67,7 @@ offset_bottom = 977.0
 texture = ExtResource("2_saclr")
 
 [node name="TextureRect3" type="TextureRect" parent="."]
-modulate = Color(1, 1, 1, 0.53333336)
+modulate = Color(1, 1, 1, 0.7294118)
 offset_left = 5823.0
 offset_top = -290.0
 offset_right = 8733.0
@@ -123,6 +124,14 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 15
 
+[node name="Label" type="Label" parent="PauseMenu/OptionsMenu/PanelMenu/ButtonContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.38343334, 0.86129975, 0.58431375)
+theme_override_fonts/font = ExtResource("4_pb0ii")
+theme_override_font_sizes/font_size = 61
+text = "PAUSA"
+horizontal_alignment = 1
+
 [node name="ResumeButton" type="Button" parent="PauseMenu/OptionsMenu/PanelMenu/ButtonContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -143,8 +152,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_i37sr")
 theme_override_styles/hover = SubResource("StyleBoxTexture_cs5nh")
 text = "Volver al inicio"
 
-[node name="ExitButton" type="Button" parent="PauseMenu/OptionsMenu/PanelMenu/ButtonContainer"]
-visible = false
+[node name="Audio" type="Button" parent="PauseMenu/OptionsMenu/PanelMenu/ButtonContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("4_pb0ii")
@@ -152,12 +160,15 @@ theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxTexture_bp3e0")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_4igu1")
 theme_override_styles/hover = SubResource("StyleBoxTexture_2hobq")
-text = "Salir del juego"
+text = "Audio"
+
+[node name="AudioConfiguration" parent="PauseMenu" instance=ExtResource("11_o5qmv")]
+visible = false
 
 [node name="DeathFloor" parent="." instance=ExtResource("4_5t86u")]
 position = Vector2(3900, 1000)
 
 [connection signal="pressed" from="PauseMenu/OptionsMenu/PanelMenu/ButtonContainer/ResumeButton" to="PauseMenu" method="_on_resume_button_pressed"]
 [connection signal="pressed" from="PauseMenu/OptionsMenu/PanelMenu/ButtonContainer/MainMenuButton" to="PauseMenu" method="_on_main_menu_button_pressed"]
-[connection signal="pressed" from="PauseMenu/OptionsMenu/PanelMenu/ButtonContainer/ExitButton" to="PauseMenu" method="_on_exit_button_pressed"]
+[connection signal="pressed" from="PauseMenu/OptionsMenu/PanelMenu/ButtonContainer/Audio" to="PauseMenu" method="_on_audio_pressed"]
 [connection signal="fall" from="DeathFloor" to="." method="_on_death_floor_fall"]
