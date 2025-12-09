@@ -250,7 +250,7 @@ theme_override_colors/font_color = Color(0.1544711, 0.15148652, 6.016344e-08, 1)
 theme_override_fonts/font = ExtResource("12_70xxs")
 theme_override_font_sizes/font_size = 25
 text = "¡ALGUIEN ACÁ SI
-QUE SABE ENBARRARSE!"
+QUE SABE EMBARRARSE!"
 horizontal_alignment = 1
 
 [node name="Llegada" parent="." index="8" instance=ExtResource("3_r0dsw")]
@@ -284,9 +284,6 @@ shape = SubResource("RectangleShape2D_rap8w")
 
 [node name="Droppy" parent="." index="12"]
 position = Vector2(71, -100)
-
-[node name="PauseMenu" parent="." index="13"]
-visible = false
 
 [node name="PlataformaNormalMediana" parent="." index="15" instance=ExtResource("6_chmf2")]
 position = Vector2(45.205, 535)

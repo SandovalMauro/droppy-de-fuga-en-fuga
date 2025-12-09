@@ -59,6 +59,7 @@ func go_next_level():
 	current_level_index += 1
 	get_child(0).queue_free()
 	load_level(current_level_index)
+	
 
 func show_final_screen():
 	# Limpiar el nivel actual si existe

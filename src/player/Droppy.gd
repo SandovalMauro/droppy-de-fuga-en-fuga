@@ -22,7 +22,6 @@ var temperature: float = 20
 
 var puede_moverse: bool = true
 
-
 func _physics_process(delta: float) -> void:
 	stabilizer.global_rotation = 0
 	#animated_sprite_2d.global_rotation = 0
@@ -30,31 +29,33 @@ func _physics_process(delta: float) -> void:
 	#ray_cast_floot_der.global_rotation = -60
 	#ray_cast_floot_izq.global_rotation = 60
 	
+	if not puede_moverse:
+		return
+	
 	#Movimiento horizontal
 	var input_vector = Vector2.ZERO
 
-	if puede_moverse:
-		if Input.is_action_pressed("right"):
-			input_vector.x += 1
-		if Input.is_action_pressed("left"):
-			input_vector.x -= 1
+	if Input.is_action_pressed("right"):
+		input_vector.x += 1
+	if Input.is_action_pressed("left"):
+		input_vector.x -= 1
 
-		if input_vector != Vector2.ZERO:
-			input_vector = input_vector.normalized() * speed
-			apply_central_force(input_vector)
-			animated_sprite_2d.play("walk")
+	if input_vector != Vector2.ZERO:
+		input_vector = input_vector.normalized() * speed
+		apply_central_force(input_vector)
+		animated_sprite_2d.play("walk")
+	else:
+		animated_sprite_2d.play("idle")
+		
+	#Salto
+	if Input.is_action_just_pressed("up") and is_on_floor_custom():
+		apply_impulse(Vector2(0, -jump_impulse))
+		if mass <= 0.96:
+			audio_manager.get_node("jump_sound_small").play()
+		elif mass >= 1.05:
+			audio_manager.get_node("jump_sound_big").play()
 		else:
-			animated_sprite_2d.play("idle")
-			
-		#Salto
-		if Input.is_action_just_pressed("up") and is_on_floor_custom():
-			apply_impulse(Vector2(0, -jump_impulse))
-			if mass <= 0.96:
-				audio_manager.get_node("jump_sound_small").play()
-			elif mass >= 1.05:
-				audio_manager.get_node("jump_sound_big").play()
-			else:
-				audio_manager.get_node("jump_sound_normal").play()
+			audio_manager.get_node("jump_sound_normal").play()
 	
 	#escala el sprite y el collisionShape dependiendo la cantidad de masa
 	#el remap esta para que se exagere un poco mas el tamaño de la imagen en realacion con los valores de la masa

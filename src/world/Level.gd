@@ -27,13 +27,12 @@ var level_selector = Level_selector.new()
 @onready var audio_configuration: Control = $Nivel/PauseMenu/AudioConfiguration
 
 
-
-
 func _ready() -> void:
 	#temperature_air = 22#30
 	#humidity = 0.9#0.5
 	#pressure_atm = 0.5 #1
 	audio_manager.get_node("music").play()
+	audio_manager.get_node("water_drop_sound").play()
 	droppy.limit_camera(limite_level)
 
 func _physics_process(delta: float) -> void:
