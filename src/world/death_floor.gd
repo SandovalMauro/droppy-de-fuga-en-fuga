@@ -1,9 +1,15 @@
-extends StaticBody2D
+extends Area2D
 
-var body_entered: Node2D
+#var body_entered: Node2D
 signal fall
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+#func _on_area_2d_body_entered(body: Node2D) -> void:
+	#if body is Droppy:
+		#body.hide()
+		#fall.emit()
+
+
+func _on_body_entered(body: Node2D) -> void:
 	if body is Droppy:
 		body.hide()
 		fall.emit()

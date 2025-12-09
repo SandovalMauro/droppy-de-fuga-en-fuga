@@ -40,8 +40,8 @@ func _physics_process(delta: float) -> void:
 	var dm = calcular_estado(droppy.temperature, temperature_air, humidity, pressure_atm, droppy.mass)
 	droppy.update_mass(dm * delta)
 	
-	if Input.is_action_pressed("esq"):
-		pause()
+	#if Input.is_action_pressed("esq"):
+		#pause()
 
 func calcular_estado(t_drop: float, t_air: float, hum: float, p_atm: float, m: float) -> float:
 	# Referencias que definen el equilibrio
@@ -77,6 +77,6 @@ func calcular_estado(t_drop: float, t_air: float, hum: float, p_atm: float, m: f
 #func reset():
 #	get_tree().reload_current_scene()
 	
-func pause():
-	$PauseMenu.show()
-	get_tree().paused = true
+#func pause():
+	#$PauseMenu.show()
+	#get_tree().paused = true

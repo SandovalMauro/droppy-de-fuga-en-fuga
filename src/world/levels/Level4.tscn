@@ -208,6 +208,7 @@ size = Vector2(64.6154, 63.8236)
 size = Vector2(61.5386, 63.6634)
 
 [node name="Level4" instance=ExtResource("1_6qeb7")]
+limite_level = 7183
 
 [node name="Background" type="TileMapLayer" parent="." index="0"]
 visible = false
