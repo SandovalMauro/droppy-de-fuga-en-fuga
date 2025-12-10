@@ -4,9 +4,13 @@ class_name Droppy
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
 @onready var stabilizer: Node2D = $Stabilizer
-@onready var ray_cast_floot: RayCast2D = $Stabilizer/RayCastFloot
+@onready var ray_cast_floot_c: RayCast2D = $Stabilizer/RayCastFlootC
 @onready var ray_cast_floot_der: RayCast2D = $Stabilizer/RayCastFlootD
+@onready var ray_cast_floot_cder: RayCast2D = $Stabilizer/RayCastFlootCD
 @onready var ray_cast_floot_izq: RayCast2D = $Stabilizer/RayCastFlootI
+@onready var ray_cast_floot_cizq: RayCast2D = $Stabilizer/RayCastFlootCI
+
+
 @onready var animated_sprite_2d: AnimatedSprite2D = $Stabilizer/AnimatedSprite2D
 @onready var audio_manager: Node2D = $"../AudioManager"
 @onready var camera: Camera2D = $Camera2D
@@ -64,9 +68,11 @@ func _physics_process(delta: float) -> void:
 	var scale = Vector2.ONE * scale_factor
 	animated_sprite_2d.scale = scale 
 	collision_shape_2d.scale = scale
-	ray_cast_floot.scale = scale
+	ray_cast_floot_c.scale = scale
 	ray_cast_floot_der.scale = scale
+	ray_cast_floot_cder.scale = scale
 	ray_cast_floot_izq.scale = scale
+	ray_cast_floot_cizq.scale = scale
 
 # actualiza masa con la variacion calculada por el nivel
 func update_mass(variacion: float) -> void:
@@ -79,7 +85,7 @@ func limit_camera(limite : float):
 	camera.limit_right = limite
 	
 func is_on_floor_custom() -> bool:
-	return ray_cast_floot.is_colliding() or ray_cast_floot_der.is_colliding() or ray_cast_floot_izq.is_colliding()
+	return ray_cast_floot_c.is_colliding() or ray_cast_floot_der.is_colliding() or ray_cast_floot_izq.is_colliding() or ray_cast_floot_cder.is_colliding() or ray_cast_floot_cizq.is_colliding()
 
 func desactivar_movimiento():
 	puede_moverse = false

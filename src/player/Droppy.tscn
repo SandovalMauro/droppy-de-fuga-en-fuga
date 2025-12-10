@@ -68,6 +68,7 @@ animations = [{
 }]
 
 [node name="Droppy" type="RigidBody2D"]
+collision_mask = 3
 script = ExtResource("1_ktedv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -89,7 +90,7 @@ sprite_frames = SubResource("SpriteFrames_ji1a7")
 animation = &"idle"
 offset = Vector2(0, -7)
 
-[node name="RayCastFloot" type="RayCast2D" parent="Stabilizer"]
+[node name="RayCastFlootC" type="RayCast2D" parent="Stabilizer"]
 show_behind_parent = true
 target_position = Vector2(0, 13)
 
@@ -98,7 +99,17 @@ show_behind_parent = true
 rotation = -1.3089969
 target_position = Vector2(0, 14.5)
 
+[node name="RayCastFlootCD" type="RayCast2D" parent="Stabilizer"]
+show_behind_parent = true
+rotation = -0.75049156
+target_position = Vector2(0, 14.5)
+
 [node name="RayCastFlootI" type="RayCast2D" parent="Stabilizer"]
 show_behind_parent = true
 rotation = 1.3089969
+target_position = Vector2(0, 14.5)
+
+[node name="RayCastFlootCI" type="RayCast2D" parent="Stabilizer"]
+show_behind_parent = true
+rotation = 0.75049156
 target_position = Vector2(0, 14.5)

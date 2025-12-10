@@ -259,6 +259,7 @@ position = Vector2(6936, 569)
 [node name="Wall" type="StaticBody2D" parent="." index="9"]
 position = Vector2(10.72, 172.495)
 scale = Vector2(0.325, 11.765)
+collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Wall" index="0"]
 visible = false
@@ -271,6 +272,7 @@ shape = SubResource("RectangleShape2D_lwcsn")
 [node name="Wall2" type="StaticBody2D" parent="." index="10"]
 position = Vector2(7800, 172.495)
 scale = Vector2(0.325, 11.765)
+collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Wall2" index="0"]
 visible = false

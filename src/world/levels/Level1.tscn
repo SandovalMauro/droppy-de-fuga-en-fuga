@@ -3582,6 +3582,7 @@ position = Vector2(3648, 559)
 visible = false
 position = Vector2(10.72, 172.495)
 scale = Vector2(0.325, 11.765)
+collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Wall" index="0"]
 texture = ExtResource("6_oafgn")
@@ -3594,6 +3595,7 @@ shape = SubResource("RectangleShape2D_t7bwb")
 visible = false
 position = Vector2(3898, 219)
 scale = Vector2(0.325, 11.765)
+collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Wall2" index="0"]
 visible = false
