@@ -1,0 +1,138 @@
+[gd_scene load_steps=8 format=3 uid="uid://5x4b1dijmupo"]
+
+[ext_resource type="Texture2D" uid="uid://c7bgihttgw6hx" path="res://assets/world/molino-base.svg" id="1_akn1j"]
+[ext_resource type="Texture2D" uid="uid://ckbufmmactt50" path="res://assets/tilesheet/tilesheet_complete.png" id="2_8l6hj"]
+[ext_resource type="Script" uid="uid://brjvcvnbwunw7" path="res://src/world/Aspas_giratorias.gd" id="2_a6bxc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8l6hj"]
+radius = 31.257
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a6bxc"]
+radius = 16.0
+height = 249.87704
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t4r01"]
+radius = 47.0
+height = 130.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5k8on"]
+size = Vector2(20.56034, 85)
+
+[node name="Molino" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 218)
+texture = ExtResource("1_akn1j")
+
+[node name="AspasGiratorias" type="AnimatableBody2D" parent="."]
+script = ExtResource("2_a6bxc")
+velocidad_giro = 1.0
+
+[node name="Aspas" type="Node2D" parent="AspasGiratorias"]
+
+[node name="Aspa1" type="Sprite2D" parent="AspasGiratorias/Aspas"]
+texture_filter = 3
+position = Vector2(0, -1.6331673e-05)
+scale = Vector2(3.25, 4.6949153)
+texture = ExtResource("2_8l6hj")
+offset = Vector2(5.59689e-13, 32.80144)
+region_enabled = true
+region_rect = Rect2(655.71497, 709.2111, 32.287903, 59.60846)
+
+[node name="Aspa2" type="Sprite2D" parent="AspasGiratorias/Aspas"]
+texture_filter = 3
+position = Vector2(0, -1.6331673e-05)
+rotation = 1.5707964
+scale = Vector2(3.25, 4.6949153)
+texture = ExtResource("2_8l6hj")
+offset = Vector2(5.59689e-13, 32.80144)
+region_enabled = true
+region_rect = Rect2(655.71497, 709.2111, 32.287903, 59.60846)
+
+[node name="Aspa3" type="Sprite2D" parent="AspasGiratorias/Aspas"]
+texture_filter = 3
+position = Vector2(0, -1.6331673e-05)
+rotation = 3.1415927
+scale = Vector2(3.25, 4.6949153)
+texture = ExtResource("2_8l6hj")
+offset = Vector2(5.59689e-13, 32.80144)
+region_enabled = true
+region_rect = Rect2(655.71497, 709.2111, 32.287903, 59.60846)
+
+[node name="Aspa4" type="Sprite2D" parent="AspasGiratorias/Aspas"]
+texture_filter = 3
+position = Vector2(0, -1.6331673e-05)
+rotation = -1.5707964
+scale = Vector2(3.25, 4.6949153)
+texture = ExtResource("2_8l6hj")
+offset = Vector2(5.59689e-13, 32.80144)
+region_enabled = true
+region_rect = Rect2(655.71497, 709.2111, 32.287903, 59.60846)
+
+[node name="Centro" type="CollisionShape2D" parent="AspasGiratorias"]
+shape = SubResource("CircleShape2D_8l6hj")
+
+[node name="BaseAspa1" type="CollisionShape2D" parent="AspasGiratorias"]
+position = Vector2(0, 141)
+scale = Vector2(1.1977592, 0.992506)
+shape = SubResource("CapsuleShape2D_a6bxc")
+
+[node name="Redondeado1" type="CollisionShape2D" parent="AspasGiratorias"]
+position = Vector2(0, 218)
+shape = SubResource("CapsuleShape2D_t4r01")
+
+[node name="Cuadrado1" type="CollisionShape2D" parent="AspasGiratorias"]
+position = Vector2(1.2999934, 250.5)
+scale = Vector2(4.6400013, 1)
+shape = SubResource("RectangleShape2D_5k8on")
+
+[node name="BaseAspa2" type="CollisionShape2D" parent="AspasGiratorias"]
+position = Vector2(-141, -6.198883e-06)
+rotation = 1.5707964
+scale = Vector2(1.1977592, 0.992506)
+shape = SubResource("CapsuleShape2D_a6bxc")
+
+[node name="Redondeado2" type="CollisionShape2D" parent="AspasGiratorias"]
+position = Vector2(-218, -9.536743e-06)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_t4r01")
+
+[node name="Cuadrado2" type="CollisionShape2D" parent="AspasGiratorias"]
+position = Vector2(-250.5, 1.2999824)
+rotation = 1.5707964
+scale = Vector2(4.6400013, 1)
+shape = SubResource("RectangleShape2D_5k8on")
+
+[node name="BaseAspa3" type="CollisionShape2D" parent="AspasGiratorias"]
+position = Vector2(1.2326612e-05, -141)
+rotation = -3.1415925
+scale = Vector2(1.1977592, 0.992506)
+shape = SubResource("CapsuleShape2D_a6bxc")
+
+[node name="Redondeado3" type="CollisionShape2D" parent="AspasGiratorias"]
+position = Vector2(1.9058165e-05, -218)
+rotation = -3.1415925
+shape = SubResource("CapsuleShape2D_t4r01")
+
+[node name="Cuadrado3" type="CollisionShape2D" parent="AspasGiratorias"]
+position = Vector2(-1.2999715, -250.5)
+rotation = -3.1415925
+scale = Vector2(4.6400013, 1)
+shape = SubResource("RectangleShape2D_5k8on")
+
+[node name="BaseAspa4" type="CollisionShape2D" parent="AspasGiratorias"]
+position = Vector2(141, -6.198883e-06)
+rotation = -1.5707964
+scale = Vector2(1.1977592, 0.992506)
+shape = SubResource("CapsuleShape2D_a6bxc")
+
+[node name="Redondeado4" type="CollisionShape2D" parent="AspasGiratorias"]
+position = Vector2(218, -9.536743e-06)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_t4r01")
+
+[node name="Cuadrado4" type="CollisionShape2D" parent="AspasGiratorias"]
+position = Vector2(250.5, -1.3000045)
+rotation = -1.5707964
+scale = Vector2(4.6400013, 1)
+shape = SubResource("RectangleShape2D_5k8on")
