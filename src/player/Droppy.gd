@@ -24,7 +24,7 @@ var mass_max: float = 1.2
 var mass_scale_divisor: float = 0.9
 var temperature: float = 20
 
-var puede_moverse: bool = true
+var puede_moverse: bool = false
 
 func _physics_process(delta: float) -> void:
 	stabilizer.global_rotation = 0

@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://c3uemlakrh0rt"]
+[gd_scene load_steps=6 format=3 uid="uid://d31018eaknlqc"]
 
-[ext_resource type="Script" uid="uid://imffpkcy07fg" path="res://src/world/bucket_intro.gd" id="1_5mbjo"]
-[ext_resource type="Texture2D" uid="uid://028jwwg5lhrw" path="res://assets/animation/balde2.png" id="2_5mbjo"]
+[ext_resource type="Script" uid="uid://juhy2byet8l7" path="res://src/world/bucket_outro.gd" id="1_50qya"]
+[ext_resource type="Texture2D" uid="uid://028jwwg5lhrw" path="res://assets/animation/balde2.png" id="2_50qya"]
 
 [sub_resource type="Animation" id="Animation_5mbjo"]
 length = 0.001
@@ -30,9 +30,9 @@ tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.8),
-"transitions": PackedFloat32Array(0.24148402, 5.4277325),
+"transitions": PackedFloat32Array(5.4277325, 0.24148402),
 "update": 0,
-"values": [Vector2(-60, 100), Vector2(100, 100)]
+"values": [Vector2(100, 100), Vector2(-60, 100)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w6efp"]
@@ -41,13 +41,13 @@ _data = {
 &"new_animation": SubResource("Animation_gs7kd")
 }
 
-[node name="BucketIntro" type="Node2D"]
-script = ExtResource("1_5mbjo")
+[node name="BucketOutro" type="Node2D"]
+script = ExtResource("1_50qya")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-60, 100)
 scale = Vector2(0.15, 0.15)
-texture = ExtResource("2_5mbjo")
+texture = ExtResource("2_50qya")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

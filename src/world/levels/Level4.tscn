@@ -253,10 +253,7 @@ text = "¡ALGUIEN ACÁ SI
 QUE SABE EMBARRARSE!"
 horizontal_alignment = 1
 
-[node name="Llegada" parent="." index="8" instance=ExtResource("3_r0dsw")]
-position = Vector2(6936, 569)
-
-[node name="Wall" type="StaticBody2D" parent="." index="9"]
+[node name="Wall" type="StaticBody2D" parent="." index="8"]
 position = Vector2(10.72, 172.495)
 scale = Vector2(0.325, 11.765)
 collision_layer = 2
@@ -269,7 +266,7 @@ texture = ExtResource("4_mr45e")
 position = Vector2(-0.676918, -0.00446129)
 shape = SubResource("RectangleShape2D_lwcsn")
 
-[node name="Wall2" type="StaticBody2D" parent="." index="10"]
+[node name="Wall2" type="StaticBody2D" parent="." index="9"]
 position = Vector2(7800, 172.495)
 scale = Vector2(0.325, 11.765)
 collision_layer = 2
@@ -279,13 +276,13 @@ visible = false
 texture = ExtResource("4_mr45e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2" index="1"]
-position = Vector2(-1855.3851, 5.057799)
+position = Vector2(-1916.9236, 4.462814)
 shape = SubResource("RectangleShape2D_rap8w")
 
-[node name="AudioManager" parent="." index="11" instance=ExtResource("5_chmf2")]
+[node name="AudioManager" parent="." index="10" instance=ExtResource("5_chmf2")]
 
-[node name="Droppy" parent="." index="12"]
-position = Vector2(71, -100)
+[node name="Llegada" parent="." index="12" instance=ExtResource("3_r0dsw")]
+position = Vector2(7038, 573)
 
 [node name="PlataformaNormalMediana" parent="." index="15" instance=ExtResource("6_chmf2")]
 position = Vector2(45.205, 535)

@@ -1,12 +1,14 @@
-[gd_scene load_steps=22 format=3 uid="uid://3y6jxu3clq88"]
+[gd_scene load_steps=24 format=3 uid="uid://3y6jxu3clq88"]
 
 [ext_resource type="Script" uid="uid://dqprhwxp64hbw" path="res://src/world/Level.gd" id="1_xigpd"]
 [ext_resource type="PackedScene" uid="uid://cj7f4do8q77kv" path="res://src/player/Droppy.tscn" id="2_koqm3"]
 [ext_resource type="Texture2D" uid="uid://ddl36av7t6xsi" path="res://assets/world/backgroud/background-game-crop-final.png" id="2_saclr"]
 [ext_resource type="Script" uid="uid://gt2uo0e4o257" path="res://src/world/Pause_menu.gd" id="3_0usyc"]
 [ext_resource type="PackedScene" uid="uid://wh1wo3lj7vic" path="res://src/world/DeathFloor.tscn" id="4_5t86u"]
+[ext_resource type="PackedScene" uid="uid://c3uemlakrh0rt" path="res://src/world/BucketIntro.tscn" id="4_fynco"]
 [ext_resource type="FontFile" uid="uid://dlr6pulax7536" path="res://assets/font/Spicy Sale.otf" id="4_pb0ii"]
 [ext_resource type="Texture2D" uid="uid://gmo1aeil3ags" path="res://assets/ui/button_rectangle_border.png" id="4_s64q8"]
+[ext_resource type="PackedScene" uid="uid://d31018eaknlqc" path="res://src/world/BucketOutro.tscn" id="5_h2yyw"]
 [ext_resource type="Texture2D" uid="uid://iiwegbb41ivg" path="res://assets/ui/button_rectangle_depth_gloss.png" id="5_ltkpa"]
 [ext_resource type="Texture2D" uid="uid://chm3al4n54tce" path="res://assets/ui/button_rectangle_depth_border.png" id="6_mexis"]
 [ext_resource type="Texture2D" uid="uid://cxb1cniwqccxi" path="res://assets/ui/button_rectangle_depth_flat.png" id="7_s64q8"]
@@ -83,7 +85,13 @@ offset_bottom = 3053.6858
 scale = Vector2(0.49770376, 0.21220258)
 
 [node name="Droppy" parent="." instance=ExtResource("2_koqm3")]
-position = Vector2(71, 438)
+position = Vector2(71, -100)
+
+[node name="BucketIntro" parent="." instance=ExtResource("4_fynco")]
+position = Vector2(-30, -200)
+
+[node name="BucketOutro" parent="." instance=ExtResource("5_h2yyw")]
+position = Vector2(-30, -200)
 
 [node name="PauseMenu" type="CanvasLayer" parent="."]
 process_mode = 3

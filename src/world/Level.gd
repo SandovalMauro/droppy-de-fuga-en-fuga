@@ -20,6 +20,8 @@ extends Node
 const K := 0.05  # coeficiente general para ajustar el juego
 
 @export var droppy: Droppy
+@onready var bucket_intro: Node2D = $BucketIntro
+@onready var bucket_outro: Node2D = $BucketOutro
 
 var level_selector = Level_selector.new()
 
@@ -28,12 +30,30 @@ var level_selector = Level_selector.new()
 
 
 func _ready() -> void:
-	#temperature_air = 22#30
-	#humidity = 0.9#0.5
-	#pressure_atm = 0.5 #1
+	droppy.visible = false
+	droppy.freeze = true
+	droppy.puede_moverse = false
+	
+	bucket_intro.intro_finished.connect(_on_intro_finished)
+	bucket_intro.play_intro()
+
+
+func _on_intro_finished() -> void:
+	bucket_intro.queue_free()
+	
+	bucket_outro.outro_finished.connect(_on_outro_finished)
+	bucket_outro.play_outro()
+	
+	droppy.visible = true
+	droppy.freeze = false
+	droppy.puede_moverse = true
+	
 	audio_manager.get_node("music").play()
 	audio_manager.get_node("water_drop_sound").play()
 	droppy.limit_camera(limite_level)
+
+func _on_outro_finished() -> void:
+	bucket_outro.queue_free()
 
 func _physics_process(delta: float) -> void:
 	var dm = calcular_estado(droppy.temperature, temperature_air, humidity, pressure_atm, droppy.mass)

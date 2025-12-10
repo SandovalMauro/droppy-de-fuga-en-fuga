@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdjcv7nokvebj"]
+[gd_scene load_steps=6 format=3 uid="uid://cdjcv7nokvebj"]
 
 [ext_resource type="Script" uid="uid://c8ro5hydps0up" path="res://src/scenes/llegada.gd" id="1_xpugu"]
+[ext_resource type="Texture2D" uid="uid://028jwwg5lhrw" path="res://assets/animation/balde2.png" id="2_ge7f2"]
 [ext_resource type="PackedScene" uid="uid://dl7x1vfy2nale" path="res://src/scenes/Victoria.tscn" id="2_lpbn3"]
 [ext_resource type="PackedScene" uid="uid://ckheptltfq8j" path="res://src/audio/audio.tscn" id="3_3qwxi"]
 
@@ -14,7 +15,13 @@ script = ExtResource("1_xpugu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(98, 0)
+scale = Vector2(0.425, 1)
 shape = SubResource("RectangleShape2D_sqq1m")
+
+[node name="Balde2" type="Sprite2D" parent="Area2D"]
+position = Vector2(98, -54.76)
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("2_ge7f2")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.722
