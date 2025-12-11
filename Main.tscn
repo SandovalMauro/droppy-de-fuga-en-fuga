@@ -1,11 +1,11 @@
-[gd_scene load_steps=25 format=3 uid="uid://cmyxmqdjcmwb3"]
+[gd_scene load_steps=26 format=3 uid="uid://cmyxmqdjcmwb3"]
 
 [ext_resource type="Script" uid="uid://84k6sawf73vg" path="res://Main.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://b7cru4ifcvdxa" path="res://src/scenes/LevelSelector.tscn" id="2_cm0pq"]
 [ext_resource type="PackedScene" uid="uid://ckheptltfq8j" path="res://src/audio/audio.tscn" id="3_r0du0"]
 [ext_resource type="FontFile" uid="uid://dlr6pulax7536" path="res://assets/font/Spicy Sale.otf" id="4_3dxm6"]
+[ext_resource type="Texture2D" uid="uid://3bxqt6qq6n27" path="res://assets/menu/background-main-menu2.jpeg" id="4_20pc6"]
 [ext_resource type="PackedScene" uid="uid://dwecqaiipqlbx" path="res://src/audio/audio_configuration.tscn" id="4_cm0pq"]
-[ext_resource type="Texture2D" uid="uid://b7o1m8p3hufbr" path="res://assets/world/backgroud/background_menu.png" id="4_lgr22"]
 [ext_resource type="Texture2D" uid="uid://iiwegbb41ivg" path="res://assets/ui/button_rectangle_depth_gloss.png" id="5_lgr22"]
 [ext_resource type="Texture2D" uid="uid://gmo1aeil3ags" path="res://assets/ui/button_rectangle_border.png" id="6_20pc6"]
 [ext_resource type="Texture2D" uid="uid://bivwox6jh4gaw" path="res://assets/player/player.png" id="8_trn2v"]
@@ -68,6 +68,8 @@ texture = ExtResource("9_20pc6")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c6i3y"]
 texture = ExtResource("10_5vvyt")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sc1dx"]
+
 [node name="main" type="Node"]
 script = ExtResource("1_ig7tw")
 level = ExtResource("2_cm0pq")
@@ -86,12 +88,16 @@ grow_vertical = 2
 color = Color(0.7627308, 0.933145, 0.98940843, 1)
 
 [node name="background" type="TextureRect" parent="MainMenu"]
+modulate = Color(1, 1, 1, 0.6627451)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -50.0
+offset_right = -50.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_lgr22")
+scale = Vector2(1.11, 1.11)
+texture = ExtResource("4_20pc6")
 expand_mode = 1
 
 [node name="OptionsMenu" type="Control" parent="MainMenu"]
@@ -121,6 +127,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_top = -74.0
+offset_bottom = -74.0
+scale = Vector2(0.63, 0.63)
 theme_override_styles/panel = SubResource("StyleBoxTexture_wkp8b")
 
 [node name="ButtonContainer" type="VBoxContainer" parent="MainMenu/OptionsMenu/PanelMenu"]
@@ -181,9 +190,11 @@ offset_top = -169.67201
 offset_right = 389.0
 offset_bottom = -86.67201
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0.1553083, 0.5487825, 0.76678735, 1)
+theme_override_colors/font_color = Color(0.95966524, 0.98203176, 0.9981956, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_3dxm6")
 theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_sc1dx")
 text = "Droppy! de fuga en fuga"
 horizontal_alignment = 1
 vertical_alignment = 1

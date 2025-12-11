@@ -27,7 +27,6 @@ var temperature: float = 20
 var puede_moverse: bool = false
 
 func _physics_process(delta: float) -> void:
-	print(linear_velocity.length())
 	stabilizer.global_rotation = 0
 	#animated_sprite_2d.global_rotation = 0
 	#ray_cast_floot.global_rotation = 0

@@ -1,12 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://2edog04xsei2"]
+[gd_scene load_steps=16 format=3 uid="uid://2edog04xsei2"]
 
-[ext_resource type="Script" uid="uid://dhqqvpfxxy0ys" path="res://src/scenes/victoria.gd" id="1_igawm"]
+[ext_resource type="Script" uid="uid://w4sxauceklof" path="res://src/scenes/final.gd" id="1_ud3p2"]
 [ext_resource type="FontFile" uid="uid://dlr6pulax7536" path="res://assets/font/Spicy Sale.otf" id="2_8g2fn"]
-[ext_resource type="Texture2D" uid="uid://b7o1m8p3hufbr" path="res://assets/world/backgroud/background_menu.png" id="2_f7l11"]
+[ext_resource type="Texture2D" uid="uid://coibhnclfuy7h" path="res://assets/menu/background-final2.jpeg" id="2_ud3p2"]
 [ext_resource type="Texture2D" uid="uid://iiwegbb41ivg" path="res://assets/ui/button_rectangle_depth_gloss.png" id="3_f7l11"]
 [ext_resource type="PackedScene" uid="uid://ckheptltfq8j" path="res://src/audio/audio.tscn" id="4_ud3p2"]
 [ext_resource type="Texture2D" uid="uid://bv33aafpr78w5" path="res://assets/ui/button_rectangle_line.png" id="6_enlqd"]
 [ext_resource type="Texture2D" uid="uid://pgwhyymms1ee" path="res://assets/ui/button_rectangle_gradient.png" id="7_e6cdf"]
+
+[sub_resource type="Theme" id="Theme_ud3p2"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_enlqd"]
 expand_margin_left = 300.0
@@ -35,8 +37,7 @@ texture = ExtResource("7_e6cdf")
 [node name="Final" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_igawm")
-level_path = "res://src/world/Nivel1.tscn"
+script = ExtResource("1_ud3p2")
 main_menu_scene_path = "res://Main.tscn"
 
 [node name="MainMenu" type="CanvasLayer" parent="."]
@@ -59,13 +60,18 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="background" type="TextureRect" parent="MainMenu/OptionsMenu"]
+modulate = Color(1, 1, 1, 0.627451)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -60.0
+offset_right = -60.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_f7l11")
+scale = Vector2(1.12, 1.12)
+theme = SubResource("Theme_ud3p2")
+texture = ExtResource("2_ud3p2")
 expand_mode = 1
 
 [node name="PanelMenu" type="Panel" parent="MainMenu/OptionsMenu"]
@@ -90,9 +96,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -236.5
-offset_top = -103.5
+offset_top = 70.0
 offset_right = 236.5
-offset_bottom = 103.5
+offset_bottom = 277.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 15
@@ -120,23 +126,33 @@ text = "Salir del juego"
 
 [node name="Label" type="Label" parent="MainMenu/OptionsMenu"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -339.0
-offset_top = -92.500015
-offset_right = 339.0
-offset_bottom = 92.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -276.23
+offset_bottom = -276.23
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.1553083, 0.5487825, 0.76678735, 1)
+theme_override_colors/font_color = Color(0.08080769, 0.37304428, 0.5326571, 1)
 theme_override_fonts/font = ExtResource("2_8g2fn")
 theme_override_font_sizes/font_size = 40
-text = "LLEGASTE AL FINAL!
+text = "LLEGASTE AL FINAL!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-DROPPY VOLVIO CON SUS AMIGOS 
+[node name="Label2" type="Label" parent="MainMenu/OptionsMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -200.0
+offset_bottom = -200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.02822759, 0.20616585, 0.30373287, 1)
+theme_override_fonts/font = ExtResource("2_8g2fn")
+theme_override_font_sizes/font_size = 30
+text = "DROPPY VOLVIO CON SUS AMIGOS 
 SANO Y SALVO"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -144,4 +160,3 @@ vertical_alignment = 1
 [node name="AudioManager" parent="." instance=ExtResource("4_ud3p2")]
 
 [connection signal="pressed" from="MainMenu/OptionsMenu/PanelMenu/ButtonContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
-[connection signal="pressed" from="MainMenu/OptionsMenu/PanelMenu/ButtonContainer/ExitButton" to="." method="_on_exit_button_pressed"]
