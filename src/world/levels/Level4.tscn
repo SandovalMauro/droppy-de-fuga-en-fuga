@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=4 uid="uid://cggy6xvqx568r"]
+[gd_scene load_steps=18 format=4 uid="uid://cggy6xvqx568r"]
 
 [ext_resource type="PackedScene" uid="uid://3y6jxu3clq88" path="res://src/world/levels/Level.tscn" id="1_6qeb7"]
 [ext_resource type="Texture2D" uid="uid://cma8ca5cw1fd6" path="res://assets/platformer-pack/Spritesheets/spritesheet-backgrounds-default.png" id="2_26v2l"]
 [ext_resource type="PackedScene" uid="uid://cdjcv7nokvebj" path="res://src/scenes/Llegada.tscn" id="3_r0dsw"]
+[ext_resource type="PackedScene" uid="uid://5x4b1dijmupo" path="res://src/world/Molino.tscn" id="4_ijqah"]
 [ext_resource type="Texture2D" uid="uid://b62dlyvbjg74i" path="res://assets/world/plataformaNormal.png" id="4_mr45e"]
 [ext_resource type="PackedScene" uid="uid://ckheptltfq8j" path="res://src/audio/audio.tscn" id="5_chmf2"]
 [ext_resource type="PackedScene" uid="uid://b54brjgcte5qh" path="res://src/world/PlataformaNormalMediana.tscn" id="6_chmf2"]
@@ -253,7 +254,13 @@ text = "¡ALGUIEN ACÁ SI
 QUE SABE EMBARRARSE!"
 horizontal_alignment = 1
 
-[node name="Wall" type="StaticBody2D" parent="." index="8"]
+[node name="Molino" parent="." index="8" instance=ExtResource("4_ijqah")]
+position = Vector2(4160, 329)
+
+[node name="AspasGiratorias" parent="Molino" index="1"]
+velocidad_giro = 0.5
+
+[node name="Wall" type="StaticBody2D" parent="." index="9"]
 position = Vector2(10.72, 172.495)
 scale = Vector2(0.325, 11.765)
 collision_layer = 2
@@ -266,7 +273,7 @@ texture = ExtResource("4_mr45e")
 position = Vector2(-0.676918, -0.00446129)
 shape = SubResource("RectangleShape2D_lwcsn")
 
-[node name="Wall2" type="StaticBody2D" parent="." index="9"]
+[node name="Wall2" type="StaticBody2D" parent="." index="10"]
 position = Vector2(7800, 172.495)
 scale = Vector2(0.325, 11.765)
 collision_layer = 2
@@ -279,103 +286,111 @@ texture = ExtResource("4_mr45e")
 position = Vector2(-1916.9236, 4.462814)
 shape = SubResource("RectangleShape2D_rap8w")
 
-[node name="AudioManager" parent="." index="10" instance=ExtResource("5_chmf2")]
+[node name="AudioManager" parent="." index="11" instance=ExtResource("5_chmf2")]
 
-[node name="Llegada" parent="." index="12" instance=ExtResource("3_r0dsw")]
+[node name="Llegada" parent="." index="13" instance=ExtResource("3_r0dsw")]
 position = Vector2(7038, 573)
 
-[node name="PlataformaNormalMediana" parent="." index="15" instance=ExtResource("6_chmf2")]
+[node name="PlataformaNormalMediana" parent="." index="16" instance=ExtResource("6_chmf2")]
 position = Vector2(45.205, 535)
 
-[node name="PlataformaNormalChica" parent="." index="16" instance=ExtResource("7_uhuij")]
+[node name="PlataformaNormalChica" parent="." index="17" instance=ExtResource("7_uhuij")]
 position = Vector2(296.825, 478)
 
-[node name="PlataformaBarro" parent="." index="17" instance=ExtResource("8_chmf2")]
+[node name="PlataformaBarro" parent="." index="18" instance=ExtResource("8_chmf2")]
 position = Vector2(458, 526)
 
-[node name="PlataformaNormalChica2" parent="." index="18" instance=ExtResource("7_uhuij")]
+[node name="PlataformaNormalChica2" parent="." index="19" instance=ExtResource("7_uhuij")]
 position = Vector2(746, 480)
 
-[node name="PlataformaNormal" parent="." index="19" instance=ExtResource("9_lwcsn")]
+[node name="PlataformaNormal" parent="." index="20" instance=ExtResource("9_lwcsn")]
 position = Vector2(911, 530)
 
-[node name="PlataformaBarroMediana" parent="." index="20" instance=ExtResource("8_lwcsn")]
+[node name="PlataformaBarroMediana" parent="." index="21" instance=ExtResource("8_lwcsn")]
 position = Vector2(1196, 449)
 
-[node name="PlataformaBarroMediana2" parent="." index="21" instance=ExtResource("8_lwcsn")]
+[node name="PlataformaBarroMediana2" parent="." index="22" instance=ExtResource("8_lwcsn")]
 position = Vector2(1428, 390)
 
-[node name="PlataformaBarroMediana3" parent="." index="22" instance=ExtResource("8_lwcsn")]
+[node name="PlataformaBarroMediana3" parent="." index="23" instance=ExtResource("8_lwcsn")]
 position = Vector2(1646, 332)
 
-[node name="PlataformaNormalChica3" parent="." index="23" instance=ExtResource("7_uhuij")]
+[node name="PlataformaNormalChica3" parent="." index="24" instance=ExtResource("7_uhuij")]
 position = Vector2(1955, 331)
 
-[node name="PlataformaNormalChica4" parent="." index="24" instance=ExtResource("7_uhuij")]
+[node name="PlataformaNormalChica4" parent="." index="25" instance=ExtResource("7_uhuij")]
 position = Vector2(2111, 386)
 
-[node name="PlataformaNormalChica5" parent="." index="25" instance=ExtResource("7_uhuij")]
+[node name="PlataformaNormalChica5" parent="." index="26" instance=ExtResource("7_uhuij")]
 position = Vector2(2246, 444)
 
-[node name="PlataformaNormalChica6" parent="." index="26" instance=ExtResource("7_uhuij")]
+[node name="PlataformaNormalChica6" parent="." index="27" instance=ExtResource("7_uhuij")]
 position = Vector2(2389, 501)
 
-[node name="PlataformaBarro2" parent="." index="27" instance=ExtResource("8_chmf2")]
+[node name="PlataformaBarro2" parent="." index="28" instance=ExtResource("8_chmf2")]
 position = Vector2(2559, 538)
 
-[node name="PlataformaNormalMediana2" parent="." index="28" instance=ExtResource("6_chmf2")]
-position = Vector2(3013, 537)
+[node name="PlataformaBarro3" parent="." index="29" instance=ExtResource("8_chmf2")]
+position = Vector2(4528, 248)
 
-[node name="PlataformaNormal2" parent="." index="29" instance=ExtResource("9_lwcsn")]
-position = Vector2(3312, 534)
+[node name="PlataformaNormalMediana2" parent="." index="30" instance=ExtResource("6_chmf2")]
+position = Vector2(2920, 534)
 
-[node name="PlataformaNormalMediana3" parent="." index="30" instance=ExtResource("6_chmf2")]
-position = Vector2(3645, 449)
+[node name="PlataformaNormal2" parent="." index="31" instance=ExtResource("9_lwcsn")]
+position = Vector2(3608, 516)
 
-[node name="PlataformaNormalMediana4" parent="." index="31" instance=ExtResource("6_chmf2")]
-position = Vector2(3868, 361)
+[node name="PlataformaNormal8" parent="." index="32" instance=ExtResource("9_lwcsn")]
+position = Vector2(3544, 237)
 
-[node name="PlataformaNormalChica7" parent="." index="32" instance=ExtResource("7_uhuij")]
-position = Vector2(4079, 267)
+[node name="PlataformaNormalMediana3" parent="." index="33" instance=ExtResource("6_chmf2")]
+position = Vector2(3301, 314)
 
-[node name="PlataformaBarroMediana4" parent="." index="33" instance=ExtResource("8_lwcsn")]
+[node name="PlataformaNormalMediana4" parent="." index="34" instance=ExtResource("6_chmf2")]
+position = Vector2(3310.0002, 514)
+
+[node name="PlataformaNormalChica7" parent="." index="35" instance=ExtResource("7_uhuij")]
+position = Vector2(3101.0002, 428)
+
+[node name="PlataformaBarroMediana4" parent="." index="36" instance=ExtResource("8_lwcsn")]
 position = Vector2(4395, 526)
 
-[node name="PlataformaBarroMediana5" parent="." index="34" instance=ExtResource("8_lwcsn")]
+[node name="PlataformaBarroMediana5" parent="." index="37" instance=ExtResource("8_lwcsn")]
 position = Vector2(4678, 526)
 
-[node name="PlataformaNormal3" parent="." index="35" instance=ExtResource("9_lwcsn")]
+[node name="PlataformaNormal3" parent="." index="38" instance=ExtResource("9_lwcsn")]
 position = Vector2(4943, 605)
 
-[node name="PlataformaNormalMediana5" parent="." index="36" instance=ExtResource("6_chmf2")]
+[node name="PlataformaNormalMediana5" parent="." index="39" instance=ExtResource("6_chmf2")]
 position = Vector2(5246, 492)
 
-[node name="PlataformaNormalMediana6" parent="." index="37" instance=ExtResource("6_chmf2")]
+[node name="PlataformaNormalMediana6" parent="." index="40" instance=ExtResource("6_chmf2")]
 position = Vector2(5523, 274)
 
-[node name="PlataformaNormalMediana7" parent="." index="38" instance=ExtResource("6_chmf2")]
+[node name="PlataformaNormalMediana7" parent="." index="41" instance=ExtResource("6_chmf2")]
 position = Vector2(6414, 271)
 
-[node name="PlataformaBarroChica" parent="." index="39" instance=ExtResource("11_rap8w")]
+[node name="PlataformaBarroChica" parent="." index="42" instance=ExtResource("11_rap8w")]
 position = Vector2(5500, 589)
 
-[node name="PlataformaBarroChica2" parent="." index="40" instance=ExtResource("11_rap8w")]
+[node name="PlataformaBarroChica2" parent="." index="43" instance=ExtResource("11_rap8w")]
 position = Vector2(5737, 587)
 
-[node name="PlataformaBarroChica3" parent="." index="41" instance=ExtResource("11_rap8w")]
+[node name="PlataformaBarroChica3" parent="." index="44" instance=ExtResource("11_rap8w")]
 position = Vector2(5979, 589)
 
-[node name="PlataformaBarroChica4" parent="." index="42" instance=ExtResource("11_rap8w")]
+[node name="PlataformaBarroChica4" parent="." index="45" instance=ExtResource("11_rap8w")]
 position = Vector2(6236, 591)
 
-[node name="PlataformaNormal4" parent="." index="43" instance=ExtResource("9_lwcsn")]
+[node name="PlataformaNormal4" parent="." index="46" instance=ExtResource("9_lwcsn")]
 position = Vector2(5775, 271)
 
-[node name="PlataformaNormal5" parent="." index="44" instance=ExtResource("9_lwcsn")]
+[node name="PlataformaNormal5" parent="." index="47" instance=ExtResource("9_lwcsn")]
 position = Vector2(6097, 271)
 
-[node name="PlataformaNormal6" parent="." index="45" instance=ExtResource("9_lwcsn")]
+[node name="PlataformaNormal6" parent="." index="48" instance=ExtResource("9_lwcsn")]
 position = Vector2(6537, 596)
 
-[node name="PlataformaNormal7" parent="." index="46" instance=ExtResource("9_lwcsn")]
+[node name="PlataformaNormal7" parent="." index="49" instance=ExtResource("9_lwcsn")]
 position = Vector2(6933, 592)
+
+[editable path="Molino"]
