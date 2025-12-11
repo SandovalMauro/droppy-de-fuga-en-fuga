@@ -51,6 +51,7 @@ level_path = "res://src/world/Nivel1.tscn"
 main_menu_scene_path = "res://Main.tscn"
 
 [node name="MainMenu" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="OptionsMenu" type="Control" parent="MainMenu"]
 layout_mode = 3

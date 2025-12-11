@@ -5,7 +5,8 @@ var levels := [
 	"res://src/world/levels/Level1.tscn",
 	"res://src/world/levels/Level2.tscn",
 	"res://src/world/levels/Level3.tscn",
-	"res://src/world/levels/Level4.tscn"
+	"res://src/world/levels/Level4.tscn",
+	"res://src/world/levels/Level5.tscn"
 ]
 
 var final_scene = "res://src/scenes/final.tscn"

@@ -27,6 +27,7 @@ var temperature: float = 20
 var puede_moverse: bool = false
 
 func _physics_process(delta: float) -> void:
+	print(linear_velocity.length())
 	stabilizer.global_rotation = 0
 	#animated_sprite_2d.global_rotation = 0
 	#ray_cast_floot.global_rotation = 0
@@ -45,11 +46,26 @@ func _physics_process(delta: float) -> void:
 		input_vector.x -= 1
 
 	if input_vector != Vector2.ZERO:
+		angular_damp = 0
 		input_vector = input_vector.normalized() * speed
 		apply_central_force(input_vector)
 		animated_sprite_2d.play("walk")
 	else:
-		animated_sprite_2d.play("idle")
+		if is_on_slope():
+			# Si esta inclinada la plataforma no pone freno como para que ahi si patine
+			angular_damp = 0
+			animated_sprite_2d.play("idle")
+		else:
+			var velocidad_actual = linear_velocity.length()
+			# Si no eesta una plataforma incluinada le pone un poco de freno
+			if velocidad_actual > 500:
+				#si venia rapido pone un freno moderado como para que no se sienta tan de golpe
+				angular_damp = 2
+			elif velocidad_actual > 400:
+				angular_damp = 3
+			else:
+				angular_damp = 5
+				animated_sprite_2d.play("idle")
 		
 	#Salto
 	if Input.is_action_just_pressed("up") and is_on_floor_custom():
@@ -89,3 +105,11 @@ func is_on_floor_custom() -> bool:
 
 func desactivar_movimiento():
 	puede_moverse = false
+	
+func is_on_slope() -> bool:
+	if ray_cast_floot_c.is_colliding():
+		var normal = ray_cast_floot_c.get_collision_normal()
+		# Si la normal en X es mayor a 0.1, significa que está inclinado
+		if abs(normal.x) > 0.1:
+			return true
+	return false
