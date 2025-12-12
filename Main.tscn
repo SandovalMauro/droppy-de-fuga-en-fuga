@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cmyxmqdjcmwb3"]
+[gd_scene load_steps=25 format=3 uid="uid://cmyxmqdjcmwb3"]
 
 [ext_resource type="Script" uid="uid://84k6sawf73vg" path="res://Main.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://b7cru4ifcvdxa" path="res://src/scenes/LevelSelector.tscn" id="2_cm0pq"]
@@ -7,10 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://3bxqt6qq6n27" path="res://assets/menu/background-main-menu2.jpeg" id="4_20pc6"]
 [ext_resource type="PackedScene" uid="uid://dwecqaiipqlbx" path="res://src/audio/audio_configuration.tscn" id="4_cm0pq"]
 [ext_resource type="Texture2D" uid="uid://iiwegbb41ivg" path="res://assets/ui/button_rectangle_depth_gloss.png" id="5_lgr22"]
-[ext_resource type="Texture2D" uid="uid://gmo1aeil3ags" path="res://assets/ui/button_rectangle_border.png" id="6_20pc6"]
 [ext_resource type="Texture2D" uid="uid://bivwox6jh4gaw" path="res://assets/player/player.png" id="8_trn2v"]
 [ext_resource type="Texture2D" uid="uid://c8i0fpi3d55k" path="res://assets/ui/button_rectangle_depth_line.png" id="9_20pc6"]
 [ext_resource type="Texture2D" uid="uid://cxb1cniwqccxi" path="res://assets/ui/button_rectangle_depth_flat.png" id="10_5vvyt"]
+[ext_resource type="Texture2D" uid="uid://deqlitcqkn7r3" path="res://assets/menu/droppy-logo.png" id="12_5vvyt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_03owx"]
 atlas = ExtResource("8_trn2v")
@@ -33,13 +33,6 @@ animations = [{
 "name": &"idle",
 "speed": 5.0
 }]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wkp8b"]
-texture = ExtResource("6_20pc6")
-expand_margin_left = 300.0
-expand_margin_top = 170.0
-expand_margin_right = 300.0
-expand_margin_bottom = 170.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_trn2v"]
 texture = ExtResource("5_lgr22")
@@ -78,22 +71,15 @@ level = ExtResource("2_cm0pq")
 
 [node name="MainMenu" type="CanvasLayer" parent="."]
 
-[node name="Background" type="ColorRect" parent="MainMenu"]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.7627308, 0.933145, 0.98940843, 1)
-
 [node name="background" type="TextureRect" parent="MainMenu"]
 modulate = Color(1, 1, 1, 0.6627451)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -50.0
-offset_right = -50.0
+offset_left = -17.0
+offset_top = -6.0
+offset_right = -17.0
+offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.11, 1.11)
@@ -108,11 +94,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainMenu/OptionsMenu"]
-visible = false
+[node name="Control" type="Control" parent="MainMenu/OptionsMenu"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainMenu/OptionsMenu/Control"]
 texture_filter = 1
-position = Vector2(1700, 46)
-scale = Vector2(4.25, 3.875)
+position = Vector2(111, -92.00003)
+rotation = 0.34906584
+scale = Vector2(10.046, 9.16)
 sprite_frames = SubResource("SpriteFrames_20pc6")
 animation = &"idle"
 autoplay = "idle"
@@ -122,15 +117,16 @@ flip_h = true
 
 [node name="PanelMenu" type="Panel" parent="MainMenu/OptionsMenu"]
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_top = -74.0
-offset_bottom = -74.0
+offset_top = 176.0
+offset_bottom = 176.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.63, 0.63)
-theme_override_styles/panel = SubResource("StyleBoxTexture_wkp8b")
 
 [node name="ButtonContainer" type="VBoxContainer" parent="MainMenu/OptionsMenu/PanelMenu"]
 layout_mode = 1
@@ -180,22 +176,20 @@ text = "Salir del juego"
 
 [node name="Label" type="Label" parent="MainMenu/OptionsMenu"]
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.33900002
 anchor_right = 0.5
-anchor_bottom = 0.33900002
 offset_left = -389.0
-offset_top = -169.67201
+offset_top = 250.0
 offset_right = 389.0
-offset_bottom = -86.67201
+offset_bottom = 400.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0.95966524, 0.98203176, 0.9981956, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0.17271599, 0.3048842, 1)
+theme_override_colors/font_shadow_color = Color(0.5796396, 0.9170691, 0.9999998, 1)
 theme_override_fonts/font = ExtResource("4_3dxm6")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxTexture_sc1dx")
-text = "Droppy! de fuga en fuga"
+text = "de fuga en fuga"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -206,6 +200,19 @@ anchors_preset = -1
 offset_right = -131.64594
 offset_bottom = -75.43359
 scale = Vector2(1.13, 1.13)
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu/OptionsMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -211.04501
+offset_top = -40.0
+offset_right = 288.95532
+offset_bottom = 460.0
+grow_horizontal = 2
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("12_5vvyt")
 
 [connection signal="pressed" from="MainMenu/OptionsMenu/PanelMenu/ButtonContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MainMenu/OptionsMenu/PanelMenu/ButtonContainer/Audio" to="." method="_on_audio_pressed"]
